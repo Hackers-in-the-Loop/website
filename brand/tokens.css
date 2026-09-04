@@ -1,0 +1,52 @@
+:root {
+  /* Core identity */
+  --hitl-carbon: #111315;
+  --hitl-paper: #f4f2ea;
+  --hitl-white: #ffffff;
+  --hitl-signal: #ff553d;
+
+  /* Supporting neutrals */
+  --hitl-graphite: #555b58;
+  --hitl-alloy: #aeb3b0;
+  --hitl-fog: #d8dcd9;
+  --hitl-canvas: #edede9;
+  --hitl-deep-signal: #c8321e;
+
+  /* Type */
+  --hitl-font-display: "Helvetica Neue", "Inter Tight", Helvetica, Arial, sans-serif;
+  --hitl-font-text: "Helvetica Neue", Inter, Helvetica, Arial, sans-serif;
+  --hitl-font-mono: Menlo, "IBM Plex Mono", Monaco, monospace;
+
+  /* Layout */
+  --hitl-space-unit: 8px;
+  --hitl-radius-control: 4px;
+  --hitl-radius-card: 12px;
+  --hitl-radius-field: 24px;
+  --hitl-rule-width: 8px;
+}
+
+/* Use Signal as a graphic accent. Deep Signal is the accessible small-text red. */
+.hitl-signal-text {
+  color: var(--hitl-deep-signal);
+}
+
+.hitl-signal-line {
+  align-items: center;
+  display: flex;
+  gap: calc(var(--hitl-space-unit) * 2);
+}
+
+.hitl-signal-line::before {
+  background: var(--hitl-signal);
+  content: "";
+  height: var(--hitl-rule-width);
+  width: min(20rem, 70%);
+}
+
+.hitl-signal-line::after {
+  background: var(--hitl-signal);
+  border-radius: 999px;
+  content: "";
+  height: calc(var(--hitl-rule-width) * 3);
+  width: calc(var(--hitl-rule-width) * 3);
+}
