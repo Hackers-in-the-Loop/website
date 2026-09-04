@@ -1,8 +1,11 @@
 .DS_Store
 node_modules/
 .next/
+.vinext/
 dist/
 build/
+.wrangler/
+outputs/
+work/
 .env*
 !.env.example
-
