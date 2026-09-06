@@ -1,20 +1,28 @@
 import Link from "next/link";
 import { CommunityLink } from "@/components/community-link";
 import { JoinBand } from "@/components/join-band";
-import { stackProjects } from "@/lib/site";
+import { LoopDiagram } from "@/components/loop-diagram";
+import { featuredProjects } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "Keep intelligence hackable.",
+  "An open-source hackerspace for people building, understanding, and improving the systems beneath agentic software.",
+  "/",
+);
 
 const principles = [
   {
     title: "Show the mechanism.",
-    copy: "Agentic systems should be understandable from the runtime up—not sealed behind a demo and a pricing page.",
+    copy: "Make the code, decisions, and tradeoffs visible. Leave enough of a trail for someone else to understand how it works.",
   },
   {
     title: "Keep people in control.",
-    copy: "Human agency belongs in the architecture: visible decisions, bounded credentials, and deliberate intervention.",
+    copy: "Give people ways to inspect actions, set boundaries, and change direction. Human agency is a design requirement.",
   },
   {
     title: "Build the commons.",
-    copy: "Useful primitives get stronger when people can inspect them, compose them, teach them, and improve them together.",
+    copy: "Share useful pieces and what you learn. A bug report, a careful question, or a good explanation moves the work forward.",
   },
 ] as const;
 
@@ -23,43 +31,84 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="site-shell hero__grid">
-          <div>
-            <p className="eyebrow">Open source for agentic systems</p>
-            <h1 className="hero__title">Keep intelligence hackable.</h1>
+          <div className="hero__main">
+            <p className="eyebrow">
+              <span className="status-dot" aria-hidden="true" /> Open source for
+              agentic systems
+            </p>
+            <h1 className="hero__title">
+              Keep intelligence <span>hackable.</span>
+            </h1>
             <p className="hero__lede">
-              Hackers in the Loop is a community building the runtimes, tools,
-              protocols, and hard-won knowledge beneath agentic software.
+              A hackerspace for the systems beneath AI agents. We build
+              runtimes, tools, and shared knowledge that people can inspect,
+              change, and make their own.
             </p>
             <div className="hero__actions">
               <CommunityLink className="button button--primary" />
               <Link className="button" href="/manifesto">
-                Read the manifesto
+                Read the manifesto <span aria-hidden="true">↗</span>
               </Link>
             </div>
-            <div className="signal-line" aria-hidden="true" />
+            <p className="hero__note">
+              For builders, tinkerers, and people who ask how it works.
+            </p>
           </div>
-
-          <aside className="stack-preview" aria-label="Working stack preview">
-            <div className="stack-preview__head">
-              <span className="metadata">The working stack</span>
-              <span className="status-dot" aria-hidden="true" />
-            </div>
-            {stackProjects.map((project, index) => (
-              <article className="project-mini" key={project.name}>
-                <span className="project-mini__index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h2>{project.name}</h2>
-                <p>{project.description}</p>
-              </article>
-            ))}
-          </aside>
+          <LoopDiagram />
         </div>
       </section>
 
-      <section className="site-shell home-section">
+      <section className="work-section" aria-labelledby="work-title">
+        <div className="site-shell">
+          <div className="section-heading section-heading--light">
+            <div>
+              <p className="eyebrow">01 / On the workbench</p>
+              <h2 id="work-title" className="section-title">
+                Find your layer.
+              </h2>
+            </div>
+            <Link className="text-link" href="/stack">
+              Explore the work <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+          <div className="work-grid">
+            {featuredProjects.map((project, index) => (
+              <Link
+                className="work-card"
+                href={`/stack#${project.id}`}
+                key={project.id}
+              >
+                <div className="work-card__meta">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span aria-hidden="true">↗</span>
+                </div>
+                <p className="metadata">{project.kind}</p>
+                <h3>{project.name}</h3>
+                <p className="work-card__copy">{project.description}</p>
+                <span className="work-card__action">
+                  Read the brief <span aria-hidden="true">→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+          <p className="work-section__note">
+            A map of the work and the questions behind it. Experiments welcome.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="site-shell home-section"
+        aria-labelledby="principles-title"
+      >
         <div className="section-heading">
-          <p className="eyebrow">What we believe</p>
+          <div>
+            <p className="eyebrow">02 / How we work</p>
+            <h2 id="principles-title" className="section-title">
+              Open by practice.
+            </h2>
+          </div>
+          <p className="section-note">Build → inspect → improve → share</p>
         </div>
         <div className="principles-grid">
           {principles.map((principle, index) => (
@@ -72,20 +121,17 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="site-shell home-section">
         <div className="manifesto-preview">
+          <p>“Help is infrastructure.”</p>
           <div>
-            <p className="eyebrow">The manifesto</p>
-            <Link className="text-link" href="/manifesto">
-              Read it whole →
+            <p>The work gets better when we help each other understand it.</p>
+            <Link
+              className="text-link"
+              href="/manifesto#help-is-infrastructure"
+            >
+              What we believe <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <p className="manifesto-preview__copy">
-            We do not want intelligence delivered as a sealed appliance. We
-            want systems we can <em>open, understand, modify, and share.</em>
-          </p>
         </div>
       </section>
 

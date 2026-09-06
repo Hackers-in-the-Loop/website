@@ -1,105 +1,100 @@
+import { discordInvite } from "@/lib/urls";
+
 export const siteConfig = {
   name: "Hackers in the Loop",
   shortName: "HITL",
-  description: "Open source for agentic systems.",
+  description:
+    "An open-source hackerspace for the systems beneath agentic software.",
   xUrl: "https://x.com/iammrduncan",
-  discordUrl:
-    process.env.NEXT_PUBLIC_DISCORD_URL?.trim() || "/community#join",
+  githubUrl: "https://github.com/Hackers-in-the-Loop",
+  repositoryUrl: "https://github.com/Hackers-in-the-Loop/website",
+  issuesUrl: "https://github.com/Hackers-in-the-Loop/website/issues",
+  discordUrl: discordInvite(process.env.NEXT_PUBLIC_DISCORD_URL),
 } as const;
 
 export const navigation = [
   { href: "/manifesto", label: "Manifesto" },
-  { href: "/stack", label: "Stack" },
+  { href: "/stack", label: "The work" },
   { href: "/community", label: "Community" },
 ] as const;
 
-export const stackProjects = [
-  {
-    name: "Threaded",
-    kind: "Agent runtime",
-    description: "Composable orchestration and visible execution paths.",
-  },
-  {
-    name: "like-wasm",
-    kind: "Runtime primitive",
-    description: "Portable, inspectable components for agent systems.",
-  },
-  {
-    name: "Credential Gateway",
-    kind: "Access layer",
-    description: "Human-directed credentials and controlled delegation.",
-  },
-  {
-    name: "Kernel Engine",
-    kind: "Open bench",
-    description: "Custom GPU kernels, old hardware, and first principles.",
-  },
-] as const;
-
+// These are project briefs, not release or availability claims. Add repository
+// links after their public location and stewardship have been confirmed.
 export const workingProjects = [
   {
+    id: "threaded",
     name: "Threaded",
-    status: "Active",
-    kind: "Agent runtime",
-    description:
-      "Composable orchestration for agentic work, with visible execution paths and deliberate human intervention.",
+    kind: "Agent runtimes",
+    description: "Orchestration you can follow, interrupt, and change.",
+    detail:
+      "Composable execution paths, explicit state, and places for people to intervene in agentic work.",
+    question:
+      "Can you explain what an agent did, and change what happens next?",
+    experiment:
+      "Trace a task through planning, tool use, and a failure. Sketch where you would inspect state, pause execution, or retry. Share the trace and the part you could not explain.",
   },
   {
+    id: "like-wasm",
     name: "like-wasm",
-    status: "Active",
-    kind: "Runtime primitive",
-    description:
-      "Experiments in portable, inspectable components that can move cleanly through an agent system.",
+    kind: "Portable components",
+    description: "Small pieces that travel between systems.",
+    detail:
+      "Experiments with WebAssembly components, explicit interfaces, and portable execution beneath agent software.",
+    question: "What should a component know about the system that runs it?",
+    experiment:
+      "Take one small tool and list its inputs, outputs, filesystem access, and network needs. Describe the minimum interface another runtime would need to run it.",
   },
   {
+    id: "credential-gateway",
     name: "Credential Gateway",
-    status: "Active",
-    kind: "Access layer",
+    kind: "Authority & access",
     description:
-      "A boundary for human-directed credentials, controlled delegation, and auditable tool access.",
+      "Give a task the authority it needs. Keep control of the rest.",
+    detail:
+      "Scoped credentials, deliberate delegation, and a record of how tools use the access they receive.",
+    question:
+      "How does a person grant, inspect, and revoke an agent’s authority?",
+    experiment:
+      "Map the permissions for a single tool call using mock credentials. Identify who grants access, when it expires, and what should happen if it is revoked mid-task.",
   },
   {
+    id: "fxclaw",
     name: "fxclaw",
-    status: "Ecosystem",
-    kind: "Applied system",
-    description:
-      "An application built on the same open agent infrastructure—and a proving ground for the stack.",
+    kind: "Applied systems",
+    description: "Find the rough edges by building on the stack.",
+    detail:
+      "An application of open agent infrastructure, exploring what the underlying primitives make possible and where they get in the way.",
+    question: "Which abstractions survive contact with an actual workflow?",
+    experiment:
+      "Describe a workflow from the user’s intent to its final result. Note every place the user needs visibility, a decision, or a way to recover from a mistake.",
   },
   {
+    id: "agent-dsl",
     name: "Agent DSL research",
-    status: "Research",
-    kind: "Languages",
-    description:
-      "Exploring languages and abstractions that make agent behavior easier to express, inspect, and compose.",
+    kind: "Languages & research",
+    description: "Make behavior easier to express and reason about.",
+    detail:
+      "Programming models for describing agent behavior, coordinating work, and making control flow legible.",
+    question: "What belongs in a language, and what belongs in a runtime?",
+    experiment:
+      "Write the same small workflow as plain language and pseudocode. Include a timeout and a human decision. Compare what each version makes explicit or leaves ambiguous.",
   },
   {
+    id: "kernel-engine",
     name: "Kernel Engine",
-    status: "On the bench",
-    kind: "Systems",
-    description:
-      "Custom GPU kernels, older hardware, and first-principles performance work—starting with a rack of P100s.",
+    kind: "Hardware & performance",
+    description: "Understand the machine. Make more of what we have.",
+    detail:
+      "GPU kernels, older hardware, memory movement, and performance experiments grounded in measurement.",
+    question:
+      "Where does the time go, and can someone else reproduce the result?",
+    experiment:
+      "Benchmark one small operation on hardware you can access. Record the machine, software versions, input size, and warm-up method. Publish the slow result as carefully as the fast one.",
   },
 ] as const;
 
-export const upstreamAreas = [
-  {
-    name: "Runtimes & model tools",
-    description:
-      "The open runtimes, model interfaces, evaluation tools, and observability layers our work depends on.",
-  },
-  {
-    name: "Languages & compilers",
-    description:
-      "Compilers, interpreters, DSLs, and component systems that make agent software portable and understandable.",
-  },
-  {
-    name: "Systems & hardware",
-    description:
-      "GPU tooling, kernels, isolation, and low-level infrastructure for keeping the whole stack hackable.",
-  },
-  {
-    name: "Community infrastructure",
-    description:
-      "The documentation, collaboration, and open-source tools that help people build and learn together.",
-  },
-] as const;
+export const featuredProjects = workingProjects.filter((project) =>
+  ["threaded", "like-wasm", "credential-gateway", "kernel-engine"].includes(
+    project.id,
+  ),
+);

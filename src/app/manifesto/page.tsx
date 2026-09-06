@@ -1,26 +1,30 @@
-import type { Metadata } from "next";
 import { JoinBand } from "@/components/join-band";
 import { manifesto } from "@/content/manifesto";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Manifesto",
-  description:
-    "Why Hackers in the Loop builds agentic systems in the open, from first principles, with people in the architecture.",
-};
+export const metadata = pageMetadata(
+  "Manifesto",
+  "Keep intelligence hackable. Eight principles for building open agent systems with people in the architecture.",
+  "/manifesto",
+);
 
 export default function ManifestoPage() {
   return (
     <>
       <header className="page-hero">
         <div className="site-shell page-hero__grid">
-          <p className="eyebrow">The manifesto · 2026</p>
           <div>
-            <h1 className="page-title">{manifesto.title}</h1>
+            <p className="eyebrow">The manifesto</p>
+            <p className="page-aside">A working statement · Eight principles</p>
+          </div>
+          <div>
+            <h1 className="page-title page-title--manifesto">
+              {manifesto.title}
+            </h1>
             <div className="page-signal" aria-hidden="true" />
           </div>
         </div>
       </header>
-
       <article className="site-shell manifesto-page">
         <div className="manifesto-intro">
           <p className="metadata">Our position</p>
@@ -30,23 +34,38 @@ export default function ManifestoPage() {
             ))}
           </div>
         </div>
-
-        <ol className="manifesto-list">
-          {manifesto.principles.map((principle, index) => (
-            <li className="manifesto-item" key={principle.title}>
-              <span className="manifesto-item__number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div className="manifesto-item__body">
+        <div className="manifesto-layout">
+          <nav className="manifesto-index" aria-label="Manifesto principles">
+            <p className="eyebrow">The principles</p>
+            {manifesto.principles.map((principle, index) => (
+              <a key={principle.id} href={`#${principle.id}`}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {principle.title}
+              </a>
+            ))}
+          </nav>
+          <ol className="manifesto-list">
+            {manifesto.principles.map((principle, index) => (
+              <li
+                className="manifesto-item"
+                id={principle.id}
+                key={principle.id}
+              >
+                <span className="manifesto-item__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h2>{principle.title}</h2>
                 {principle.body.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
-              </div>
-            </li>
-          ))}
-        </ol>
-
+                <div className="manifesto-practice">
+                  <h3 className="metadata">In practice</h3>
+                  <p>{principle.practice}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
         <div className="manifesto-closing">
           <p className="eyebrow">The invitation</p>
           {manifesto.closing.map((paragraph) => (
@@ -54,8 +73,7 @@ export default function ManifestoPage() {
           ))}
         </div>
       </article>
-
-      <JoinBand title="Do the hard work in good company." />
+      <JoinBand title="Do the work in good company." />
     </>
   );
 }

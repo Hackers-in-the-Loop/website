@@ -6,13 +6,11 @@ type CommunityLinkProps = {
   children?: React.ReactNode;
 };
 
-export function CommunityLink({
-  className,
-  children = "Join the community",
-}: CommunityLinkProps) {
-  const isExternal = siteConfig.discordUrl.startsWith("http");
+export function CommunityLink({ className, children }: CommunityLinkProps) {
+  const label =
+    children ?? (siteConfig.discordUrl ? "Join Discord ↗" : "Get involved →");
 
-  if (isExternal) {
+  if (siteConfig.discordUrl) {
     return (
       <a
         className={className}
@@ -20,14 +18,14 @@ export function CommunityLink({
         rel="noreferrer"
         target="_blank"
       >
-        {children}
+        {label}
       </a>
     );
   }
 
   return (
-    <Link className={className} href={siteConfig.discordUrl}>
-      {children}
+    <Link className={className} href="/community#join">
+      {label}
     </Link>
   );
 }
