@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { siteConfig } from "@/lib/site";
 import { siteOrigin } from "@/lib/urls";
 import "./globals.css";
 
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
     "A community for people building with technology, learning about it, or finding their footing in tech.",
   openGraph: {
     title: "Hackers in the Loop",
-    description: "Open source for agentic systems.",
+    description: siteConfig.description,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Hackers in the Loop",
-    description: "Open source for agentic systems.",
+    description: siteConfig.description,
   },
 };
 

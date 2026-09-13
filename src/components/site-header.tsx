@@ -17,7 +17,7 @@ export function SiteHeader() {
             height={78}
             loading="eager"
             unoptimized
-            src="/brand/hitl-horizontal-lockup.svg"
+            src="/brand/hitl-horizontal-lockup.svg?v=2"
             width={270}
           />
         </Link>
