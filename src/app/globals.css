@@ -1517,6 +1517,8 @@ main:focus {
 .projects-lab-link { margin-top: 1.5rem; }
 
 .community-rules { padding-left: 1.5rem; font-size: 1.125rem; line-height: 1.7; }
-.community-rules li + li { margin-top: .75rem; }
+.community-rules li + li { margin-top: 2rem; }
+.community-rules h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.5; }
+.community-rules p { margin-top: .5rem; max-width: 65ch; color: var(--graphite); font-size: 1rem; line-height: 1.7; }
 .community-rules li::marker { color: var(--signal-deep); font-family: var(--font-mono); }
 .community-rules a { text-decoration: underline; text-underline-offset: .2em; }
