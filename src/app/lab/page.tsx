@@ -1,7 +1,6 @@
 import Link from "@/components/site-link";
 import { LabPhoto } from "@/components/lab-photo";
 import { LabPowerEstimate } from "@/components/lab-power-estimate";
-import { labProjects } from "@/content/lab-projects";
 import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -23,27 +22,20 @@ export default function LabPage() {
         <p className="eyebrow">The HITL Lab / Built to be shared</p>
         <h1 className="page-title">Real hardware.<br />Room to experiment.</h1>
         <p className="page-lede">A founder-funded mini cluster, a collection of test benches, and a place to try ideas. We’re building toward shared compute so more people can learn, research, and build without owning all the equipment themselves.</p>
-        <div className="hero__actions"><a className="button button--primary" href={siteConfig.labRequestUrl} target="_blank" rel="noreferrer">Request access / compute grant ↗</a><a className="text-link" href="#projects">Explore active projects ↓</a></div>
+        <div className="hero__actions"><a className="button button--primary" href={siteConfig.labRequestUrl} target="_blank" rel="noreferrer">Request access / compute grant ↗</a><Link className="text-link" href="/projects">Explore active projects →</Link></div>
         <p className="lab-fineprint">Requests can be submitted now. Access and resource allocations are arranged after review; submitting a request does not provision compute.</p>
       </div>
       <LabPhoto name="cluster-complete" priority alt="The assembled HITL mini rack, with three DGX Sparks, network cabling, storage, and an external GPU bench." caption="The mini cluster and GPU bench, photographed during the build." />
     </header>
 
     <nav className="site-shell lab-index" aria-label="Lab sections">
-      <a href="#projects">Active projects</a><a href="#hardware">Hardware</a><a href="#journey">Build journey</a><a href="#costs">Costs & power</a><a href="#access">Request access</a><a href="#support">Support the Lab</a>
+      <a href="#hardware">Hardware</a><a href="#journey">Build journey</a><a href="#costs">Costs & power</a><a href="#access">Request access</a><a href="#support">Support the Lab</a>
     </nav>
 
     <section className="work-section" id="projects" aria-labelledby="projects-title">
       <div className="site-shell">
-        <div className="section-heading section-heading--light"><div><p className="eyebrow">Work in progress</p><h2 className="section-title" id="projects-title">Active projects.</h2></div><p className="lab-section-note">Founder-led experiments documented in the September 12 build notes. These are project updates, not live utilization readings.</p></div>
-        <div className="lab-projects">
-          {labProjects.map((project) => <article className="lab-project" key={project.id} id={project.id}>
-            <p className="metadata">{project.stage}</p><h3>{project.name}</h3><p className="lab-project__question">{project.question}</p><p>{project.description}</p>
-            <h4>Resources</h4><ul>{project.resources.map((resource) => <li key={resource}>{resource}</li>)}</ul><p className="lab-fineprint">{project.allocation}</p>
-          </article>)}
-        </div>
-        <p className="lab-section-note lab-projects-note">The shared model gateway and community Discord bot remain planned. A project’s presence here does not indicate spare capacity or an open allocation.</p>
-        <a className="text-link" href={siteConfig.labRequestUrl} target="_blank" rel="noreferrer">Propose a project for the Lab ↗</a>
+        <div className="section-heading section-heading--light"><div><p className="eyebrow">Work in progress</p><h2 className="section-title" id="projects-title">What’s being built.</h2></div><p className="lab-section-note">Explore the experiments, the questions behind them, and the hardware they use.</p></div>
+        <Link className="text-link" href="/projects">See active projects & resources →</Link>
       </div>
     </section>
 

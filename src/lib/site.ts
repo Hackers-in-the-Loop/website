@@ -18,6 +18,7 @@ export const navigation = [
   { href: "/", label: "Home" },
   { href: "/why", label: "Why HITL?" },
   { href: "/lab", label: "Lab" },
+  { href: "/projects", label: "Projects" },
   { href: "/community", label: "Community" },
 ] as const;
 

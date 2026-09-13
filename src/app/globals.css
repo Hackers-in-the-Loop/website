@@ -1460,11 +1460,11 @@ main:focus {
 .lab-projects { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border: 1px solid #3b403e; margin-top: 2.5rem; }
 .lab-project { padding: clamp(1.5rem,3vw,3rem); }
 .lab-project + .lab-project { border-left: 1px solid #3b403e; }
-.lab-project h3, .lab-hardware-grid h3, .power-estimate h3, .lab-power-title, .home-projects h2, .founder-placeholder h2 { font: 650 clamp(1.8rem,2.5vw,2.6rem)/1.12 var(--font-display); letter-spacing: -.025em; }
-.lab-project h3 { margin-top: 1rem; }
+.lab-project h2, .lab-hardware-grid h3, .power-estimate h3, .lab-power-title, .home-projects h2, .founder-placeholder h2 { font: 650 clamp(1.8rem,2.5vw,2.6rem)/1.12 var(--font-display); letter-spacing: -.025em; }
+.lab-project h2 { margin-top: 1rem; }
 .lab-project p, .lab-project li { color: var(--alloy); }
 .lab-project .lab-project__question { color: var(--paper); font-size: 1.15rem; margin-block: 1.5rem 1rem; }
-.lab-project h4 { font: .875rem var(--font-mono); text-transform: uppercase; margin-top: 2rem; }
+.lab-project h3 { font: .875rem var(--font-mono); text-transform: uppercase; margin-top: 2rem; }
 .lab-project ul { margin: 1rem 0 0 1.2rem; }
 .lab-project li + li { margin-top: .6rem; }
 .lab-projects-note { margin-top: 1.5rem; max-width: 65rem; }
@@ -1526,3 +1526,10 @@ main:focus {
   .lab-access .button { white-space:normal; }
 }
 @media (max-width:480px) { .lab-gallery { grid-template-columns:1fr; } .lab-power-table { font-size:.875rem; } }
+
+/* Projects have their own growing directory; the Lab keeps a short signpost. */
+.projects-page .lab-projects { grid-template-columns: 1fr; }
+.projects-page .lab-project + .lab-project { border-left: 0; border-top: 1px solid #3b403e; }
+.projects-page .lab-project { max-width: 100%; }
+.projects-page .lab-project > p { max-width: 65ch; }
+.projects-lab-link { margin-top: 1.5rem; }

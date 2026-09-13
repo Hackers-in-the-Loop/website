@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </div>
     </section>
-    <section className="site-shell home-projects"><p className="eyebrow">On the workbench</p><h2>Active projects in the Lab.</h2><p>Explore the experiments and the hardware behind them, from GPU comparisons to small-device agent computing.</p><Link className="text-link" href="/lab#projects">See projects & resources →</Link></section>
+    <section className="site-shell home-projects"><p className="eyebrow">On the workbench</p><h2>Active projects in the Lab.</h2><p>Explore the experiments and the hardware behind them, from GPU comparisons to small-device agent computing.</p><Link className="text-link" href="/projects">See projects & resources →</Link></section>
     <JoinBand title="Start where you are." />
   </>;
 }

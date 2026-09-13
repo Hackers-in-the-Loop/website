@@ -4,6 +4,7 @@ The Lab now contains six user-supplied build photographs, documented experiments
 
 ## Content maintenance
 
+- Active projects live at `/projects`, linked from the main navigation, homepage, and Lab. The Lab retains a short signpost at `#projects` for old links.
 - Edit `src/content/lab-projects.ts` to update project stage, description, resources, and allocation notes. These are editorial records, not live resource readings. Initial entries are Agent Blade and the GPU comparison bench from the supplied build guide. No scheduled GPU-hours or member allocations were supplied.
 - `src/content/lab-power.json` is the supplied device-level model; totals and calculator outputs are computed from it. Update the visible power summary and public power notes together if the model changes.
 - The September 12 inventory supersedes the earlier September 8 snapshot: TecMOJO rack; K15 + DEG2 GPU bench; 4 × 8 TB RAID5 NAS plus one 4 TB NVMe tier. GPU spares are not concurrent capacity.
