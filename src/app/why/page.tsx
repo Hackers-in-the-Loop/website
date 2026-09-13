@@ -22,7 +22,7 @@ export default function WhyPage() {
       </div>
     </div></section>
     <section className="site-shell page-section" id="founder" aria-labelledby="founder-title">
-      <div className="founder-placeholder"><p className="eyebrow">The person behind HITL</p><h2 id="founder-title">Who am I?</h2><p>Founder introduction coming soon.</p><p className="lab-fineprint">A personal story, background, and past work — in the founder’s own words.</p></div>
+      <div className="founder-placeholder"><p className="eyebrow">The person behind HITL</p><h2 id="founder-title">Who am I?</h2><p>Founder introduction coming soon.</p><p className="lab-fineprint">A personal story, background, and past work, in the founder’s own words.</p></div>
     </section>
     <JoinBand />
   </>;

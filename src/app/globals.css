@@ -618,20 +618,6 @@ main:focus {
 .site-footer a:hover {
   color: var(--signal);
 }
-.site-footer__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 2rem;
-  margin-top: 2.75rem;
-  font-size: 0.67rem;
-  color: var(--alloy);
-}
-.site-footer__bottom a {
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
-}
-
 .page-hero {
   padding-block: clamp(3rem, 6vw, 6rem);
 }
@@ -1199,9 +1185,6 @@ main:focus {
   .site-footer__links {
     gap: 0.25rem 1.5rem;
   }
-  .site-footer__bottom {
-    margin-top: 1.75rem;
-  }
   .page-hero__grid,
   .manifesto-intro,
   .manifesto-layout {
@@ -1423,7 +1406,6 @@ main:focus {
 .hero__note, .site-footer__copy { font-size: 1rem; }
 .join-band__copy, .work-card__copy, .community-place > p:not(.metadata),
 .source-note p:not(.eyebrow) { font-size: 1rem; }
-.site-footer__bottom { font-size: 0.875rem; }
 .community-invitation { background: var(--carbon); color: var(--paper); padding: clamp(1.5rem, 3vw, 3rem); border-radius: 0.5rem; }
 .community-invitation h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 3.25rem); line-height: 1.08; letter-spacing: -0.025em; margin-top: 2rem; }
 .community-invitation > p:not(.eyebrow) { color: var(--alloy); margin-top: 1.5rem; }

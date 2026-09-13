@@ -33,12 +33,6 @@ export function SiteFooter() {
           </a>
         </nav>
       </div>
-      <div className="site-shell site-footer__bottom">
-        <p>Understand the system. Improve the system. Share what you learn.</p>
-        <a href={siteConfig.repositoryUrl} rel="noreferrer" target="_blank">
-          This site is open source ↗
-        </a>
-      </div>
     </footer>
   );
 }

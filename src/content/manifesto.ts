@@ -22,7 +22,7 @@ export const manifesto = {
         "Make authority explicit. Give people a way to inspect, interrupt, and recover.",
       body: [
         "Human-in-the-loop cannot be a checkbox added after the system is built. Human agency should shape permissions, execution boundaries, review points, reversibility, and accountability from the beginning.",
-        "Agents should extend a person’s ability to act—not make responsibility disappear.",
+        "Agents should extend a person’s ability to act while keeping responsibility clear.",
       ],
     },
     {
@@ -72,7 +72,7 @@ export const manifesto = {
         "Answer with context, make room for beginners, and give credit for work that helps others.",
       body: [
         "Communities compound capability when people can ask honest questions, show unfinished work, cross disciplines, and receive serious feedback without performance or posturing.",
-        "We want the person learning agent runtimes today to help someone understand kernels tomorrow—and to be helped in return.",
+        "We want the person learning agent runtimes today to help someone understand kernels tomorrow and to be helped in return.",
       ],
     },
     {
@@ -88,6 +88,5 @@ export const manifesto = {
   ],
   closing: [
     "Hackers in the Loop is a workshop, not a pedestal. Bring a difficult problem, a strange machine, an unfinished tool, or a question that refuses to go away.",
-    "Understand the system. Improve the system. Share what you learn.",
   ],
 } as const;
