@@ -1533,3 +1533,8 @@ main:focus {
 .projects-page .lab-project { max-width: 100%; }
 .projects-page .lab-project > p { max-width: 65ch; }
 .projects-lab-link { margin-top: 1.5rem; }
+
+.community-rules { padding-left: 1.5rem; font-size: 1.125rem; line-height: 1.7; }
+.community-rules li + li { margin-top: .75rem; }
+.community-rules li::marker { color: var(--signal-deep); font-family: var(--font-mono); }
+.community-rules a { text-decoration: underline; text-underline-offset: .2em; }

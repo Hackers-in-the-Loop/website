@@ -19,5 +19,16 @@ export default function CommunityPage() {
       </div>
     </section>
     <section className="community-ethos" aria-labelledby="ethos-title"><div className="site-shell community-ethos__inner"><p className="eyebrow">How we treat one another</p><div><h2 id="ethos-title">Take the person<br />as seriously as the work.</h2><p>Listen. Make room for questions at every experience level. Offer feedback with care, give credit, and help when you can.</p><Link className="text-link" href="/why">Why HITL? →</Link></div></div></section>
+    <section className="site-shell community-section" id="rules" aria-labelledby="rules-title">
+      <div className="manifesto-intro">
+        <h2 className="eyebrow" id="rules-title">Community rules</h2>
+        <ol className="community-rules">
+          <li>Follow <a href="https://discord.com/terms" target="_blank" rel="noreferrer">Discord’s Terms of Service</a>.</li>
+          <li>Be nice.</li>
+          <li>Don’t be toxic.</li>
+          <li>Have fun.</li>
+        </ol>
+      </div>
+    </section>
   </>;
 }
