@@ -18,6 +18,6 @@ export default function CommunityPage() {
         <article className="community-place"><p className="metadata">Founder / Connect</p><h3>Connect with the founder.</h3><p>Follow along on X, or get in touch there about the community, a project idea, or supporting the Lab with hardware or hosting.</p><div className="community-place__actions"><a className="button" href={siteConfig.xUrl} target="_blank" rel="noreferrer">Find the founder on X ↗</a></div></article>
       </div>
     </section>
-    <section className="community-ethos" aria-labelledby="ethos-title"><div className="site-shell community-ethos__inner"><p className="eyebrow">How we treat one another</p><div><h2 id="ethos-title">Take the person<br />as seriously as the work.</h2><p>Listen. Make room for questions at every experience level. Offer feedback with care, give credit, and help when you can. Honest criticism can help people grow; cruelty and hate have no place here.</p><Link className="text-link" href="/why">Why HITL? →</Link></div></div></section>
+    <section className="community-ethos" aria-labelledby="ethos-title"><div className="site-shell community-ethos__inner"><p className="eyebrow">How we treat one another</p><div><h2 id="ethos-title">Take the person<br />as seriously as the work.</h2><p>Listen. Make room for questions at every experience level. Offer feedback with care, give credit, and help when you can.</p><Link className="text-link" href="/why">Why HITL? →</Link></div></div></section>
   </>;
 }
