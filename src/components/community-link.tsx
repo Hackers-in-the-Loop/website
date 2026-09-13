@@ -8,7 +8,7 @@ type CommunityLinkProps = {
 
 export function CommunityLink({ className, children }: CommunityLinkProps) {
   const label =
-    children ?? (siteConfig.discordUrl ? "Join Discord ↗" : "Get involved →");
+    children ?? (siteConfig.discordUrl ? "Join Discord ↗" : "Join the community →");
 
   if (siteConfig.discordUrl) {
     return (

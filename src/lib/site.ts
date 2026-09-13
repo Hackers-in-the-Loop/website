@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Hackers in the Loop",
   shortName: "HITL",
   description:
-    "An open-source hackerspace for the systems beneath agentic software.",
+    "A community for people building with technology, learning about it, or finding their footing in tech.",
   xUrl: "https://x.com/iammrduncan",
   githubUrl: "https://github.com/Hackers-in-the-Loop",
   repositoryUrl: "https://github.com/Hackers-in-the-Loop/website",
@@ -13,8 +13,9 @@ export const siteConfig = {
 } as const;
 
 export const navigation = [
-  { href: "/manifesto", label: "Manifesto" },
-  { href: "/stack", label: "The work" },
+  { href: "/", label: "Home" },
+  { href: "/why", label: "Why HITL?" },
+  { href: "/lab", label: "Lab" },
   { href: "/community", label: "Community" },
 ] as const;
 

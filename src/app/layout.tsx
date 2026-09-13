@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s · Hackers in the Loop",
   },
   description:
-    "An open-source community building the systems beneath agentic software.",
+    "A community for people building with technology, learning about it, or finding their footing in tech.",
   openGraph: {
     title: "Hackers in the Loop",
     description: "Open source for agentic systems.",

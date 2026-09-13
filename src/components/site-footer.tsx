@@ -16,7 +16,7 @@ export function SiteFooter() {
             width={80}
           />
           <p className="site-footer__copy">
-            Open source for agentic systems. Built in public, improved together.
+            A place to belong, share what you know, and grow in tech.
           </p>
         </div>
         <nav className="site-footer__links" aria-label="Footer navigation">

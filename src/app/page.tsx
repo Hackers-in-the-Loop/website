@@ -1,141 +1,58 @@
 import Link from "next/link";
 import { CommunityLink } from "@/components/community-link";
 import { JoinBand } from "@/components/join-band";
-import { LoopDiagram } from "@/components/loop-diagram";
-import { featuredProjects } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-  "Keep intelligence hackable.",
-  "An open-source hackerspace for people building, understanding, and improving the systems beneath agentic software.",
+  "A place to belong in tech.",
+  "A community for people building with technology, learning about it, or finding their footing in tech. Bring your questions, your work, and yourself.",
   "/",
 );
 
-const principles = [
-  {
-    title: "Show the mechanism.",
-    copy: "Make the code, decisions, and tradeoffs visible. Leave enough of a trail for someone else to understand how it works.",
-  },
-  {
-    title: "Keep people in control.",
-    copy: "Give people ways to inspect actions, set boundaries, and change direction. Human agency is a design requirement.",
-  },
-  {
-    title: "Build the commons.",
-    copy: "Share useful pieces and what you learn. A bug report, a careful question, or a good explanation moves the work forward.",
-  },
+const paths = [
+  { href: "/why", label: "Why HITL?", title: "People worth investing in.", copy: "Why belonging, listening, and helping one another grow are at the heart of HITL.", action: "Why we exist" },
+  { href: "/lab", label: "The Lab / In preparation", title: "Resources to learn with.", copy: "A personal compute cluster is the starting point. Shared access, a community bot, and an inference gateway are planned.", action: "See the Lab plans" },
+  { href: "/community", label: "Community / Connect", title: "Bring what’s on your mind.", copy: "Ask a question, share what you’re trying, or take an interest in someone else’s work. You can start where you are.", action: "Find your way in" },
 ] as const;
 
 export default function Home() {
-  return (
-    <>
-      <section className="hero">
-        <div className="site-shell hero__grid">
-          <div className="hero__main">
-            <p className="eyebrow">
-              <span className="status-dot" aria-hidden="true" /> Open source for
-              agentic systems
-            </p>
-            <h1 className="hero__title">
-              Keep intelligence <span>hackable.</span>
-            </h1>
-            <p className="hero__lede">
-              A hackerspace for the systems beneath AI agents. We build
-              runtimes, tools, and shared knowledge that people can inspect,
-              change, and make their own.
-            </p>
-            <div className="hero__actions">
-              <CommunityLink className="button button--primary" />
-              <Link className="button" href="/manifesto">
-                Read the manifesto <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
-            <p className="hero__note">
-              For builders, tinkerers, and people who ask how it works.
-            </p>
-          </div>
-          <LoopDiagram />
-        </div>
-      </section>
-
-      <section className="work-section" aria-labelledby="work-title">
-        <div className="site-shell">
-          <div className="section-heading section-heading--light">
-            <div>
-              <p className="eyebrow">01 / On the workbench</p>
-              <h2 id="work-title" className="section-title">
-                Find your layer.
-              </h2>
-            </div>
-            <Link className="text-link" href="/stack">
-              Explore the work <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-          <div className="work-grid">
-            {featuredProjects.map((project, index) => (
-              <Link
-                className="work-card"
-                href={`/stack#${project.id}`}
-                key={project.id}
-              >
-                <div className="work-card__meta">
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <span aria-hidden="true">↗</span>
-                </div>
-                <p className="metadata">{project.kind}</p>
-                <h3>{project.name}</h3>
-                <p className="work-card__copy">{project.description}</p>
-                <span className="work-card__action">
-                  Read the brief <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
-          </div>
-          <p className="work-section__note">
-            A map of the work and the questions behind it. Experiments welcome.
-          </p>
-        </div>
-      </section>
-
-      <section
-        className="site-shell home-section"
-        aria-labelledby="principles-title"
-      >
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">02 / How we work</p>
-            <h2 id="principles-title" className="section-title">
-              Open by practice.
-            </h2>
-          </div>
-          <p className="section-note">Build → inspect → improve → share</p>
-        </div>
-        <div className="principles-grid">
-          {principles.map((principle, index) => (
-            <article className="principle" key={principle.title}>
-              <span className="principle__number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3>{principle.title}</h3>
-              <p>{principle.copy}</p>
-            </article>
-          ))}
-        </div>
-        <div className="manifesto-preview">
-          <p>“Help is infrastructure.”</p>
-          <div>
-            <p>The work gets better when we help each other understand it.</p>
-            <Link
-              className="text-link"
-              href="/manifesto#help-is-infrastructure"
-            >
-              What we believe <span aria-hidden="true">→</span>
-            </Link>
+  return <>
+    <section className="hero">
+      <div className="site-shell hero__grid">
+        <div className="hero__main">
+          <p className="eyebrow">Hackers in the Loop / Community</p>
+          <h1 className="hero__title">A place to <span>belong</span> in tech.</h1>
+          <p className="hero__lede">Hackers in the Loop is a community for people building with technology, learning about it, or finding their footing in tech.</p>
+          <p className="hero__note">We lean toward agentic systems, AI, LLMs, and model training, and welcome people working across all of tech.</p>
+          <div className="hero__actions">
+            <CommunityLink className="button button--primary" />
+            <Link className="button" href="/why">Why HITL?</Link>
           </div>
         </div>
-      </section>
-
-      <JoinBand />
-    </>
-  );
+        <aside className="community-invitation" aria-labelledby="invitation-title">
+          <p className="eyebrow">We all started somewhere</p>
+          <h2 id="invitation-title">Bring your questions.<br />Your work.<br />Yourself.</h2>
+          <div className="page-signal" aria-hidden="true" />
+          <p>We want people to find a place to belong and people who care about what they’re building and doing.</p>
+          <p>Sometimes that means listening. Sometimes it means sharing what we know or building alongside someone.</p>
+          <p className="community-invitation__close">You’re welcome here, with no strings attached.</p>
+        </aside>
+      </div>
+    </section>
+    <section className="work-section" aria-labelledby="explore-title">
+      <div className="site-shell">
+        <div className="section-heading section-heading--light">
+          <div><p className="eyebrow">Get to know HITL</p><h2 className="section-title" id="explore-title">People. Shared curiosity.<br />Room to grow.</h2></div>
+        </div>
+        <div className="work-grid home-paths">
+          {paths.map((path) => <Link className="work-card" href={path.href} key={path.href}>
+            <p className="metadata">{path.label}</p>
+            <h3>{path.title}</h3><p className="work-card__copy">{path.copy}</p>
+            <span className="work-card__action">{path.action}<span aria-hidden="true">→</span></span>
+          </Link>)}
+        </div>
+      </div>
+    </section>
+    <JoinBand title="Start where you are." />
+  </>;
 }

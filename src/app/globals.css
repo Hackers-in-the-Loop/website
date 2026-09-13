@@ -1415,3 +1415,30 @@ main:focus {
     color: black;
   }
 }
+
+/* Community-first slice: retain the original palette, type and surfaces. */
+.eyebrow, .metadata, .text-link, .site-nav__link, .button,
+.hero__actions .button, .header-join, .work-card .metadata,
+.work-card__action, .page-aside, .site-footer__links a { font-size: 0.875rem; }
+.hero__note, .site-footer__copy { font-size: 1rem; }
+.join-band__copy, .work-card__copy, .community-place > p:not(.metadata),
+.source-note p:not(.eyebrow) { font-size: 1rem; }
+.site-footer__bottom { font-size: 0.875rem; }
+.community-invitation { background: var(--carbon); color: var(--paper); padding: clamp(1.5rem, 3vw, 3rem); border-radius: 0.5rem; }
+.community-invitation h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 3.25rem); line-height: 1.08; letter-spacing: -0.025em; margin-top: 2rem; }
+.community-invitation > p:not(.eyebrow) { color: var(--alloy); margin-top: 1.5rem; }
+.community-invitation .community-invitation__close { color: var(--paper); }
+.home-paths { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-paths .metadata { margin-top: 0; }
+.home-paths h3 { margin-top: 2rem; }
+.lab-list { padding-left: 1.25rem; margin-top: 1.5rem; }
+.lab-list li + li { margin-top: 0.75rem; }
+.community-place--dark .lab-list { color: var(--alloy); }
+.site-header__inner { flex-wrap: wrap; }
+@media (max-width: 1100px) { .header-join { display: none; } }
+@media (max-width: 760px) {
+  .home-paths { grid-template-columns: 1fr; }
+  .home-paths .work-card + .work-card { border-left: 0; border-top: 1px solid #3b403e; }
+  .site-nav { flex-wrap: wrap; gap: 0.25rem 1rem; }
+  .site-header__inner { grid-template-columns: 1fr; }
+}
