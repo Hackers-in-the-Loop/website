@@ -11,7 +11,7 @@ export const metadata = pageMetadata(
 
 const paths = [
   { href: "/why", label: "Why HITL?", title: "People worth investing in.", copy: "Why belonging, listening, and helping one another grow are at the heart of HITL.", action: "Why we exist" },
-  { href: "/lab", label: "The Lab / In preparation", title: "Resources to learn with.", copy: "A personal compute cluster is the starting point. Shared access, a community bot, and an inference gateway are planned.", action: "See the Lab plans" },
+  { href: "/lab", label: "The Lab / Compute & experiments", title: "Resources to learn with.", copy: "Explore the mini cluster, active experiments, and the build journey. Requests for compute grants are now open.", action: "Explore the Lab" },
   { href: "/community", label: "Community / Connect", title: "Bring what’s on your mind.", copy: "Ask a question, share what you’re trying, or take an interest in someone else’s work. You can start where you are.", action: "Find your way in" },
 ] as const;
 
@@ -53,6 +53,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <section className="site-shell home-projects"><p className="eyebrow">On the workbench</p><h2>Active projects in the Lab.</h2><p>Explore the experiments and the hardware behind them, from GPU comparisons to small-device agent computing.</p><Link className="text-link" href="/lab#projects">See projects & resources →</Link></section>
     <JoinBand title="Start where you are." />
   </>;
 }

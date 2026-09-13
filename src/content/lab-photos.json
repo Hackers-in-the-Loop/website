@@ -1,0 +1,26 @@
+{
+  "cluster-complete": {
+    "width": 1280,
+    "height": 1707
+  },
+  "parts-on-the-bench": {
+    "width": 1280,
+    "height": 1707
+  },
+  "rack-assembly": {
+    "width": 1280,
+    "height": 1707
+  },
+  "sparks-in-the-rack": {
+    "width": 1280,
+    "height": 1707
+  },
+  "building-together": {
+    "width": 1280,
+    "height": 1707
+  },
+  "gpu-test-bench": {
+    "width": 1280,
+    "height": 1707
+  }
+}
