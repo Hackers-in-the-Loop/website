@@ -1442,7 +1442,7 @@ main:focus {
 .lab-projects { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border: 1px solid #3b403e; margin-top: 2.5rem; }
 .lab-project { padding: clamp(1.5rem,3vw,3rem); }
 .lab-project + .lab-project { border-left: 1px solid #3b403e; }
-.lab-project h2, .lab-hardware-grid h3, .power-estimate h3, .lab-power-title, .home-projects h2, .founder-placeholder h2 { font: 650 clamp(1.8rem,2.5vw,2.6rem)/1.12 var(--font-display); letter-spacing: -.025em; }
+.lab-project h2, .lab-hardware-grid h3, .power-estimate h3, .lab-power-title, .home-projects h2, .founder-story h2 { font: 650 clamp(1.8rem,2.5vw,2.6rem)/1.12 var(--font-display); letter-spacing: -.025em; }
 .lab-project h2 { margin-top: 1rem; }
 .lab-project p, .lab-project li { color: var(--alloy); }
 .lab-project .lab-project__question { color: var(--paper); font-size: 1.15rem; margin-block: 1.5rem 1rem; }
@@ -1490,8 +1490,17 @@ main:focus {
 .lab-access__inner p:not(.eyebrow) { margin-top:1.5rem; }
 .lab-access .button { flex-shrink:0; }
 .lab-access :focus-visible { outline-color:var(--carbon); }
-.founder-placeholder { border:1px dashed var(--graphite); padding:clamp(2rem,4vw,4rem); }
-.founder-placeholder h2 { margin:1rem 0; }
+.founder-story { display: grid; grid-template-columns: minmax(12rem, .4fr) minmax(0, 1.6fr); gap: clamp(2.5rem, 5vw, 5rem); border-top: 1px solid var(--fog); padding-top: clamp(2rem, 4vw, 4rem); }
+.founder-story__copy { max-width: 65ch; }
+.founder-story__copy p, .founder-story__copy li { font-size: 1.125rem; line-height: 1.75; color: var(--graphite); }
+.founder-story__copy p + p, .founder-story__copy ol + p { margin-top: 1.5rem; }
+.founder-story__copy h3 { font-size: 1.25rem; margin-block: 2rem 1rem; }
+.founder-story__copy ol { padding-left: 1.5rem; }
+.founder-story__copy li + li { margin-top: 1rem; }
+.founder-story__copy strong { color: var(--carbon); }
+.founder-story__copy .text-link { margin-top: 2rem; }
+@media (max-width: 760px) { .founder-story { grid-template-columns: 1fr; gap: 1.5rem; } }
+.founder-story h2 { margin:1rem 0; }
 .home-projects { padding-block:var(--section-space); }
 .home-projects h2 { margin:1rem 0; }
 .home-projects p:not(.eyebrow) { color:var(--graphite); max-width:42rem; }
