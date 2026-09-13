@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { CommunityLink } from "@/components/community-link";
 import { JoinBand } from "@/components/join-band";
 import { pageMetadata } from "@/lib/metadata";

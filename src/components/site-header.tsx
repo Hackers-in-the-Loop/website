@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { CommunityLink } from "@/components/community-link";
 import { SiteNavigation } from "@/components/site-navigation";
 

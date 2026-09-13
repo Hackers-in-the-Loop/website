@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { navigation, siteConfig } from "@/lib/site";
 
 export function SiteFooter() {

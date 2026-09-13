@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("The Lab", "The personal compute cluster behind HITL’s planned shared Lab: equipment, intentions, and access status.", "/lab");
