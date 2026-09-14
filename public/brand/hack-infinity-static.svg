@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" role="img" aria-labelledby="title desc">
 <title id="title">Hackers in the Loop infinity mark</title>
 <desc id="desc">An orange dot follows an infinity loop with a trail that narrows behind it.</desc>
-<defs><path id="loop" d="M220 120 C300 12 420 12 420 120 C420 228 300 228 220 120 C140 12 20 12 20 120 C20 228 140 228 220 120 Z"/></defs><use href="#loop" fill="none" stroke="#FF553D" stroke-width="3.5" opacity=".26"/><g fill="none" stroke="#FF553D" stroke-linecap="round"><use href="#loop" stroke-width="1.10" opacity="0.180" stroke-dasharray="6.148 1111.705" stroke-dashoffset="-782.50"></use>
+<defs><path id="loop" d="M220 120 C300 12 420 12 420 120 C420 228 300 228 220 120 C140 12 20 12 20 120 C20 228 140 228 220 120 Z"/></defs><use href="#loop" fill="none" stroke="#FF553D" stroke-width="7" opacity=".85"/><g fill="none" stroke="#FF553D" stroke-linecap="round"><use href="#loop" stroke-width="1.10" opacity="0.180" stroke-dasharray="6.148 1111.705" stroke-dashoffset="-782.50"></use>
 <use href="#loop" stroke-width="1.22" opacity="0.248" stroke-dasharray="6.148 1111.705" stroke-dashoffset="-787.58"></use>
 <use href="#loop" stroke-width="1.38" opacity="0.283" stroke-dasharray="6.148 1111.705" stroke-dashoffset="-792.67"></use>
 <use href="#loop" stroke-width="1.55" opacity="0.312" stroke-dasharray="6.148 1111.705" stroke-dashoffset="-797.76"></use>

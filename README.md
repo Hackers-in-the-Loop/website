@@ -36,7 +36,7 @@ Set `NEXT_PUBLIC_SITE_URL` to the deployed origin for production metadata. Never
 
 ## Brand
 
-Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#f7f7f7), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, on a black background, with a tapered trail; reduced-motion users receive the static version. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.
+Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#fdfdfd), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, on a black background, with a tapered trail; reduced-motion users receive the static version. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.
 
 Earlier exports under `brand/assets` and `brand/reference` are historical and must not be reused as current branding. The former abbreviation and tagline have been retired. Fonts remain locally served Inter Tight, Inter, and IBM Plex Mono.
 

@@ -1,4 +1,4 @@
-.v2-site { --v2-width: 1240px; --graphite: var(--carbon); --alloy: var(--carbon); --v2-body: #f7f7f7; background: var(--v2-body); color: var(--carbon); }
+.v2-site { --v2-width: 1240px; --graphite: var(--carbon); --alloy: var(--carbon); --v2-body: #fdfdfd; background: var(--v2-body); color: var(--carbon); }
 .v2-wrap { width: min(100%, var(--v2-width)); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
 .v2-site a, .v2-site button, .v2-site summary { touch-action: manipulation; }
 .v2-version { background: var(--carbon); color: var(--paper); font-size: .875rem; }
