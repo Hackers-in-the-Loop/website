@@ -10,3 +10,5 @@ outputs/
 work/
 .env*
 !.env.example
+
+.inventory-output/

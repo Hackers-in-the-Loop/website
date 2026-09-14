@@ -1,0 +1,1436 @@
+{
+  "schemaVersion": 1,
+  "name": "Hackers in the Loop",
+  "shortName": "HACK",
+  "snapshot": "2026-09-12",
+  "currency": "USD",
+  "priceDates": "2026-09-11; network switch updated 2026-09-12",
+  "costDefinition": "Estimated replacement cost using dated references and configuration allowances. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the published $119 line and $29,749 total.",
+  "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
+  "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
+  "items": [
+    {
+      "id": "EQ-01",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA DGX Spark Founders Edition, 128 GB unified memory, 4 TB NVMe",
+      "quantity": 3,
+      "unitCostUSD": 5500,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 16500,
+      "lineTotalUSD": 16500,
+      "sourceLineTotalUSD": 16500,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/p/16089197934"
+        }
+      ],
+      "powerGroupId": "sparks",
+      "powerTreatment": "System group: all 3 machines"
+    },
+    {
+      "id": "EQ-02",
+      "category": "Compute and add-ons",
+      "name": "MINISFORUM MS-A2, Ryzen 9 9955HX, 96 GB, 2 TB SSD",
+      "quantity": 1,
+      "unitCostUSD": 2063,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 2063,
+      "lineTotalUSD": 2063,
+      "sourceLineTotalUSD": 2063,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Configuration price estimate: MINISFORUM",
+      "sourceUrls": [
+        {
+          "label": "MINISFORUM",
+          "url": "https://store.minisforum.com/products/minisforum-ms-a2-workstation"
+        }
+      ],
+      "powerGroupId": "msa2",
+      "powerTreatment": "Host group includes these 3 SSDs"
+    },
+    {
+      "id": "EQ-03",
+      "category": "Compute and add-ons",
+      "name": "Additional 2 TB PCIe 4 NVMe SSDs for MS-A2",
+      "quantity": 2,
+      "unitCostUSD": 330,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 660,
+      "lineTotalUSD": 660,
+      "sourceLineTotalUSD": 660,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy Crucial P310",
+      "sourceUrls": [
+        {
+          "label": "Best Buy Crucial P310",
+          "url": "https://www.bestbuy.com/product/crucial-p310-2tb-internal-ssd-pcie-gen-4-x4-nvme-m-2/JX8PSKCGRH"
+        }
+      ],
+      "powerGroupId": "msa2",
+      "powerTreatment": "Included with MS-A2. No separate watts"
+    },
+    {
+      "id": "EQ-04",
+      "category": "Compute and add-ons",
+      "name": "Beelink Mini S13 / N150 / 16 GB / 500 GB",
+      "quantity": 1,
+      "unitCostUSD": 400,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 400,
+      "lineTotalUSD": 400,
+      "sourceLineTotalUSD": 400,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Amazon exact variant",
+      "sourceUrls": [
+        {
+          "label": "Amazon exact variant",
+          "url": "https://www.amazon.com/dp/B0F9FL84DP"
+        }
+      ],
+      "powerGroupId": "n150",
+      "powerTreatment": "Host group includes USB HDD"
+    },
+    {
+      "id": "EQ-05",
+      "category": "Compute and add-ons",
+      "name": "5 TB USB 3 external HDD for controller",
+      "quantity": 1,
+      "unitCostUSD": 218,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 218,
+      "lineTotalUSD": 218,
+      "sourceLineTotalUSD": 218,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Walmart WD My Passport",
+      "sourceUrls": [
+        {
+          "label": "Walmart WD My Passport",
+          "url": "https://www.walmart.com/ip/5194254760"
+        }
+      ],
+      "powerGroupId": "n150",
+      "powerTreatment": "Included with N150. No separate watts"
+    },
+    {
+      "id": "EQ-06",
+      "category": "Compute and add-ons",
+      "name": "GMKtec K15 / Core Ultra 5 125U / 32 GB / 512 GB internal SSD",
+      "quantity": 1,
+      "unitCostUSD": 700,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 700,
+      "lineTotalUSD": 700,
+      "sourceLineTotalUSD": 700,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "32 GB / 512 GB configuration estimate: GMKtec K15",
+      "sourceUrls": [
+        {
+          "label": "GMKtec K15",
+          "url": "https://www.gmktec.com/products/gmktec-k15-minipc-intel-core-ultra-5-125u"
+        }
+      ],
+      "powerGroupId": "k15",
+      "powerTreatment": "Host group includes both drives"
+    },
+    {
+      "id": "EQ-07",
+      "category": "Compute and add-ons",
+      "name": "Additional 4 TB NVMe SSD in K15",
+      "quantity": 1,
+      "unitCostUSD": 250,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 250,
+      "lineTotalUSD": 250,
+      "sourceLineTotalUSD": 250,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy WD Blue SN5000",
+      "sourceUrls": [
+        {
+          "label": "Best Buy WD Blue SN5000",
+          "url": "https://www.bestbuy.com/product/wd-blue-sn5000-4tb-internal-ssd-pcie-gen-4-x4-nvme/6588587.p?skuId=6588587"
+        }
+      ],
+      "powerGroupId": "k15",
+      "powerTreatment": "Included with K15. No separate watts"
+    },
+    {
+      "id": "EQ-08",
+      "category": "Compute and add-ons",
+      "name": "MINISFORUM DEG2 OCuLink/USB4 eGPU dock",
+      "quantity": 1,
+      "unitCostUSD": 270,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 270,
+      "lineTotalUSD": 270,
+      "sourceLineTotalUSD": 270,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay listings",
+      "sourceUrls": [
+        {
+          "label": "eBay listings",
+          "url": "https://www.ebay.com/shop/minisforum-deg2?_nkw=minisforum+deg2"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Dock group includes one V100, SSD, fans and PSU"
+    },
+    {
+      "id": "EQ-09",
+      "category": "Compute and add-ons",
+      "name": "2 TB NVMe SSD in DEG2",
+      "quantity": 1,
+      "unitCostUSD": 330,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 330,
+      "lineTotalUSD": 330,
+      "sourceLineTotalUSD": 330,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy Crucial P310",
+      "sourceUrls": [
+        {
+          "label": "Best Buy Crucial P310",
+          "url": "https://www.bestbuy.com/product/crucial-p310-2tb-internal-ssd-pcie-gen-4-x4-nvme-m-2/JX8PSKCGRH"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Included with dock. No separate watts"
+    },
+    {
+      "id": "EQ-10",
+      "category": "Compute and add-ons",
+      "name": "Thermaltake Toughpower GF A3 850 W",
+      "quantity": 1,
+      "unitCostUSD": 119.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 120,
+      "lineTotalUSD": 120,
+      "sourceLineTotalUSD": 120,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/product/thermaltake-toughpower-gf-a3-850w-80-plus-gold-pcie-gen-5-atx-3-0-ready-fully-modular-power-supply-black/J39ZPC9RKT?sb_share_source=PDP"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Losses included with dock. 850 W is PSU rating"
+    },
+    {
+      "id": "EQ-11",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA Tesla P100 16 GB, used",
+      "quantity": 1,
+      "unitCostUSD": 84.97,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 85,
+      "lineTotalUSD": 85,
+      "sourceLineTotalUSD": 85,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/188683348763"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Swap card. Excluded from V100 example"
+    },
+    {
+      "id": "EQ-12",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA Tesla V100 32 GB PCIe, used",
+      "quantity": 1,
+      "unitCostUSD": 659.98,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 660,
+      "lineTotalUSD": 660,
+      "sourceLineTotalUSD": 660,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/407093226208"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "One V100 included in dock example"
+    },
+    {
+      "id": "EQ-13",
+      "category": "Compute and add-ons",
+      "name": "AMD/XFX BC-160 8 GB HBM2, used",
+      "quantity": 1,
+      "unitCostUSD": 85,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 85,
+      "lineTotalUSD": 85,
+      "sourceLineTotalUSD": 85,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay offers",
+      "sourceUrls": [
+        {
+          "label": "eBay offers",
+          "url": "https://www.ebay.com/p/21061520142"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Swap card. Excluded from V100 example"
+    },
+    {
+      "id": "EQ-14",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA Tesla P100 16 GB spares, used",
+      "quantity": 7,
+      "unitCostUSD": 84.97,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 595,
+      "lineTotalUSD": 595,
+      "sourceLineTotalUSD": 595,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/188683348763"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Spare cards. Excluded from power totals"
+    },
+    {
+      "id": "EQ-15",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA Tesla V100 32 GB spare, used",
+      "quantity": 1,
+      "unitCostUSD": 659.98,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 660,
+      "lineTotalUSD": 660,
+      "sourceLineTotalUSD": 660,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/407093226208"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Spare card. Excluded from power totals"
+    },
+    {
+      "id": "EQ-16",
+      "category": "Compute and add-ons",
+      "name": "AMD/XFX BC-160 8 GB HBM2 spare, used",
+      "quantity": 1,
+      "unitCostUSD": 85,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 85,
+      "lineTotalUSD": 85,
+      "sourceLineTotalUSD": 85,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay offers",
+      "sourceUrls": [
+        {
+          "label": "eBay offers",
+          "url": "https://www.ebay.com/p/21061520142"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Spare card. Excluded from power totals"
+    },
+    {
+      "id": "EQ-17",
+      "category": "Compute and add-ons",
+      "name": "AMD Radeon VII 16 GB spare, used",
+      "quantity": 1,
+      "unitCostUSD": 300,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 300,
+      "lineTotalUSD": 300,
+      "sourceLineTotalUSD": 300,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay tested listing",
+      "sourceUrls": [
+        {
+          "label": "eBay tested listing",
+          "url": "https://www.ebay.com/itm/188712668708"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Spare card. Excluded from power totals"
+    },
+    {
+      "id": "EQ-18",
+      "category": "Compute and add-ons",
+      "name": "AMD Radeon VII 16 GB, used",
+      "quantity": 1,
+      "unitCostUSD": 300,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 300,
+      "lineTotalUSD": 300,
+      "sourceLineTotalUSD": 300,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay tested listing",
+      "sourceUrls": [
+        {
+          "label": "eBay tested listing",
+          "url": "https://www.ebay.com/itm/188712668708"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Swap card. Excluded from V100 example"
+    },
+    {
+      "id": "EQ-19",
+      "category": "Compute and add-ons",
+      "name": "Noctua NF-A4x20 PWM for P100/V100 cooling",
+      "quantity": 4,
+      "unitCostUSD": 15.95,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 64,
+      "lineTotalUSD": 64,
+      "sourceLineTotalUSD": 64,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Newegg",
+      "sourceUrls": [
+        {
+          "label": "Newegg",
+          "url": "https://www.newegg.com/noctua-nf-a4x20-pwm-case-fan/p/1YF-000T-00093"
+        }
+      ],
+      "powerGroupId": "gpu",
+      "powerTreatment": "Included with dock. No separate watts"
+    },
+    {
+      "id": "EQ-20",
+      "category": "Compute and add-ons",
+      "name": "Custom i5 / 8 GB / 256 GB HDD / PCIe slot",
+      "quantity": 1,
+      "unitCostUSD": 150,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 150,
+      "lineTotalUSD": 150,
+      "sourceLineTotalUSD": 150,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Custom i5 system estimate",
+      "sourceUrls": [],
+      "powerGroupId": "i5",
+      "powerTreatment": "Host group. PCIe FPGA is separate"
+    },
+    {
+      "id": "EQ-21",
+      "category": "Compute and add-ons",
+      "name": "Orange Pi 6, single-board computer",
+      "quantity": 1,
+      "unitCostUSD": 320,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 320,
+      "lineTotalUSD": 320,
+      "sourceLineTotalUSD": 320,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Price reference: reseller",
+      "sourceUrls": [
+        {
+          "label": "reseller",
+          "url": "https://cyberconnect.shop/shop/product/orange-pi-6-1913"
+        }
+      ],
+      "powerGroupId": "orangepi",
+      "powerTreatment": "System estimate"
+    },
+    {
+      "id": "EQ-22",
+      "category": "Compute and add-ons",
+      "name": "QNAP TS-464 enclosure, 8 GB SKU",
+      "quantity": 1,
+      "unitCostUSD": 715,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 715,
+      "lineTotalUSD": 715,
+      "sourceLineTotalUSD": 715,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay listings",
+      "sourceUrls": [
+        {
+          "label": "eBay listings",
+          "url": "https://www.ebay.com/shop/qnap-ts464?_nkw=qnap+ts-464"
+        }
+      ],
+      "powerGroupId": "nas",
+      "powerTreatment": "NAS group includes all 5 drives"
+    },
+    {
+      "id": "EQ-23",
+      "category": "Compute and add-ons",
+      "name": "WD Red Plus 8 TB NAS HDD, model WD80EFPX",
+      "quantity": 4,
+      "unitCostUSD": 354.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 1420,
+      "lineTotalUSD": 1420,
+      "sourceLineTotalUSD": 1420,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/product/wd-red-plus-8tb-nas-internal-hard-drive/JXTHCC7RTT"
+        }
+      ],
+      "powerGroupId": "nas",
+      "powerTreatment": "Included with NAS. No separate watts"
+    },
+    {
+      "id": "EQ-24",
+      "category": "Compute and add-ons",
+      "name": "WD Blue-class 4 TB NVMe for QNAP Qtier",
+      "quantity": 1,
+      "unitCostUSD": 250,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 250,
+      "lineTotalUSD": 250,
+      "sourceLineTotalUSD": 250,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy WD Blue SN5000",
+      "sourceUrls": [
+        {
+          "label": "Best Buy WD Blue SN5000",
+          "url": "https://www.bestbuy.com/product/wd-blue-sn5000-4tb-internal-ssd-pcie-gen-4-x4-nvme/6588587.p?skuId=6588587"
+        }
+      ],
+      "powerGroupId": "nas",
+      "powerTreatment": "Included with NAS. No separate watts"
+    },
+    {
+      "id": "EQ-25",
+      "category": "Compute and add-ons",
+      "name": "TANG Primer 20K FPGA board",
+      "quantity": 1,
+      "unitCostUSD": 47.38,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 47,
+      "lineTotalUSD": 47,
+      "sourceLineTotalUSD": 47,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/355057111901"
+        }
+      ],
+      "powerGroupId": "tang",
+      "powerTreatment": "Separate USB-powered FPGA estimate"
+    },
+    {
+      "id": "EQ-26",
+      "category": "Compute and add-ons",
+      "name": "Microsoft Azure X930613-001 Stratix V card, used",
+      "quantity": 1,
+      "unitCostUSD": 12,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 12,
+      "lineTotalUSD": 12,
+      "sourceLineTotalUSD": 12,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/326168074933"
+        }
+      ],
+      "powerGroupId": "fpga",
+      "powerTreatment": "One installed PCIe FPGA example"
+    },
+    {
+      "id": "EQ-27",
+      "category": "Compute and add-ons",
+      "name": "Xilinx Kintex-7 XC7K325T board",
+      "quantity": 1,
+      "unitCostUSD": 212.42,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 212,
+      "lineTotalUSD": 212,
+      "sourceLineTotalUSD": 212,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Board price reference: eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/198043359103"
+        }
+      ],
+      "powerGroupId": "fpga",
+      "powerTreatment": "Swap card. Excluded from Stratix V example"
+    },
+    {
+      "id": "EQ-28",
+      "category": "Compute and add-ons",
+      "name": "Alibaba/Xilinx XCKU3P-FFVB676 R1291-F9003-02 card",
+      "quantity": 1,
+      "unitCostUSD": 130,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 130,
+      "lineTotalUSD": 130,
+      "sourceLineTotalUSD": 130,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/p/19088373089"
+        }
+      ],
+      "powerGroupId": "fpga",
+      "powerTreatment": "Swap card. Excluded from Stratix V example"
+    },
+    {
+      "id": "EQ-29",
+      "category": "Compute and add-ons",
+      "name": "M5Stack ESP32-S3 device; CoreS3 used for pricing",
+      "quantity": 1,
+      "unitCostUSD": 132,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 132,
+      "lineTotalUSD": 132,
+      "sourceLineTotalUSD": 132,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Price reference: eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/127082038126"
+        }
+      ],
+      "powerGroupId": "m5",
+      "powerTreatment": "System estimate"
+    },
+    {
+      "id": "EQ-30",
+      "category": "Compute and add-ons",
+      "name": "M5Stack LLM AI Module / AX630C kit",
+      "quantity": 1,
+      "unitCostUSD": 146,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 146,
+      "lineTotalUSD": 146,
+      "sourceLineTotalUSD": 146,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/286975057386"
+        }
+      ],
+      "powerGroupId": "llm",
+      "powerTreatment": "Module estimate. M5Stack host is separate"
+    },
+    {
+      "id": "EQ-31",
+      "category": "Compute and add-ons",
+      "name": "Agent Blade custom PCB, 6 ESP32-S3, 3 ESP32-P4, 9 × 16 GB NAND",
+      "quantity": 1,
+      "unitCostUSD": 365,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 365,
+      "lineTotalUSD": 365,
+      "sourceLineTotalUSD": 365,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Custom PCB",
+      "sourceUrls": [],
+      "powerGroupId": "blade",
+      "powerTreatment": "Projected populated board, not measured"
+    },
+    {
+      "id": "EQ-32",
+      "category": "Rack and shared",
+      "name": "TecMOJO 12U 10-inch rack",
+      "quantity": 1,
+      "unitCostUSD": 209,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 209,
+      "lineTotalUSD": 209,
+      "sourceLineTotalUSD": 209,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/267713808890"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive hardware"
+    },
+    {
+      "id": "EQ-33",
+      "category": "Rack and shared",
+      "name": "0.5U 10-inch shelves",
+      "quantity": 3,
+      "unitCostUSD": 38.19,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 115,
+      "lineTotalUSD": 115,
+      "sourceLineTotalUSD": 115,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/376969418892"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive hardware"
+    },
+    {
+      "id": "EQ-34",
+      "category": "Rack and shared",
+      "name": "1U 10-inch shelves",
+      "quantity": 2,
+      "unitCostUSD": 27,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 54,
+      "lineTotalUSD": 54,
+      "sourceLineTotalUSD": 54,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/306823668525"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive hardware"
+    },
+    {
+      "id": "EQ-35",
+      "category": "Rack and shared",
+      "name": "NETGEAR GS108E, 8-port Gigabit managed switch with VLAN support",
+      "quantity": 1,
+      "unitCostUSD": 54.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 55,
+      "lineTotalUSD": 55,
+      "sourceLineTotalUSD": 55,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "NETGEAR, September 12, 2026",
+      "sourceUrls": [
+        {
+          "label": "NETGEAR",
+          "url": "https://www.netgear.com/business/wired/switches/easy-smart/gs108e/"
+        }
+      ],
+      "powerGroupId": "switch",
+      "powerTreatment": "System estimate"
+    },
+    {
+      "id": "EQ-36",
+      "category": "Rack and shared",
+      "name": "12-port Cat6 patch panel",
+      "quantity": 1,
+      "unitCostUSD": 19.95,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 20,
+      "lineTotalUSD": 20,
+      "sourceLineTotalUSD": 20,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay listings",
+      "sourceUrls": [
+        {
+          "label": "eBay listings",
+          "url": "https://www.ebay.com/b/12-Port-Cat-6-Ethernet-RJ-45-Network-Patch-Panels/44992/bn_42809637"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive hardware"
+    },
+    {
+      "id": "EQ-37",
+      "category": "Rack and shared",
+      "name": "KC-KVM801-compatible 4K 8-port HDMI KVM switch",
+      "quantity": 1,
+      "unitCostUSD": 118.47,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 118,
+      "lineTotalUSD": 119,
+      "sourceLineTotalUSD": 119,
+      "sourceRoundingAdjustmentUSD": 1,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/127651197363"
+        }
+      ],
+      "powerGroupId": "kvm",
+      "powerTreatment": "Group includes keyboard and mouse"
+    },
+    {
+      "id": "EQ-38",
+      "category": "Rack and shared",
+      "name": "HDMI/USB3 KVM cable sets",
+      "quantity": 8,
+      "unitCostUSD": 20,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 160,
+      "lineTotalUSD": 160,
+      "sourceLineTotalUSD": 160,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Cable-set estimate",
+      "sourceUrls": [],
+      "powerGroupId": "kvm",
+      "powerTreatment": "Connection cables. No separate draw"
+    },
+    {
+      "id": "EQ-39",
+      "category": "Rack and shared",
+      "name": "Best Buy Essentials keyboard/mouse bundle",
+      "quantity": 1,
+      "unitCostUSD": 19.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 20,
+      "lineTotalUSD": 20,
+      "sourceLineTotalUSD": 20,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?browsedCategory=pcmcat1694202645610&id=pcat17071&qp=currentprice_facet%3DPrice~Less+than+%2425&st=pcmcat1694202645610_categoryid%24abcat0513000"
+        }
+      ],
+      "powerGroupId": "kvm",
+      "powerTreatment": "Included with KVM. No separate watts"
+    },
+    {
+      "id": "EQ-40",
+      "category": "Rack and shared",
+      "name": "7.84-inch 2U 1280×400 touchscreen monitor",
+      "quantity": 1,
+      "unitCostUSD": 84.54,
+      "shippingPerUnitUSD": 60,
+      "baseRoundedLineCostUSD": 145,
+      "lineTotalUSD": 145,
+      "sourceLineTotalUSD": 145,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "eBay",
+      "sourceUrls": [
+        {
+          "label": "eBay",
+          "url": "https://www.ebay.com/itm/178050234700"
+        }
+      ],
+      "powerGroupId": "screen",
+      "powerTreatment": "Screen-on estimate. Includes $60 shipping in cost"
+    },
+    {
+      "id": "EQ-41",
+      "category": "Rack and shared",
+      "name": "Seeed reTerminal E1001 ePaper/ESP32-S3 display",
+      "quantity": 1,
+      "unitCostUSD": 79,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 79,
+      "lineTotalUSD": 79,
+      "sourceLineTotalUSD": 79,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Mouser",
+      "sourceUrls": [
+        {
+          "label": "Mouser",
+          "url": "https://www.mouser.com/ProductDetail/Seeed-Studio/100073581?qs=FmjOKN4Os8596w%252BQ3UW5xg%3D%3D"
+        }
+      ],
+      "powerGroupId": "epaper",
+      "powerTreatment": "Periodic refresh / sleep estimate"
+    },
+    {
+      "id": "EQ-42",
+      "category": "Rack and shared",
+      "name": "20 A / 2,000 W PDU with protection",
+      "quantity": 1,
+      "unitCostUSD": 160,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 160,
+      "lineTotalUSD": 160,
+      "sourceLineTotalUSD": 160,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Price reference: eBay PDUMH20",
+      "sourceUrls": [
+        {
+          "label": "eBay PDUMH20",
+          "url": "https://www.ebay.com/itm/236539217817"
+        }
+      ],
+      "powerGroupId": "meter",
+      "powerTreatment": "Group includes PDU and meter electronics"
+    },
+    {
+      "id": "EQ-43",
+      "category": "Rack and shared",
+      "name": "Volt/amp/watt/kWh meter",
+      "quantity": 1,
+      "unitCostUSD": 29.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 30,
+      "lineTotalUSD": 30,
+      "sourceLineTotalUSD": 30,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Circuit Specialists P4400",
+      "sourceUrls": [
+        {
+          "label": "Circuit Specialists P4400",
+          "url": "https://www.circuitspecialists.com/p4400_kill_a_watt_energy_meter"
+        }
+      ],
+      "powerGroupId": "meter",
+      "powerTreatment": "Included with PDU / meter group"
+    },
+    {
+      "id": "EQ-44",
+      "category": "Rack and shared",
+      "name": "CyberPower 750 VA UPS",
+      "quantity": 1,
+      "unitCostUSD": 99.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 100,
+      "lineTotalUSD": 100,
+      "sourceLineTotalUSD": 100,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy CyberPower 750VA",
+      "sourceUrls": [
+        {
+          "label": "Best Buy CyberPower 750VA",
+          "url": "https://www.bestbuy.com/product/cyberpower-750va-battery-back-up-system-black/JX8P9XGR8Y?extStoreId=293"
+        }
+      ],
+      "powerGroupId": "ups",
+      "powerTreatment": "Overhead only. Essential-load branch"
+    },
+    {
+      "id": "EQ-45",
+      "category": "Rack and shared",
+      "name": "12 V/9 V/5 V DC fan supply",
+      "quantity": 1,
+      "unitCostUSD": 25,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 25,
+      "lineTotalUSD": 25,
+      "sourceLineTotalUSD": 25,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Supply price reference: example",
+      "sourceUrls": [
+        {
+          "label": "example",
+          "url": "https://eletechsup.com/products/dc-dc-5-35v-to-12v-9v-5v-adjustable-buck-converter-step-down-power-supply-module"
+        }
+      ],
+      "powerGroupId": "fans",
+      "powerTreatment": "Group includes both fans and DC supply"
+    },
+    {
+      "id": "EQ-46",
+      "category": "Rack and shared",
+      "name": "120 mm rack-airflow fans",
+      "quantity": 2,
+      "unitCostUSD": 12,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 24,
+      "lineTotalUSD": 24,
+      "sourceLineTotalUSD": 24,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Price reference: Best Buy case fans",
+      "sourceUrls": [
+        {
+          "label": "Best Buy case fans",
+          "url": "https://www.bestbuy.com/site/shop/best-case-fans"
+        }
+      ],
+      "powerGroupId": "fans",
+      "powerTreatment": "Included with DC supply / fan group"
+    },
+    {
+      "id": "EQ-47",
+      "category": "Rack and shared",
+      "name": "Cat6 patch cables, unspecified length",
+      "quantity": 8,
+      "unitCostUSD": 6.89,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 55,
+      "lineTotalUSD": 55,
+      "sourceLineTotalUSD": 55,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy 3-foot Cat6",
+      "sourceUrls": [
+        {
+          "label": "Best Buy 3-foot Cat6",
+          "url": "https://www.bestbuy.com/product/cables-direct-online-cat6-ethernet-cable-3ft-550mhz-utp-patch-cord-for-pc-router-modem-tv-console-gray/JCF4CRYVL9"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive cabling"
+    },
+    {
+      "id": "EQ-48",
+      "category": "Rack and shared",
+      "name": "3-foot Cat6 patch cables",
+      "quantity": 8,
+      "unitCostUSD": 6.89,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 55,
+      "lineTotalUSD": 55,
+      "sourceLineTotalUSD": 55,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/product/cables-direct-online-cat6-ethernet-cable-3ft-550mhz-utp-patch-cord-for-pc-router-modem-tv-console-gray/JCF4CRYVL9"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive cabling"
+    },
+    {
+      "id": "EQ-49",
+      "category": "Rack and shared",
+      "name": "32 GB USB sticks, one NVIDIA recovery and one Ubuntu",
+      "quantity": 2,
+      "unitCostUSD": 17.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 36,
+      "lineTotalUSD": 36,
+      "sourceLineTotalUSD": 36,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy SanDisk Ultra 32GB",
+      "sourceUrls": [
+        {
+          "label": "Best Buy SanDisk Ultra 32GB",
+          "url": "https://www.bestbuy.com/product/sandisk-ultra-32gb-usb-3-0-flash-drive-black/9211069"
+        }
+      ],
+      "powerGroupId": "capture",
+      "powerTreatment": "Connected USB devices included with capture"
+    },
+    {
+      "id": "EQ-50",
+      "category": "Rack and shared",
+      "name": "HDMI capture device for Capture Viewer",
+      "quantity": 1,
+      "unitCostUSD": 20,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 20,
+      "lineTotalUSD": 20,
+      "sourceLineTotalUSD": 20,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Configuration allowance",
+      "sourceNote": "Price reference: Capture Viewer",
+      "sourceUrls": [
+        {
+          "label": "Capture Viewer",
+          "url": "https://github.com/iammrduncan/capture-viewer"
+        }
+      ],
+      "powerGroupId": "capture",
+      "powerTreatment": "Group includes connected recovery USB devices"
+    },
+    {
+      "id": "EQ-51",
+      "category": "Rack and shared",
+      "name": "USB-to-USB-C adapter",
+      "quantity": 1,
+      "unitCostUSD": 9.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 10,
+      "lineTotalUSD": 10,
+      "sourceLineTotalUSD": 10,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/product/insignia-usb-c-to-usb-adapter-black/J2FPJKSSJC"
+        }
+      ],
+      "powerGroupId": "capture",
+      "powerTreatment": "Connection adapter. No separate draw"
+    },
+    {
+      "id": "EQ-52",
+      "category": "Rack and shared",
+      "name": "Mini-HDMI-to-HDMI adapter",
+      "quantity": 1,
+      "unitCostUSD": 13.99,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": 14,
+      "lineTotalUSD": 14,
+      "sourceLineTotalUSD": 14,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated price reference",
+      "sourceNote": "Best Buy",
+      "sourceUrls": [
+        {
+          "label": "Best Buy",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=mini+hdmi+adapter+to+hdmi"
+        }
+      ],
+      "powerGroupId": "none",
+      "powerTreatment": "Passive adapter"
+    }
+  ],
+  "powerGroups": [
+    {
+      "id": "sparks",
+      "name": "3 × DGX Spark",
+      "label": "3 × DGX Spark",
+      "scope": "Core",
+      "idleW": 105,
+      "workingW": 215,
+      "heavyW": 570,
+      "basis": "Includes all three systems and their internal storage. Idle: 35 W each. Working: two at 90 W and one at 35 W. Heavy: 190 W each.",
+      "sourceUrls": [
+        {
+          "label": "ServeTheHome: DGX Spark review and power testing",
+          "url": "https://www.servethehome.com/nvidia-dgx-spark-review-the-gb10-machine-is-so-freaking-cool/4/"
+        },
+        {
+          "label": "Tom’s Hardware: DGX Spark idle-power update",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-dgx-spark-update-cuts-idle-power-by-32-percent-or-more-hot-plug-detection-on-connectx-nic-makes-for-a-more-efficient-ai-workstation"
+        }
+      ]
+    },
+    {
+      "id": "msa2",
+      "name": "MS-A2: Ryzen 9 9955HX, 96 GB, all 3 SSDs",
+      "label": "MINISFORUM MS-A2",
+      "scope": "Core",
+      "idleW": 30,
+      "workingW": 60,
+      "heavyW": 140,
+      "basis": "Includes 96 GB RAM and all three SSDs, with extra allowance over the review configuration.",
+      "sourceUrls": [
+        {
+          "label": "Notebookcheck: MINISFORUM MS-A2 review",
+          "url": "https://www.notebookcheck.net/Minisforum-MS-A2-review-Compact-AMD-mini-PC-with-workstation-ambitions-and-GPU-upgrade-option.1062179.0.html"
+        }
+      ]
+    },
+    {
+      "id": "n150",
+      "name": "Beelink N150: 16 GB, SSD + 5 TB USB HDD",
+      "label": "Beelink N150 + USB HDD",
+      "scope": "Core",
+      "idleW": 14,
+      "workingW": 18,
+      "heavyW": 30,
+      "basis": "Includes the mini PC, internal SSD, and a spinning 5 TB USB hard drive. Estimated from the components.",
+      "sourceUrls": []
+    },
+    {
+      "id": "k15",
+      "name": "GMKtec K15: 32 GB, internal SSD + 4 TB NVMe",
+      "label": "GMKtec K15",
+      "scope": "Core",
+      "idleW": 12,
+      "workingW": 25,
+      "heavyW": 55,
+      "basis": "Includes both internal drives. The external GPU dock is counted separately.",
+      "sourceUrls": [
+        {
+          "label": "Notebookcheck: GMK NucBox K15 review",
+          "url": "https://www.notebookcheck.net/GMK-NucBox-K15-review-Affordable-mini-PC-with-an-oversized-design.1214008.0.html"
+        }
+      ]
+    },
+    {
+      "id": "nas",
+      "name": "QNAP TS-464: 4 × 8 TB HDDs + 4 TB NVMe",
+      "label": "QNAP TS-464 + all drives",
+      "scope": "Core",
+      "idleW": 45,
+      "workingW": 55,
+      "heavyW": 70,
+      "basis": "Includes four spinning hard drives, the NVMe tier, enclosure, and fan. Higher loads allow for transfers and RAID activity.",
+      "sourceUrls": [
+        {
+          "label": "QNAP: TS-464 hardware specifications",
+          "url": "https://www.qnap.com/en-us/product/ts-464/specs/hardware"
+        }
+      ]
+    },
+    {
+      "id": "switch",
+      "name": "NETGEAR GS108E",
+      "label": "NETGEAR GS108E",
+      "scope": "Core",
+      "idleW": 3,
+      "workingW": 4,
+      "heavyW": 5,
+      "basis": "Eight Gigabit ports, VLAN support, fanless, and non-PoE. The 3–5 W estimate allows for connected ports and the power adapter.",
+      "sourceUrls": [
+        {
+          "label": "NETGEAR: GS108E specifications",
+          "url": "https://www.netgear.com/business/wired/switches/easy-smart/gs108e/"
+        }
+      ]
+    },
+    {
+      "id": "gpu",
+      "name": "DEG2 + V100 32 GB + 2 TB NVMe + 4 Noctua fans + GF A3 PSU losses",
+      "label": "DEG2 + V100 + SSD + cooling",
+      "scope": "Bench addition",
+      "idleW": 45,
+      "workingW": 170,
+      "heavyW": 295,
+      "basis": "Includes one V100, the DEG2, 2 TB SSD, four Noctua fans, and PSU losses. Heavy load allows 250 W for the GPU; the K15 is separate.",
+      "sourceUrls": [
+        {
+          "label": "NVIDIA: Tesla V100 specifications",
+          "url": "https://www.nvidia.com/en-gb/data-center/tesla-v100/"
+        },
+        {
+          "label": "Noctua: NF-A4x20 PWM specifications",
+          "url": "https://www.noctua.at/en/products/nf-a4x20-pwm/specifications"
+        }
+      ]
+    },
+    {
+      "id": "i5",
+      "name": "Custom i5 microbench: 8 GB + HDD, excluding FPGA",
+      "label": "Custom i5 microbench",
+      "scope": "Bench addition",
+      "idleW": 30,
+      "workingW": 50,
+      "heavyW": 95,
+      "basis": "Includes the i5 host, 8 GB RAM, HDD, and PSU losses. The FPGA has its own row. Estimated from the components.",
+      "sourceUrls": []
+    },
+    {
+      "id": "fpga",
+      "name": "One installed PCIe FPGA card",
+      "label": "One installed PCIe FPGA",
+      "scope": "Bench addition",
+      "idleW": 12,
+      "workingW": 25,
+      "heavyW": 45,
+      "basis": "One installed PCIe card, using the Stratix V as the example. Power varies with the card and bitstream.",
+      "sourceUrls": []
+    },
+    {
+      "id": "tang",
+      "name": "TANG Primer 20K",
+      "label": "TANG Primer 20K",
+      "scope": "Bench addition",
+      "idleW": 2,
+      "workingW": 3,
+      "heavyW": 5,
+      "basis": "USB-powered board, counted separately from the PCIe FPGA.",
+      "sourceUrls": []
+    },
+    {
+      "id": "orangepi",
+      "name": "Orange Pi 6",
+      "label": "Orange Pi 6",
+      "scope": "Bench addition",
+      "idleW": 12,
+      "workingW": 22,
+      "heavyW": 40,
+      "basis": "Includes the board, storage, cooling, and power adapter. Estimated from the components.",
+      "sourceUrls": []
+    },
+    {
+      "id": "m5",
+      "name": "M5Stack ESP32-S3 device",
+      "label": "M5Stack ESP32-S3",
+      "scope": "Bench addition",
+      "idleW": 1.5,
+      "workingW": 2,
+      "heavyW": 3,
+      "basis": "Includes the ESP32-S3 device and its peripherals. Estimated from the components.",
+      "sourceUrls": []
+    },
+    {
+      "id": "llm",
+      "name": "M5Stack AX630C LLM module",
+      "label": "AX630C LLM module",
+      "scope": "Bench addition",
+      "idleW": 1,
+      "workingW": 2.5,
+      "heavyW": 3,
+      "basis": "Includes the AX630C module and power-conversion allowance. The M5Stack host is separate.",
+      "sourceUrls": [
+        {
+          "label": "M5Stack: Module LLM documentation",
+          "url": "https://docs.m5stack.com/en/module/Module-LLM"
+        }
+      ]
+    },
+    {
+      "id": "blade",
+      "name": "Agent Blade: all 9 ESP32 nodes + SD NAND",
+      "label": "9-node Agent Blade",
+      "scope": "Bench addition",
+      "idleW": 6,
+      "workingW": 12,
+      "heavyW": 20,
+      "basis": "Projected draw for all nine ESP32 nodes, SD NAND, and board power conversion. Working: about 0.8 W per S3 and 1.5 W per P4, plus 2.7 W overhead.",
+      "sourceUrls": []
+    },
+    {
+      "id": "epaper",
+      "name": "Seeed E1001 ePaper / ESP32 display",
+      "label": "Seeed E1001 ePaper",
+      "scope": "Core",
+      "idleW": 0.3,
+      "workingW": 0.5,
+      "heavyW": 1,
+      "basis": "Periodic screen updates with sleep between refreshes.",
+      "sourceUrls": []
+    },
+    {
+      "id": "screen",
+      "name": "7.84-inch rack touchscreen",
+      "label": "Rack touchscreen",
+      "scope": "Core",
+      "idleW": 5,
+      "workingW": 7,
+      "heavyW": 8,
+      "basis": "Screen on; brightness affects consumption.",
+      "sourceUrls": []
+    },
+    {
+      "id": "kvm",
+      "name": "KC-KVM801 + keyboard and mouse",
+      "label": "KVM + keyboard + mouse",
+      "scope": "Core",
+      "idleW": 3,
+      "workingW": 4,
+      "heavyW": 5,
+      "basis": "Includes the KVM electronics, keyboard, and mouse.",
+      "sourceUrls": []
+    },
+    {
+      "id": "capture",
+      "name": "HDMI capture + connected recovery USB devices",
+      "label": "Capture + connected USB",
+      "scope": "Core",
+      "idleW": 1,
+      "workingW": 3,
+      "heavyW": 4,
+      "basis": "Includes connected capture and USB devices.",
+      "sourceUrls": []
+    },
+    {
+      "id": "fans",
+      "name": "2 × 120 mm rack fans + their DC supply",
+      "label": "Rack fans + DC supply",
+      "scope": "Core",
+      "idleW": 4,
+      "workingW": 5,
+      "heavyW": 7,
+      "basis": "Both rack fans and their DC supply. GPU cooling is included in the dock row.",
+      "sourceUrls": []
+    },
+    {
+      "id": "meter",
+      "name": "PDU and volt/amp/watt/kWh meter electronics",
+      "label": "PDU + meter electronics",
+      "scope": "Core",
+      "idleW": 1.5,
+      "workingW": 2,
+      "heavyW": 2,
+      "basis": "Power used by the meter and PDU electronics.",
+      "sourceUrls": []
+    },
+    {
+      "id": "ups",
+      "name": "CyberPower 750 VA UPS overhead",
+      "label": "UPS overhead",
+      "scope": "Core",
+      "idleW": 6,
+      "workingW": 8,
+      "heavyW": 10,
+      "basis": "UPS losses and maintenance charging, assuming an essential-load branch. Excludes battery recharge after an outage.",
+      "sourceUrls": []
+    }
+  ],
+  "controls": {
+    "computeCostUSD": 28244,
+    "sharedCostUSD": 1505,
+    "totalCostUSD": 29749,
+    "corePowerW": [
+      229.8,
+      406.5,
+      907
+    ],
+    "wholeLabPowerW": [
+      339.3,
+      693,
+      1413
+    ],
+    "sourceTotalCostUSD": 29749,
+    "sourceRoundingDifferenceUSD": 1,
+    "unadjustedRoundedTotalUSD": 29748
+  }
+}

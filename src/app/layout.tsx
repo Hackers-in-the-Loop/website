@@ -4,7 +4,7 @@ import { siteOrigin } from "@/lib/urls";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: siteOrigin(process.env.NEXT_PUBLIC_SITE_URL),
+  metadataBase: siteOrigin(process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url),
   title: {
     default: "Hackers in the Loop",
     template: "%s · Hackers in the Loop",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Hackers in the Loop",
     description: siteConfig.description,
   },

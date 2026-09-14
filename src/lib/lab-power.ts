@@ -1,8 +1,8 @@
-import devices from "../content/lab-power.json" with { type: "json" };
+import inventory from "../content/lab-inventory.json" with { type: "json" };
 
 export function powerTotals(scope: "core" | "whole") {
-  return devices.filter((device) => scope === "whole" || !device.bench)
-    .reduce((totals, device) => totals.map((value, index) => value + device.power[index]), [0, 0, 0]);
+  return inventory.powerGroups.filter((device) => scope === "whole" || device.scope === "Core")
+    .reduce((totals, device) => totals.map((value, index) => value + [device.idleW, device.workingW, device.heavyW][index]), [0, 0, 0]);
 }
 
 export function monthlyPowerEstimate(scope: "core" | "whole", load: "working" | "heavy", hours: number, rate: number) {

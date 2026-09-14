@@ -11,7 +11,7 @@ export function CommunityRules() {
           </li>
           <li>
             <h3>No unsolicited promotional DMs.</h3>
-            <p>Don’t privately pitch members your services, products, job opportunities, or other communities unless they have invited that kind of contact. Joining HITL is not consent to receive sales messages.</p>
+            <p>Don’t privately pitch members your services, products, job opportunities, or other communities unless they have invited that kind of contact. Joining Hackers in the Loop is not consent to receive sales messages.</p>
           </li>
           <li>
             <h3>Keep conversations useful.</h3>

@@ -10,6 +10,6 @@ export function pageMetadata(
     description,
     alternates: { canonical: path },
     openGraph: { title, description, url: path, type: "website" },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary", title, description },
   };
 }
