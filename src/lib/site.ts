@@ -12,4 +12,6 @@ export const siteConfig = {
   xUrl: "https://x.com/iammrduncan",
   githubUrl: "https://github.com/Hackers-in-the-Loop",
   discordUrl: discordInvite("https://discord.gg/3Qs2uejUf9"),
+  discordWidgetImageUrl:
+    "https://discord.com/api/guilds/1489405473110102199/widget.png?style=shield",
 } as const;

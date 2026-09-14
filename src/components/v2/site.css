@@ -94,6 +94,9 @@
 .v2-footer { background: var(--carbon); color: var(--paper); padding-block: 3rem; }
 .v2-footer-inner { display: flex; justify-content: space-between; gap: 3rem; }
 .v2-footer p { color: var(--fog); font-size: .9375rem; margin-top: 1.25rem; }
+.v2-discord-status { display: block; width: fit-content; margin-top: 1.25rem; line-height: 0; border-radius: 3px; }
+.v2-discord-status:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+.v2-discord-status img { display: block; width: 120px; height: 20px; }
 .v2-footer nav { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 3rem; align-content: start; }
 .v2-footer nav a { font-size: .9375rem; padding-block: .5rem; }
 .v2-footer nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
