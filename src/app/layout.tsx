@@ -30,6 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="URCZBLKK"
+          defer
+        />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content
