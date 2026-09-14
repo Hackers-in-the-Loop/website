@@ -201,3 +201,5 @@
 .v2-project-group-heading .v2-kicker { margin: 0; }
 .v2-project .v2-kicker { margin-bottom: .75rem; }
 .v2-project-external { display: inline-block; margin-top: 1rem; }
+.v2-project-lead { text-decoration: underline; text-underline-offset: .25em; }
+.v2-project-lead:hover { color: var(--signal-deep); }

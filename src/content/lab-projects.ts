@@ -18,6 +18,7 @@ type LabProject = {
   resources: string[];
   target?: string;
   link?: { label: string; url: string };
+  lead?: string;
 };
 
 export const labProjects: LabProject[] = [
@@ -80,6 +81,7 @@ export const labProjects: LabProject[] = [
     id: "wrist-pet", group: "hardware", name: "A tiny pet on your wrist", stage: "In development",
     description: "A Tamagotchi-style watch or wristband game Shannon is building with his daughter. She is designing it and working with Claude Code and an ESP32-S3 touchscreen to bring it to life.",
     resources: ["Microbench", "ESP32-S3 with touchscreen"],
+    lead: "Shannon’s Daughter",
   },
   {
     id: "cluster-monitoring", group: "cluster", name: "Cluster monitoring & HUD", stage: "Setup in progress",

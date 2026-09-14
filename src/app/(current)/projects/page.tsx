@@ -14,7 +14,7 @@ export default function ProjectsPage() {
         <div className="v2-project-group-heading"><h2 id={`${group.id}-title`}>{group.name}</h2><p className="v2-kicker">{labProjects.filter(project => project.group === group.id).length} projects</p></div>
         {labProjects.filter(project => project.group === group.id).map(project => <article className="v2-project" id={project.id} key={project.id} aria-labelledby={`${project.id}-title`}>
           <div><p className="v2-kicker">{project.stage}</p><h3 id={`${project.id}-title`}>{project.name}</h3><p>{project.description}</p>{project.link && <a className="v2-link v2-project-external" href={project.link.url} target="_blank" rel="noreferrer">{project.link.label} ↗</a>}</div>
-          <dl><div><dt>Hardware & resources</dt><dd><ul>{project.resources.map(resource => <li key={resource}>{resource}</li>)}</ul></dd></div>{project.target && <div><dt>Working toward</dt><dd>{project.target}</dd></div>}</dl>
+          <dl><div><dt>Project lead</dt><dd>{project.lead ? project.lead : <a className="v2-project-lead" href={siteConfig.xUrl} target="_blank" rel="noreferrer">Shannon Duncan ↗</a>}</dd></div><div><dt>Hardware & resources</dt><dd><ul>{project.resources.map(resource => <li key={resource}>{resource}</li>)}</ul></dd></div>{project.target && <div><dt>Working toward</dt><dd>{project.target}</dd></div>}</dl>
         </article>)}
       </section>)}
     </div>
