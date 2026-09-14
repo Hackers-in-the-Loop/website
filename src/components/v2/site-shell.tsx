@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 import "./site.css";
 
 function Brand() {
-  return <a className="v2-brand" href="/" aria-label="Hackers in the Loop home"><img src="/brand/hack-badge.svg" alt="HACK" width="52" height="52" /><span>Hackers<br />in the Loop</span></a>;
+  return <a className="v2-brand" href="/" aria-label="Hackers in the Loop home"><img src="/brand/hack-badge-static.svg" alt="HACK" width="52" height="52" /><span>Hackers<br />in the Loop</span></a>;
 }
 
 export function SiteShell({ children }: { children: React.ReactNode }) {

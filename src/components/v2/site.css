@@ -1,4 +1,4 @@
-.v2-site { --v2-width: 1240px; --graphite: var(--carbon); --alloy: var(--carbon); --v2-body: #fafaf7; background: var(--v2-body); color: var(--carbon); }
+.v2-site { --v2-width: 1240px; --graphite: var(--carbon); --alloy: var(--carbon); --v2-body: #f7f7f7; background: var(--v2-body); color: var(--carbon); }
 .v2-wrap { width: min(100%, var(--v2-width)); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3.5rem); }
 .v2-site a, .v2-site button, .v2-site summary { touch-action: manipulation; }
 .v2-version { background: var(--carbon); color: var(--paper); font-size: .875rem; }
@@ -91,9 +91,9 @@
 .v2-invitation .v2-split { align-items: center; grid-template-columns: 1fr auto; }
 .v2-invitation h2 { font-size: clamp(1.8rem,3vw,2.5rem); }
 .v2-invitation p:not(.v2-kicker) { margin-top: 1rem; }
-.v2-footer { background: var(--v2-body); color: var(--carbon); border-top: 1px solid var(--fog); padding-block: 3rem; }
+.v2-footer { background: var(--carbon); color: var(--paper); padding-block: 3rem; }
 .v2-footer-inner { display: flex; justify-content: space-between; gap: 3rem; }
-.v2-footer p { color: var(--alloy); font-size: .9375rem; margin-top: 1.25rem; }
+.v2-footer p { color: var(--fog); font-size: .9375rem; margin-top: 1.25rem; }
 .v2-footer nav { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 3rem; align-content: start; }
 .v2-footer nav a { font-size: .9375rem; padding-block: .5rem; }
 .v2-footer nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
@@ -179,7 +179,7 @@
 @media (prefers-reduced-motion: reduce) { .v2-site *, .v2-site *::before, .v2-site *::after { scroll-behavior: auto; transition: none; } }
 
 .v2-hero-surface { background: var(--paper); }
-.v2-home-mark { width: 100%; max-width: 480px; justify-self: center; }
+.v2-home-mark { width: 100%; max-width: 480px; aspect-ratio: 1; display: flex; align-items: center; padding: clamp(1rem, 3vw, 2rem); background: var(--carbon); border-radius: .25rem; justify-self: center; }
 .v2-home-mark img { width: 100%; height: auto; }
 .v2-access .v2-button--primary, .v2-invitation .v2-button--primary { background: var(--carbon); color: var(--paper); border-color: var(--carbon); }
 .v2-access .v2-button--primary:hover, .v2-invitation .v2-button--primary:hover { background: #303234; }

@@ -1,9 +1,7 @@
 import { siteConfig } from "@/lib/site";
 
 export function ConnectLink({ className = "v2-button v2-button--primary" }: { className?: string }) {
-  return siteConfig.discordUrl
-    ? <a className={className} href={siteConfig.discordUrl} target="_blank" rel="noreferrer">Join Discord ↗</a>
-    : <a className={className} href="/community#connect">Connect with Hackers in the Loop →</a>;
+  return <a className={className} href="/community">Join community →</a>;
 }
 
 export function FounderLinks() {

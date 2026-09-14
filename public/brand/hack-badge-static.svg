@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
 <title id="title">HACK, Hackers in the Loop</title>
-<desc id="desc">HACK lettering above an infinity loop. An orange dot follows the loop with a tapered trail.</desc>
+<desc id="desc">HACK lettering above an infinity loop. An orange dot and tapered trail mark the loop.</desc>
 <rect x="24" y="24" width="464" height="464" rx="48" fill="#111315"/>
 <g transform="translate(0 25)"><path d="M69 714V0H226V308H515V0H672V714H515V440H226V714Z" fill="#F4F2EA" transform="translate(67.159 210) scale(0.138 -0.1380000)"/>
 <path d="M249 276 342 538H344L434 276ZM264 714 -6 0H152L208 159H475L529 0H692L425 714Z" fill="#F4F2EA" transform="translate(162.417 210) scale(0.138 -0.1380000)"/>
