@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "name": "Hackers in the Loop",
   "shortName": "HACK",
-  "snapshot": "2026-09-12",
+  "snapshot": "2026-09-13",
   "currency": "USD",
   "priceDates": "2026-09-11; network switch updated 2026-09-12",
-  "costDefinition": "Estimated replacement cost using dated references and configuration allowances. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the published $119 line and $29,749 total.",
+  "costDefinition": "Estimated replacement cost using dated references and configuration allowances. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the published $119 line and $29,749 total. Recently acquired equipment with no price reference has blank cost inputs and is excluded from the priced subtotal. The full replacement estimate remains incomplete until those inputs are provided.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -667,7 +667,7 @@
     {
       "id": "EQ-31",
       "category": "Compute and add-ons",
-      "name": "Agent Blade custom PCB, 6 ESP32-S3, 3 ESP32-P4, 9 × 16 GB NAND",
+      "name": "Agent Blade custom PCB, 6 ESP32-S3, 3 ESP32-P4, 9 \u00d7 16 GB NAND",
       "quantity": 1,
       "unitCostUSD": 365,
       "shippingPerUnitUSD": 0,
@@ -855,7 +855,7 @@
     {
       "id": "EQ-40",
       "category": "Rack and shared",
-      "name": "7.84-inch 2U 1280×400 touchscreen monitor",
+      "name": "7.84-inch 2U 1280\u00d7400 touchscreen monitor",
       "quantity": 1,
       "unitCostUSD": 84.54,
       "shippingPerUnitUSD": 60,
@@ -1137,13 +1137,35 @@
       ],
       "powerGroupId": "none",
       "powerTreatment": "Passive adapter"
+    },
+    {
+      "id": "EQ-53",
+      "category": "Compute and add-ons",
+      "name": "NVIDIA P4 GPU, 8 GB memory",
+      "quantity": 1,
+      "unitCostUSD": null,
+      "shippingPerUnitUSD": 0,
+      "baseRoundedLineCostUSD": null,
+      "lineTotalUSD": null,
+      "sourceLineTotalUSD": null,
+      "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced",
+      "sourceNote": "Acquisition reported by Shannon Duncan on September 13, 2026. Installation and availability unconfirmed. No price supplied.",
+      "sourceUrls": [],
+      "powerGroupId": "none",
+      "powerTreatment": "Not modeled: installation and power use unconfirmed",
+      "recentAcquisition": {
+        "reportedOn": "2026-09-13",
+        "status": "Acquired",
+        "description": "One 8 GB GPU added to the Lab inventory. Installation and availability for projects are not yet confirmed."
+      }
     }
   ],
   "powerGroups": [
     {
       "id": "sparks",
-      "name": "3 × DGX Spark",
-      "label": "3 × DGX Spark",
+      "name": "3 \u00d7 DGX Spark",
+      "label": "3 \u00d7 DGX Spark",
       "scope": "Core",
       "idleW": 105,
       "workingW": 215,
@@ -1155,7 +1177,7 @@
           "url": "https://www.servethehome.com/nvidia-dgx-spark-review-the-gb10-machine-is-so-freaking-cool/4/"
         },
         {
-          "label": "Tom’s Hardware: DGX Spark idle-power update",
+          "label": "Tom\u2019s Hardware: DGX Spark idle-power update",
           "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-dgx-spark-update-cuts-idle-power-by-32-percent-or-more-hot-plug-detection-on-connectx-nic-makes-for-a-more-efficient-ai-workstation"
         }
       ]
@@ -1205,7 +1227,7 @@
     },
     {
       "id": "nas",
-      "name": "QNAP TS-464: 4 × 8 TB HDDs + 4 TB NVMe",
+      "name": "QNAP TS-464: 4 \u00d7 8 TB HDDs + 4 TB NVMe",
       "label": "QNAP TS-464 + all drives",
       "scope": "Core",
       "idleW": 45,
@@ -1227,7 +1249,7 @@
       "idleW": 3,
       "workingW": 4,
       "heavyW": 5,
-      "basis": "Eight Gigabit ports, VLAN support, fanless, and non-PoE. The 3–5 W estimate allows for connected ports and the power adapter.",
+      "basis": "Eight Gigabit ports, VLAN support, fanless, and non-PoE. The 3\u20135 W estimate allows for connected ports and the power adapter.",
       "sourceUrls": [
         {
           "label": "NETGEAR: GS108E specifications",
@@ -1383,7 +1405,7 @@
     },
     {
       "id": "fans",
-      "name": "2 × 120 mm rack fans + their DC supply",
+      "name": "2 \u00d7 120 mm rack fans + their DC supply",
       "label": "Rack fans + DC supply",
       "scope": "Core",
       "idleW": 4,
@@ -1431,6 +1453,8 @@
     ],
     "sourceTotalCostUSD": 29749,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 29748
+    "unadjustedRoundedTotalUSD": 29748,
+    "unpricedItemCount": 1,
+    "costScope": "Priced equipment only; excludes NVIDIA P4"
   }
 }

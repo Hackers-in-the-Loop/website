@@ -2,7 +2,7 @@
 
 The public workbook is `public/lab/hack-lab-inventory.xlsx`.
 
-Use `src/content/lab-inventory.json` as the maintained registry. It contains all 52 priced equipment records, stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
+Use `src/content/lab-inventory.json` as the maintained registry. It contains 53 equipment records (52 priced and one awaiting a price), stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
 
 The site's power calculator reads this same registry through `src/lib/lab-power.ts`. Do not maintain a separate power estimate file.
 
@@ -20,6 +20,10 @@ node scripts/build-lab-inventory.mjs src/content/lab-inventory.json /private/tmp
 2. Update the snapshot date, source URL/note, quantity, unit estimate, shipping allowance and any affected power assumptions. The generator derives formulas from the current record count. Its basic inputs may also be edited in the workbook's amber cells for local calculations.
 3. Keep watts at the system-group level. Do not allocate host watts to SSDs, fans, power supplies, or spare cards without new measurements or a revised documented model. Update a GPU/FPGA example only when the chosen configuration is known.
 4. Recompute registry control totals if the data changes, regenerate the workbook, review its totals and rendered sheets, and publish the single workbook. The registry's `lineTotalUSD` is the cost after its explicit source rounding adjustment.
+
+## September 13, 2026 acquisition
+
+Added EQ-53, one NVIDIA P4 8 GB, from Shannon’s acquisition update. The Lab’s Recently acquired section reads its status from the same registry. Installation, availability, cost and power use are unconfirmed. Blank costs remain unknown in Excel; the full total shows Missing input while the priced subtotal remains $29,749. The existing power model is unchanged. `none` means no assigned power group here, not zero power draw.
 
 ## Rounding reconciliation
 
