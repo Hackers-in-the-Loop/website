@@ -12,3 +12,7 @@ work/
 !.env.example
 
 .inventory-output/
+
+# Local research and generated repository snapshots
+docs/rawness/
+repomix-output.xml

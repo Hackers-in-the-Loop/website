@@ -10,7 +10,7 @@ The Next.js App Router runs through Vinext and the existing Sites integration. `
 
 ## Current site
 
-The selected V2 design is the main site:
+The repository contains one production site:
 
 - `/`: Community purpose and ways to participate.
 - `/why`: Shared purpose and the founder's own story.
@@ -18,7 +18,7 @@ The selected V2 design is the main site:
 - `/projects`: Documented experiments and their hardware.
 - `/community`: Discord, contact links, and community rules.
 
-Old `/v2` links redirect to the matching primary page. `/compare`, `/manifesto`, and `/stack` redirect to the current experience. Previous designs remain in Git history.
+Legacy `/manifesto` and `/stack` links redirect to the matching current pages. Previous designs, review pages, and `/v2` route aliases remain available in Git history.
 
 Primary pages live under `src/app/(current)`. Shared design components and styles remain under `src/components/v2`. Native navigation links are intentional for compatibility with the hosted runtime.
 
@@ -38,7 +38,19 @@ Set `NEXT_PUBLIC_SITE_URL` to the deployed origin for production metadata. Never
 
 Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#fdfdfd), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, with an illuminated orange track and tapered trail on black; reduced-motion users receive the static version. The large Lab application section is black with an orange button; smaller invitation banners stay orange. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.
 
-Earlier exports under `brand/assets` and `brand/reference` are historical and must not be reused as current branding. The former abbreviation and tagline have been retired. Fonts remain locally served Inter Tight, Inter, and IBM Plex Mono.
+The former abbreviation and tagline have been retired. Previous brand explorations remain available in Git history instead of the working tree. Fonts remain locally served Inter Tight, Inter, and IBM Plex Mono.
+
+## Repository layout
+
+- `src/app`: Current pages and compatibility redirects.
+- `src/components`: Shared layout, navigation, rules, and Lab components.
+- `src/content`: Maintained project, hardware, photo, inventory, and power data.
+- `public/brand`: Current website and Discord brand assets.
+- `public/lab`: Published Lab photos and downloadable inventory workbook.
+- `scripts`: Reproducible brand and inventory asset generators.
+- `docs`: Maintenance notes for the Lab inventory and Projects page.
+
+Local research under `docs/rawness/` and generated `repomix-output.xml` snapshots are intentionally ignored. Keep private project source material outside the public repository.
 
 ## Verification
 

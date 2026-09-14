@@ -50,13 +50,10 @@ function motif(animated) {
 function svg(content,w,h,title,desc) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">\n<title id="title">${title}</title>\n<desc id="desc">${desc}</desc>\n${content}\n</svg>\n`;
 }
-for (const animated of [false,true]) {
-  const suffix=animated?'':'-static';
-  const mark=motif(animated);
-  const body='<rect x="24" y="24" width="464" height="464" rx="48" fill="#111315"/><g transform="translate(0 25)">'+lettering+'</g><g transform="translate(91 269) scale(.75)">'+mark+'</g>';
-  await fs.writeFile(`public/brand/hack-badge${suffix}.svg`,svg(body,512,512,'HACK, Hackers in the Loop','HACK lettering above a rounded infinity loop with an orange dot and tapered trail.'));
-  await fs.writeFile(`public/brand/hack-infinity${suffix}.svg`,svg(mark,440,240,'Hackers in the Loop infinity mark','A continuous rounded infinity loop with an orange dot and tapered trail.'));
-}
+const mark=motif(false);
+const body='<rect x="24" y="24" width="464" height="464" rx="48" fill="#111315"/><g transform="translate(0 25)">'+lettering+'</g><g transform="translate(91 269) scale(.75)">'+mark+'</g>';
+await fs.writeFile('public/brand/hack-badge-static.svg',svg(body,512,512,'HACK, Hackers in the Loop','HACK lettering above a rounded infinity loop with an orange dot and tapered trail.'));
+await fs.writeFile('public/brand/hack-infinity-static.svg',svg(mark,440,240,'Hackers in the Loop infinity mark','A continuous rounded infinity loop with an orange dot and tapered trail.'));
 await fs.copyFile('public/brand/hack-infinity-static.svg','src/app/icon.svg');
 await sharp('public/brand/hack-badge-static.svg').png().toFile('public/brand/hack-discord-icon.png');
 console.log('Brand exports rebuilt. Static dot:',start,'Path length:',length.toFixed(3));
