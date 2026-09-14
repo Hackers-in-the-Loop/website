@@ -112,7 +112,7 @@
 .v2-hardware h3 { margin-bottom: .75rem; }
 .v2-hardware p:not(.v2-kicker) { color: var(--graphite); }
 .v2-hardware .v2-kicker { margin-bottom: .65rem; }
-.v2-access { background: var(--signal); border-block: 1px solid var(--fog); }
+.v2-access { --graphite: #d8dcd9; background: var(--carbon); color: var(--paper); border-block: 1px solid #303438; }
 .v2-access h3 { margin-bottom: 1rem; }
 .v2-access ul { padding-left: 1.2rem; margin-block: 1rem 1.5rem; }
 .v2-access li + li { margin-top: .65rem; }
@@ -179,11 +179,12 @@
 @media (prefers-reduced-motion: reduce) { .v2-site *, .v2-site *::before, .v2-site *::after { scroll-behavior: auto; transition: none; } }
 
 .v2-hero-surface { background: var(--paper); }
-.v2-home-mark { width: 100%; max-width: 480px; aspect-ratio: 1; display: flex; align-items: center; padding: clamp(1rem, 3vw, 2rem); background: var(--carbon); border-radius: .25rem; justify-self: center; }
+.v2-home-mark { width: 100%; max-width: 480px; aspect-ratio: 1; display: flex; align-items: center; padding: clamp(1rem, 3vw, 2rem); background: radial-gradient(ellipse at 52% 46%, #271918 0%, var(--carbon) 66%); border: 1px solid #303236; border-radius: 1.25rem; box-shadow: 0 22px 45px -30px #11131580, inset 0 1px 0 #ffffff0d; justify-self: center; }
 .v2-home-mark img { width: 100%; height: auto; }
-.v2-access .v2-button--primary, .v2-invitation .v2-button--primary { background: var(--carbon); color: var(--paper); border-color: var(--carbon); }
-.v2-access .v2-button--primary:hover, .v2-invitation .v2-button--primary:hover { background: #303234; }
-.v2-access .v2-link:hover, .v2-invitation .v2-link:hover { color: var(--carbon); }
-.v2-access .v2-form-expectations { border-left-color: var(--carbon); }
+.v2-invitation .v2-button--primary { background: var(--carbon); color: var(--paper); border-color: var(--carbon); }
+.v2-invitation .v2-button--primary:hover { background: #303234; }
+.v2-access .v2-link:hover { color: var(--signal); }
+.v2-invitation .v2-link:hover { color: var(--carbon); }
+.v2-access .v2-form-expectations { border-left-color: var(--signal); }
 .v2-button--light { background: var(--signal); border-color: var(--signal); }
 @media (max-width: 760px) { .v2-home-mark { max-width: 300px; } }

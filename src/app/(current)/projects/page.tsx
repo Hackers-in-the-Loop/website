@@ -1,12 +1,13 @@
 import { labProjects } from "@/content/lab-projects";
 import { CommunityInvitation, PageIntro } from "@/components/v2/shared";
+import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("Active Projects", "The experiments documented in the Hackers in the Loop Lab, their hardware, and how to bring your own work to the community.", "/projects");
 
 export default function ProjectsPage() {
   return <>
-    <PageIntro label="Projects / Work in progress" title="What’s on the workbench."><p>Experiments documented in the September 12, 2026 build notes. These are project records, not a live capacity dashboard; resource allocations are arranged separately.</p></PageIntro>
+    <PageIntro label="Projects / Work in progress" title="What’s on the workbench."><p>Experiments documented in the September 12, 2026 build notes. These are project records, not a live capacity dashboard; resource allocations are arranged separately.</p><div className="v2-actions"><a className="v2-button" href={siteConfig.githubUrl} target="_blank" rel="noreferrer">Explore our GitHub ↗</a></div></PageIntro>
     <section className="v2-wrap" aria-label="Active projects"><nav className="v2-project-index" aria-label="Project index">{labProjects.map(p=><a key={p.id} href={`#${p.id}`}>{p.name} ↓</a>)}<a href="/lab#hardware">Explore all Lab hardware →</a></nav>
       {labProjects.map(project=><article className="v2-project" id={project.id} key={project.id}>
         <div><p className="v2-kicker">{project.stage}</p><h2>{project.name}</h2><p className="v2-project-question">{project.question}</p><p>{project.description}</p></div>

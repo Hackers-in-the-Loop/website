@@ -7,7 +7,7 @@ export default function V2Home() {
   return <>
     <section className="v2-hero-surface"><div className="v2-wrap v2-home-hero">
       <div><p className="v2-kicker">A community for people in tech</p><h1>A place to<br /><em>belong</em> in tech.</h1><p className="v2-lede">People who take an interest in what you’re building, help you work through a question, and share what they know.</p><p className="v2-muted">Builders, learners, and people finding their footing are welcome. We’re especially curious about AI and agentic systems, with room for work across technology.</p><div className="v2-actions"><ConnectLink /><a className="v2-link" href="/why">Why we’re here →</a></div></div>
-      <div className="v2-home-mark" aria-hidden="true"><img src="/brand/hack-infinity.svg" alt="" width="720" height="400" /></div>
+      <div className="v2-home-mark" aria-hidden="true"><img src="/brand/hack-hero.svg" alt="" width="660" height="420" /></div>
     </div>
     </section>
     <section className="v2-wrap v2-section" aria-labelledby="start-title"><div className="v2-section-heading"><p className="v2-kicker">There’s more than one way in</p><h2 id="start-title">Start with something small.</h2></div><div className="v2-start-grid">

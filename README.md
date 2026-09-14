@@ -24,7 +24,7 @@ Primary pages live under `src/app/(current)`. Shared design components and style
 
 ## Maintained content
 
-- `src/lib/site.ts`: Public Discord invite, application form, and contact links. The supplied Discord invite is authoritative and is presented on the Community page. Elsewhere, “Join community” leads to `/community`.
+- `src/lib/site.ts`: Public Discord invite, application form, and contact links. The supplied Discord invite appears on the Community page and in the footer. “Join community” calls to action lead to `/community`. Footer social links are Discord and X; GitHub is linked from Projects.
 - `src/content/lab-projects.ts`: Project records and experimental resource configurations.
 - `src/content/v2/hardware.ts`: On-page hardware summary.
 - `src/content/lab-inventory.json`: Itemized inventory, costs, power group mappings, and references. Both the calculator and workbook use this registry.
@@ -36,7 +36,7 @@ Set `NEXT_PUBLIC_SITE_URL` to the deployed origin for production metadata. Never
 
 ## Brand
 
-Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#fdfdfd), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, on a black background, with a tapered trail; reduced-motion users receive the static version. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.
+Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#fdfdfd), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, with an illuminated orange track and tapered trail on black; reduced-motion users receive the static version. The large Lab application section is black with an orange button; smaller invitation banners stay orange. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.
 
 Earlier exports under `brand/assets` and `brand/reference` are historical and must not be reused as current branding. The former abbreviation and tagline have been retired. Fonts remain locally served Inter Tight, Inter, and IBM Plex Mono.
 

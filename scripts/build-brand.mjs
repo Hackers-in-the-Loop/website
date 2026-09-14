@@ -60,3 +60,22 @@ for (const animated of [false,true]) {
 await fs.copyFile('public/brand/hack-infinity-static.svg','src/app/icon.svg');
 await sharp('public/brand/hack-badge-static.svg').png().toFile('public/brand/hack-discord-icon.png');
 console.log('Brand exports rebuilt. Static dot:',start,'Path length:',length.toFixed(3));
+
+// The hero uses a luminous treatment of the same mark. Wordmarks stay flat and static.
+function heroHead(animated) {
+  const motion=animated?`<animateMotion path="${path}" dur="9s" calcMode="paced" repeatCount="indefinite"/>`:'';
+  const transform=animated?'':` transform="translate(${start[0]} ${start[1]})"`;
+  return `<g${transform}>${motion}<circle r="32" fill="url(#head-halo)"/><circle r="11.5" fill="url(#head-core)"/><circle r="3.8" fill="#fff8eb"/></g>`;
+}
+const heroDefs=`<defs><path id="loop" d="${path}"/>
+<linearGradient id="track" x1="40" y1="200" x2="375" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#df482e"/><stop offset=".4" stop-color="#ff6245"/><stop offset=".72" stop-color="#ffad7c"/><stop offset="1" stop-color="#ff553d"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="220" x2="0" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#ff553d" stop-opacity="0"/><stop offset="1" stop-color="#fff0d5" stop-opacity=".72"/></linearGradient>
+<radialGradient id="head-halo"><stop stop-color="#ff8153" stop-opacity=".65"/><stop offset=".28" stop-color="#ff6342" stop-opacity=".35"/><stop offset="1" stop-color="#ff553d" stop-opacity="0"/></radialGradient>
+<radialGradient id="head-core" cx=".38" cy=".3"><stop stop-color="#fff6da"/><stop offset=".38" stop-color="#ffcf94"/><stop offset="1" stop-color="#ff7048"/></radialGradient>
+<filter id="track-glow" x="-20%" y="-35%" width="140%" height="170%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>`;
+const heroTrack='<use href="#loop" fill="none" stroke="#ff553d" stroke-width="12" opacity=".25" filter="url(#track-glow)"/><use href="#loop" fill="none" stroke="#642d24" stroke-width="13"/><use href="#loop" fill="none" stroke="url(#track)" stroke-width="8"/><use href="#loop" fill="none" stroke="url(#shine)" stroke-width="1.6"/>';
+const heroTrail=animated=>`<g fill="none" stroke="#ff9468" stroke-linecap="round">${trail(animated)}</g>`;
+const hero=heroDefs+'<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style><g transform="rotate(-8 220 120)">'+heroTrack+`<g class="motion">${heroTrail(true)}${heroHead(true)}</g><g class="still">${heroTrail(false)}${heroHead(false)}</g></g>`;
+const heroSvg=svg(hero,440,280,'Hackers in the Loop','A luminous orange infinity loop with a steady moving light and tapered trail.').replace('viewBox="0 0 440 280"','viewBox="-12 -20 464 280"');
+await fs.writeFile('public/brand/hack-hero.svg',heroSvg);
