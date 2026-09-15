@@ -4,9 +4,11 @@ A community for people building with technology, learning about it, or finding t
 
 ## Development
 
-Use Node.js 22.13 or newer. Run `npm ci` and `npm run dev`. The local site uses port 9854. `npm run build` creates the production build.
+Use Node.js 22.13 or newer. Run `npm ci` and `npm run dev`. The local site uses port 9854.
 
-The Next.js App Router runs through Vinext and the existing Sites integration. `.openai/hosting.json` identifies the existing Site. Do not create a replacement Site when publishing edits.
+The site uses the Next.js App Router in static export mode. `npm run build` writes the complete deployable site to `out/`. It has no server runtime, Worker, D1 database, or R2 bucket. For Cloudflare Pages, use `npm run build` as the build command and `out` as the output directory.
+
+`.openai/hosting.json` identifies the existing ChatGPT Site and points it at the same static output. Do not create a replacement Site when publishing edits.
 
 ## Current site
 

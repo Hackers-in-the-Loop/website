@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { Navigation } from "@/components/v2/navigation";
 import { ConnectLink } from "@/components/v2/shared";
 import { siteConfig } from "@/lib/site";
 import "./site.css";
 
 function Brand() {
-  return <a className="v2-brand" href="/" aria-label="Hackers in the Loop home"><img src="/brand/hack-badge-static.svg" alt="HACK" width="52" height="52" /><span>Hackers<br />in the Loop</span></a>;
+  return <Link className="v2-brand" href="/" aria-label="Hackers in the Loop home"><img src="/brand/hack-badge-static.svg" alt="HACK" width="52" height="52" /><span>Hackers<br />in the Loop</span></Link>;
 }
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
