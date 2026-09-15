@@ -1,6 +1,6 @@
 // Project descriptions and hardware assignments supplied by Shannon Duncan.
 // These records describe work in progress, not reservations or live utilization.
-export const projectsUpdated = "September 13, 2026";
+export const projectsUpdated = "September 15, 2026";
 
 export const projectGroups = [
   { id: "oss", name: "Open source software", label: "OSS" },
@@ -47,6 +47,12 @@ export const labProjects: LabProject[] = [
     id: "zd-web-server", group: "oss", name: "ZD Web Server", stage: "In development",
     description: "Updating the ZD harness and editor to serve over the web, with a headless way to work with agent projects across the cluster.",
     resources: ["N150"],
+  },
+  {
+    id: "esp32-fx", group: "oss", name: "esp32-fx", stage: "Experimental prototype",
+    description: "Runs the fx coding agent on native Linux on an ESP32-S3. WAMR runs the fx WebAssembly core, and a Seeed reTerminal E1001 e-paper display shows the agent’s response. Model inference currently uses a remote provider.",
+    resources: ["N150", "Seeed reTerminal E1001 with ESP32-S3"],
+    link: { label: "View esp32-fx on GitHub", url: "https://github.com/iammrduncan/esp32-fx" },
   },
   {
     id: "gpu-bench", group: "gpu", name: "Practical Small Model Usage", stage: "Active research",
