@@ -76,6 +76,7 @@
 .v2-goals p { color: var(--graphite); margin-top: 1rem; }
 .v2-founder { grid-template-columns: .65fr 1.35fr; border-top: 1px solid var(--fog); }
 .v2-founder h2 { margin-bottom: 1.5rem; }
+.v2-founder-photo { display: block; width: min(100%, 15rem); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
 .v2-founder aside p { margin-top: 1rem; }
 .v2-connection { background: var(--v2-body); border-top: 1px solid var(--fog); border-bottom: 1px solid var(--fog); }
 .v2-connection h2 { margin-bottom: 1.25rem; }

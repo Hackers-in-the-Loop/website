@@ -12,7 +12,7 @@ export default function WhyPage() {
       <article><p className="v2-kicker">02 / Share resources</p><h2>Make room to experiment.</h2><p>Offer compute through grants so people can learn, research, and build with open source technology. Requests are open; access is arranged after review.</p><a className="v2-link" href="/lab#access">Explore compute requests →</a></article>
     </section>
     <section className="v2-wrap v2-section v2-split v2-founder" id="founder" aria-labelledby="founder-title">
-      <aside><p className="v2-kicker">In Shannon’s words</p><h2 id="founder-title">Who am I?</h2><p>Shannon Duncan<br /><span className="v2-muted">Hackers in the Loop founder · Arkansas</span></p><FounderLinks /></aside>
+      <aside><p className="v2-kicker">In Shannon’s words</p><h2 id="founder-title">Who am I?</h2><img className="v2-founder-photo" src="/people/shannon-duncan.webp" alt="Shannon Duncan outdoors with his bicycle" width="640" height="640" loading="lazy" decoding="async" /><p>Shannon Duncan<br /><span className="v2-muted">Hackers in the Loop founder · Arkansas</span></p><FounderLinks /></aside>
       <FounderStory />
     </section>
     <CommunityInvitation />
