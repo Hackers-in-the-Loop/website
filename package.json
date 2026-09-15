@@ -10,7 +10,8 @@
     "build": "next build",
     "lint": "eslint . --ignore-pattern out --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "next": "16.3.4",

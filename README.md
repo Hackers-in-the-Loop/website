@@ -36,6 +36,12 @@ The inventory and estimates describe documented equipment, not live capacity or 
 
 Set `NEXT_PUBLIC_SITE_URL` to the deployed origin for production metadata. Never put secrets in `NEXT_PUBLIC_*` values.
 
+## Search and sharing
+
+Each current page has a unique title, description, canonical URL, and Open Graph / X preview metadata through `src/lib/metadata.ts`. The shared social image is `public/og.png`, featuring the completed Lab cluster. Metadata, `robots.txt`, and the five-page `sitemap.xml` are generated into `out/` at build time. Legacy routes remain excluded from indexing and the sitemap.
+
+When moving to Cloudflare Pages or a custom domain, set `NEXT_PUBLIC_SITE_URL` before building so canonicals, social image URLs, structured website data, and the sitemap use that origin. Run `npm run test:seo` after building to check the exported metadata and assets.
+
 ## Brand
 
 Current SVGs are in `public/brand/`. The header and hero stay cream, the body is neutral off-white (#fdfdfd), and the footer is brand black (#111315). The HACK badge and infinity motif preserve the existing colors and outlined wordmark. Only the hero motif animates, with an illuminated orange track and tapered trail on black; reduced-motion users receive the static version. The large Lab application section is black with an orange button; smaller invitation banners stay orange. Header and footer badges are static. `public/brand/hack-discord-icon.png` is the 512 × 512 Discord icon export. The favicon uses the static infinity mark.

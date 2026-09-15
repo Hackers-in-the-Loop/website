@@ -52,7 +52,7 @@ export const labProjects: LabProject[] = [
     id: "esp32-fx", group: "oss", name: "esp32-fx", stage: "Experimental prototype",
     description: "Runs the fx coding agent on native Linux on an ESP32-S3. WAMR runs the fx WebAssembly core, and a Seeed reTerminal E1001 e-paper display shows the agent’s response. Model inference currently uses a remote provider.",
     resources: ["N150", "Seeed reTerminal E1001 with ESP32-S3"],
-    link: { label: "View esp32-fx on GitHub", url: "https://github.com/iammrduncan/esp32-fx" },
+    link: { label: "Explore the esp32-fx source on GitHub", url: "https://github.com/iammrduncan/esp32-fx" },
   },
   {
     id: "gpu-bench", group: "gpu", name: "Practical Small Model Usage", stage: "Active research",

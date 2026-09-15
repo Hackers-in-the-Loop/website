@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import { siteOrigin } from "@/lib/urls";
+import { metadataOrigin, pageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: siteOrigin(process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url),
+  ...pageMetadata(siteConfig.name, siteConfig.description, "/"),
+  metadataBase: metadataOrigin,
   title: {
     default: "Hackers in the Loop",
     template: "%s · Hackers in the Loop",
   },
-  description:
-    "A community for people building with technology, learning about it, or finding their footing in tech.",
-  openGraph: {
-    title: "Hackers in the Loop",
-    description: siteConfig.description,
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Hackers in the Loop",
-    description: siteConfig.description,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
@@ -31,6 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          alternateName: siteConfig.shortName,
+          url: metadataOrigin.href,
+          description: siteConfig.description,
+        }).replace(/</g, "\\u003c") }} />
         <script
           src="https://cdn.usefathom.com/script.js"
           data-site="URCZBLKK"
