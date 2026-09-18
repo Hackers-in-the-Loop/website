@@ -4,8 +4,8 @@
   "shortName": "HACK",
   "snapshot": "2026-09-18",
   "currency": "USD",
-  "priceDates": "2026-09-11; network switch updated 2026-09-12; reported acquisition costs added 2026-09-18",
-  "costDefinition": "Priced inventory subtotal using dated replacement references, configuration allowances, and reported acquisition costs. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the original published $119 line. Recently acquired equipment without a price has blank cost inputs and is excluded from the priced subtotal. The full replacement estimate remains incomplete until those inputs are provided.",
+  "priceDates": "2026-09-11; network switch updated 2026-09-12; recent acquisitions researched 2026-09-18",
+  "costDefinition": "Estimated equipment replacement/reference total using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. Recent-acquisition power references are separate from the configured-lab power totals until installation and workload are confirmed.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -1143,17 +1143,18 @@
       "category": "Compute and add-ons",
       "name": "NVIDIA P4 GPU, 8 GB memory",
       "quantity": 1,
-      "unitCostUSD": null,
+      "unitCostUSD": 179.99,
       "shippingPerUnitUSD": 0,
-      "baseRoundedLineCostUSD": null,
-      "lineTotalUSD": null,
-      "sourceLineTotalUSD": null,
+      "baseRoundedLineCostUSD": 180,
+      "lineTotalUSD": 180,
+      "sourceLineTotalUSD": 180,
       "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced",
-      "sourceNote": "Acquisition reported by Shannon Duncan on September 13, 2026. Installation and availability unconfirmed. No price supplied.",
-      "sourceUrls": [],
+      "costBasis": "Dated refurbished replacement reference",
+      "sourceNote": "Acquired September 13, 2026. Newegg listed a refurbished 8 GB Tesla P4 at $179.99 on September 18. Exact card condition and installation are unconfirmed.",
+      "sourceUrls": [{ "label": "Newegg refurbished Tesla P4 listing", "url": "https://www.newegg.com/p/pl?N=100006519+100&d=nvidia+tesla+p4+8gb" }],
       "powerGroupId": "none",
-      "powerTreatment": "Not modeled: installation and power use unconfirmed",
+      "powerTreatment": "Power reference only; not in configured-lab totals until installed",
+      "powerReference": { "summary": "50 or 75 W board-power design; idle draw and host overhead unknown", "basis": "NVIDIA Tesla P4 datasheet. These are design power options, not measured draw for this card.", "sourceUrls": [{ "label": "NVIDIA Tesla P4 datasheet", "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/184457-Tesla-P4-Datasheet-NV-Final-Letter-Web.pdf" }] },
       "recentAcquisition": {
         "reportedOn": "2026-09-13",
         "status": "Acquired",
@@ -1163,50 +1164,57 @@
     {
       "id": "EQ-54", "category": "Rack and shared", "name": "CyberPower PR2200LCDSL Smart App Sinewave UPS, 2070 VA / 1980 W, 7 outlets, AVR, mini-tower", "quantity": 1,
       "unitCostUSD": 995, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 995, "lineTotalUSD": 995, "sourceLineTotalUSD": 995, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Reported acquisition cost", "sourceNote": "Acquisition and $995 cost reported by Shannon Duncan on September 18, 2026. Its rated output is not a wall-power measurement; installation and overhead are not yet modeled.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: replacement of or addition to the existing UPS branch is unconfirmed",
+      "costBasis": "Owner-reported price, checked against current listing", "sourceNote": "Shannon reported $995 on September 18, 2026; DigiKey listed the exact model at $995.95. The owner-reported amount is retained as the cost reference. Installation and protected loads are unconfirmed.", "sourceUrls": [{ "label": "DigiKey CyberPower PR2200LCDSL", "url": "https://www.digikey.com/en/products/detail/cyber-power-systems-usa-inc/PR2200LCDSL/21527902" }, { "label": "CyberPower specifications and MSRP", "url": "https://www.cyberpowersystems.com/product/ups/smart-app-sinewave/pr2200lcdsl/" }],
+      "powerGroupId": "none", "powerTreatment": "UPS overhead reference only; do not add rated output as consumption or double-count the existing UPS",
+      "powerReference": { "summary": "6 W at no load; about 98% efficient at 25% output load and 99% at 50%", "basis": "ENERGY STAR test for PR2200LCDSL. Output capacity is 1,980 W, not wall draw. Overhead depends on attached load and whether this UPS replaces or supplements the 750 VA unit; battery recharge is excluded.", "sourceUrls": [{ "label": "ENERGY STAR qualified UPS list, PR2200LCDSL", "url": "https://downloads.energystar.gov/bi/qplist/Uninterruptible_Power_Supplies_Product_List.pdf" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A 2070 VA / 1980 W sinewave UPS for the Lab. Installation and which loads it will protect have not yet been confirmed." }
     },
     {
       "id": "EQ-55", "category": "Compute and add-ons", "name": "WEP 605D-III DC variable bench power supply, 60 V / 5 A", "quantity": 1,
       "unitCostUSD": 69, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 69, "lineTotalUSD": 69, "sourceLineTotalUSD": 69, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Reported acquisition cost", "sourceNote": "Acquisition and $69 cost reported by Shannon Duncan on September 18, 2026. Output rating is not a wall-power measurement.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: bench use and duty cycle unconfirmed",
+      "costBasis": "Owner-reported price, checked against current listing", "sourceNote": "Shannon reported $69 on September 18, 2026; a current WEP 605D-III listing was $69.98. The owner-reported amount is retained as the cost reference.", "sourceUrls": [{ "label": "WEP 605D-III US listing", "url": "https://www.shopabunda.com/products/wep-605d-iii-dc-variable-power-supply-60-00v-5-000a-high-precision-bench-lab-power-supply-with-alligator-clips-for-anodizing-kit-electroplating-arduino-breadboard" }],
+      "powerGroupId": "none", "powerTreatment": "Power reference only; bench duty cycle is not part of current whole-lab scenario",
+      "powerReference": { "summary": "Up to 300 W DC output; roughly 375 W AC input at full output if efficiency is 80%", "basis": "60 V × 5 A gives 300 W maximum output. The 80% conversion-efficiency assumption comes from a comparable 60 V / 5 A bench supply, not a published WEP measurement. Actual wall draw follows the connected load.", "sourceUrls": [{ "label": "Comparable 60 V / 5 A bench supply efficiency datasheet", "url": "https://www.farnell.com/datasheets/4459704.pdf" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A precision DC supply for electronics experiments, prototyping, and bench work." }
     },
     {
       "id": "EQ-56", "category": "Compute and add-ons", "name": "Luckfox Pico Mini A", "quantity": 1,
-      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price, configuration, and active use unconfirmed.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: configuration and active use unconfirmed",
+      "unitCostUSD": 11.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 12, "lineTotalUSD": 12, "sourceLineTotalUSD": 12, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated base-variant price reference", "sourceNote": "Luckfox listed the Mini A base board at $11.99 on September 18, 2026. Flash/header options cost up to $18.99; the acquired variant is not specified.", "sourceUrls": [{ "label": "Luckfox Pico Mini A", "url": "https://www.luckfox.com/Luckfox-Pico-Mini-A" }],
+      "powerGroupId": "none", "powerTreatment": "Power reference only; configuration and active use unconfirmed",
+      "powerReference": { "summary": "About 1-2 W planning allowance when powered by USB-C; no model-specific draw published", "basis": "Luckfox documents USB-C power but does not publish a board-level watt figure. This is an explicit low-power board allowance, not a measured specification; connected USB peripherals and cameras add load.", "sourceUrls": [{ "label": "Luckfox Pico Mini A product page", "url": "https://www.luckfox.com/Luckfox-Pico-Mini-A" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A small development board for hardware and embedded experiments." }
     },
     {
       "id": "EQ-57", "category": "Rack and shared", "name": "Sipeed NanoKVM", "quantity": 1,
-      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and installation unconfirmed.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: installation and power use unconfirmed",
+      "unitCostUSD": 112.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 113, "lineTotalUSD": 113, "sourceLineTotalUSD": 113, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Provisional Cube Full-class US replacement reference", "sourceNote": "The exact NanoKVM variant was not specified. A US Cube Full Kit listing was $112.99 on September 18, 2026. This is a provisional comparable reference, not the acquired device's confirmed variant or purchase price; other variants cost less or more.", "sourceUrls": [{ "label": "Sipeed NanoKVM product family", "url": "https://github.com/sipeed/NanoKVM" }, { "label": "US Cube Full Kit retailer listing", "url": "https://www.newegg.com/p/3C6-05G2-02VG1?Item=9SIC5T7KZA4026" }],
+      "powerGroupId": "none", "powerTreatment": "Provisional Cube-class reference only; variant and installation unconfirmed",
+      "powerReference": { "summary": "About 1 W for NanoKVM Cube; other NanoKVM variants can differ", "basis": "Sipeed's NanoKVM Cube quick-start states about 1 W at 5 V. This cannot be treated as the acquired device's draw until the variant is identified.", "sourceUrls": [{ "label": "Sipeed NanoKVM Cube quick start", "url": "https://wiki.sipeed.com/hardware/en/kvm/NanoKVM/quick_start.html" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A compact remote-access KVM device. Installation has not yet been confirmed." }
     },
     {
       "id": "EQ-58", "category": "Compute and add-ons", "name": "Grove Vision AI Module V2", "quantity": 1,
-      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and project assignment unconfirmed.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: project assignment and active use unconfirmed",
+      "unitCostUSD": 16.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 17, "lineTotalUSD": 17, "sourceLineTotalUSD": 17, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated manufacturer price reference", "sourceNote": "Seeed Studio listed the bare Grove Vision AI Module V2 at $16.99 on September 18, 2026. A camera or host board is not included in this line.", "sourceUrls": [{ "label": "Seeed Studio Grove Vision AI Module V2", "url": "https://www.seeedstudio.com/Grove-Vision-AI-Module-V2-p-5851.html" }],
+      "powerGroupId": "none", "powerTreatment": "Power reference only; camera, host, and deployment configuration unconfirmed",
+      "powerReference": { "summary": "About 0.35-0.42 W during published inference examples; host and camera separate", "basis": "Published tests report about 0.35 W average and 0.42 W peak for specific vision workloads. This is not a site measurement and is not a universal maximum.", "sourceUrls": [{ "label": "Grove Vision AI V2 inference power experiment", "url": "https://www.hackster.io/limengdu0117/2024-mcu-ai-vision-boards-performance-comparison-998505" }, { "label": "Vision AI V2 measured example", "url": "https://mlsysbook.ai/kits/contents/seeed/grove_vision_ai_v2/setup_and_no_code_apps/setup_and_no_code_apps.html" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An embedded vision module for future bench experiments." }
     },
     {
       "id": "EQ-59", "category": "Compute and add-ons", "name": "Soldering iron setup", "quantity": 1,
-      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Model, price, and active power use unconfirmed.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: model and duty cycle unconfirmed",
+      "unitCostUSD": 49.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 50, "lineTotalUSD": 50, "sourceLineTotalUSD": 50, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Provisional comparable-kit allowance", "sourceNote": "The acquired setup's make and contents were not specified. iFixit's entry-level soldering workstation was $49.99 on September 18, 2026; this is a comparable allowance, not the actual paid price or an exact replacement match.", "sourceUrls": [{ "label": "iFixit entry-level soldering workstation", "url": "https://www.ifixit.com/products/soldering-workstation" }],
+      "powerGroupId": "none", "powerTreatment": "Power reference only; model and bench duty cycle unconfirmed",
+      "powerReference": { "summary": "About 30-60 W while heating for a 60 W-class iron; near zero unplugged", "basis": "Comparable 60 W soldering irons are load- and thermostat-dependent. This is a planning range, not a specification for the acquired setup; hot-air stations may draw much more.", "sourceUrls": [{ "label": "Adafruit adjustable 60 W iron reference", "url": "https://www.adafruit.com/explore/tools" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A soldering setup for electronics assembly and repair." }
     },
     {
       "id": "EQ-60", "category": "Compute and add-ons", "name": "M5Stack CoreS3 ESP32-S3 development kit", "quantity": 1,
-      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
-      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and project assignment unconfirmed.", "sourceUrls": [],
-      "powerGroupId": "none", "powerTreatment": "Not modeled: project assignment and active use unconfirmed",
+      "unitCostUSD": 59.90, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 60, "lineTotalUSD": 60, "sourceLineTotalUSD": 60, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated manufacturer price reference", "sourceNote": "M5Stack listed the CoreS3 IoT development kit at $59.90 on September 18, 2026. The older registry also has one M5Stack ESP32-S3 device (EQ-29); this line assumes the newly reported CoreS3 is additional until the owner confirms whether it is the same unit.", "sourceUrls": [{ "label": "M5Stack CoreS3 official store", "url": "https://shop.m5stack.com/products/m5stack-cores3-esp32s3-iotdevelopment-kit" }],
+      "powerGroupId": "none", "powerTreatment": "Power reference only; do not double-count the existing M5Stack power group until quantity is confirmed",
+      "powerReference": { "summary": "About 1.5-3 W planning range when active; peripherals and charging vary", "basis": "Uses the existing M5Stack ESP32-S3 bench allowance as a comparable reference. The CoreS3 has a battery and 1 W speaker; manufacturer does not publish a whole-kit wall-power measurement. Additional-unit status is unconfirmed.", "sourceUrls": [{ "label": "M5Stack CoreS3 specifications", "url": "https://shop.m5stack.com/products/m5stack-cores3-esp32s3-iotdevelopment-kit" }] },
       "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An ESP32-S3 development kit for embedded experiments." }
     }
   ],
@@ -1487,9 +1495,9 @@
     }
   ],
   "controls": {
-    "computeCostUSD": 28313,
-    "sharedCostUSD": 2500,
-    "totalCostUSD": 30813,
+    "computeCostUSD": 28632,
+    "sharedCostUSD": 2613,
+    "totalCostUSD": 31245,
     "corePowerW": [
       229.8,
       406.5,
@@ -1500,10 +1508,10 @@
       693,
       1413
     ],
-    "sourceTotalCostUSD": 30813,
+    "sourceTotalCostUSD": 31245,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 30812,
-    "unpricedItemCount": 6,
-    "costScope": "Priced equipment only; six acquisitions have no supplied cost"
+    "unadjustedRoundedTotalUSD": 31244,
+    "unpricedItemCount": 0,
+    "costScope": "Sixty priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
   }
 }
