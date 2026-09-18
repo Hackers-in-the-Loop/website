@@ -1,6 +1,6 @@
 // Project descriptions and hardware assignments supplied by Shannon Duncan.
 // These records describe work in progress, not reservations or live utilization.
-export const projectsUpdated = "September 15, 2026";
+export const projectsUpdated = "September 18, 2026";
 
 export const projectGroups = [
   { id: "oss", name: "Open source software", label: "OSS" },
@@ -9,7 +9,7 @@ export const projectGroups = [
   { id: "cluster", name: "Cluster infrastructure", label: "Cluster work" },
 ] as const;
 
-type LabProject = {
+export type LabProject = {
   id: string;
   group: (typeof projectGroups)[number]["id"];
   name: string;
@@ -18,6 +18,7 @@ type LabProject = {
   resources: string[];
   target?: string;
   link?: { label: string; url: string };
+  links?: { label: string; url: string }[];
   lead?: string;
 };
 
@@ -49,10 +50,16 @@ export const labProjects: LabProject[] = [
     resources: ["N150"],
   },
   {
-    id: "esp32-fx", group: "oss", name: "esp32-fx", stage: "Experimental prototype",
-    description: "Runs the fx coding agent on native Linux on an ESP32-S3. WAMR runs the fx WebAssembly core, and a Seeed reTerminal E1001 e-paper display shows the agent’s response. Model inference currently uses a remote provider.",
-    resources: ["N150", "Seeed reTerminal E1001 with ESP32-S3"],
-    link: { label: "Explore the esp32-fx source on GitHub", url: "https://github.com/iammrduncan/esp32-fx" },
+    id: "typesafe-ai-benchmark", group: "oss", name: "TypeSafe AI Benchmark", stage: "Ongoing benchmarks",
+    description: "Comparing structured-output approaches and model behavior. New benchmarks and models will be added as they become available.",
+    resources: ["MacBook"],
+    link: { label: "Explore the benchmark on GitHub", url: "https://github.com/iammrduncan/typesafe-ai-benchmark" },
+  },
+  {
+    id: "esp32-needle-research", group: "oss", name: "ESP32 Needle 3 decode research", stage: "Active follow-on research",
+    description: "Automating experiments to improve decode speed while retaining eight layers and checking that output quality does not regress. This work builds on the completed ESP32 Needle 3 project; a separate research branch is not public yet.",
+    resources: ["Microbench", "pod-pi", "pi-autoresearch"],
+    link: { label: "Explore the ESP32 Needle 3 repository", url: "https://github.com/iammrduncan/esp32-needle-3" },
   },
   {
     id: "gpu-bench", group: "gpu", name: "Practical Small Model Usage", stage: "Active research",
@@ -64,6 +71,16 @@ export const labProjects: LabProject[] = [
     id: "deepseek-flash", group: "gpu", name: "DeepSeek Flash 4.1", stage: "Active research",
     description: "Work on running DeepSeek Flash 4.1 across a pair of DGX Sparks.",
     resources: ["2 × DGX Spark"],
+  },
+  {
+    id: "eight-gb-model-testing", group: "gpu", name: "8 GB model testing", stage: "Active research",
+    description: "Testing quantized Ternary Bonsai 2 27B on memory-constrained hardware. Model fit, decoding speed, and output quality are questions for the experiment, not published results.",
+    resources: ["BC-160", "GPU bench"],
+    links: [
+      { label: "Model files", url: "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf" },
+      { label: "Model announcement", url: "https://prismml.com/news/bonsai-2-27b" },
+      { label: "PrismML post", url: "https://x.com/PrismML/status/2100692248480596348" },
+    ],
   },
   {
     id: "agent-blade", group: "hardware", name: "Agent Blade", stage: "Prototype testing",
@@ -109,5 +126,26 @@ export const labProjects: LabProject[] = [
     description: "Preparing a gateway for models served from the cluster, including the DeepSeek Flash 4.1 work, so community members can try them using keys issued through compute grants.",
     resources: ["Cluster model-serving resources", "Gateway host not yet specified"],
     target: "Grant-based API access for community testing. The gateway and key distribution are not yet available.",
+  },
+];
+
+export const completedProjects: LabProject[] = [
+  {
+    id: "pod-pi", group: "oss", name: "pod-pi", stage: "Completed",
+    description: "A containerized pi setup for connecting devices to models hosted on the DGX Sparks. The repository is currently private, so the source link requires access.",
+    resources: ["DGX Sparks", "Client devices"],
+    link: { label: "pod-pi repository (private)", url: "https://github.com/hackers-in-the-loop/pod-pi" },
+  },
+  {
+    id: "esp32-fx", group: "oss", name: "esp32-fx", stage: "Completed prototype",
+    description: "Runs the fx coding agent on native Linux on an ESP32-S3. WAMR runs the fx WebAssembly core, and a Seeed reTerminal E1001 e-paper display shows the agent’s response. Model inference uses a remote provider.",
+    resources: ["Microbench", "Seeed reTerminal E1001 with ESP32-S3"],
+    link: { label: "Explore the esp32-fx source on GitHub", url: "https://github.com/iammrduncan/esp32-fx" },
+  },
+  {
+    id: "esp32-needle-3", group: "oss", name: "ESP32 Needle 3", stage: "Completed prototype",
+    description: "A Needle 3 agent running on ESP32 hardware. Follow-on decode-speed research continues separately on the active projects page.",
+    resources: ["Microbench"],
+    link: { label: "Explore ESP32 Needle 3 on GitHub", url: "https://github.com/iammrduncan/esp32-needle-3" },
   },
 ];

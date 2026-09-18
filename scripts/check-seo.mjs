@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 // Inspect the exported HTML: social crawlers must not need JavaScript or a server.
-const routes = ["", "why", "lab", "projects", "community"];
+const routes = ["", "why", "lab", "projects", "projects/active", "projects/completed", "community"];
 const titles = new Set();
 const descriptions = new Set();
 const urls = [];
@@ -47,5 +47,11 @@ assert.ok(readFileSync("out/robots.txt", "utf8").includes(`Sitemap: ${new URL("/
 for (const legacy of ["manifesto", "stack"]) {
   assert.match(readFileSync(`out/${legacy}/index.html`, "utf8"), /name="robots" content="noindex/);
 }
-assert.match(readFileSync("out/projects/index.html", "utf8"), /href="https:\/\/github.com\/iammrduncan\/esp32-fx"/);
-console.log("SEO export checks passed: five pages, social images, structured data, sitemap, robots, legacy exclusions, and project link.");
+const projectIndex = readFileSync("out/projects/index.html", "utf8");
+assert.match(projectIndex, /href="\/projects\/active"/);
+assert.match(projectIndex, /href="\/projects\/completed"/);
+assert.match(projectIndex, /TypeSafe AI Benchmark/);
+assert.match(projectIndex, /ESP32 Needle 3/);
+assert.match(readFileSync("out/projects/completed/index.html", "utf8"), /href="https:\/\/github.com\/iammrduncan\/esp32-fx"/);
+assert.match(readFileSync("out/projects/active/index.html", "utf8"), /Ternary Bonsai 2 27B/);
+console.log("SEO export checks passed: seven pages, social images, structured data, sitemap, robots, legacy exclusions, and project navigation.");

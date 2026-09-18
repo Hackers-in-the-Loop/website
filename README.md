@@ -17,7 +17,7 @@ The repository contains one production site:
 - `/`: Community purpose and ways to participate.
 - `/why`: Shared purpose and the founder's own story.
 - `/lab`: Hardware, compute requests, support, operating estimates, and the build journey.
-- `/projects`: Documented experiments and their hardware.
+- `/projects`: Directory of active and completed work; `/projects/active` and `/projects/completed` document leads and resources.
 - `/community`: Discord, contact links, and community rules.
 
 Legacy `/manifesto` and `/stack` links redirect to the matching current pages. Previous designs, review pages, and `/v2` route aliases remain available in Git history.

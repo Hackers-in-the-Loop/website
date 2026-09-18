@@ -63,7 +63,7 @@ cell(overview,'A28','Keeping the inventory current');overview.getRange('A28').fo
 note(overview,'A29','Use the item IDs and power-group IDs when updating equipment, quantities or estimates.');
 note(overview,'A30','Update amber cost inputs and the power rows, then review the totals and snapshot date.');
 note(overview,'A31','Add new records through the maintained data file and regenerate to extend all formulas.');
-note(overview,'A32','Prices are from September 11, 2026, with the network switch updated September 12.');
+note(overview,'A32','Reference prices: September 11–12, 2026; reported acquisition costs: September 18.');
 
 baseStyle(inventory,`A1:L${last+5}`);widths(inventory,{A:12,B:51,C:8,D:13,E:13,F:14,G:15,H:17,I:48,J:23,K:3,L:74});
 title(inventory,'Lab inventory');rule(inventory,'A3:J3');

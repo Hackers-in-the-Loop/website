@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "name": "Hackers in the Loop",
   "shortName": "HACK",
-  "snapshot": "2026-09-13",
+  "snapshot": "2026-09-18",
   "currency": "USD",
-  "priceDates": "2026-09-11; network switch updated 2026-09-12",
-  "costDefinition": "Estimated replacement cost using dated references and configuration allowances. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the published $119 line and $29,749 total. Recently acquired equipment with no price reference has blank cost inputs and is excluded from the priced subtotal. The full replacement estimate remains incomplete until those inputs are provided.",
+  "priceDates": "2026-09-11; network switch updated 2026-09-12; reported acquisition costs added 2026-09-18",
+  "costDefinition": "Priced inventory subtotal using dated replacement references, configuration allowances, and reported acquisition costs. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The KVM carries a visible $1 source-rounding adjustment to preserve the original published $119 line. Recently acquired equipment without a price has blank cost inputs and is excluded from the priced subtotal. The full replacement estimate remains incomplete until those inputs are provided.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -1159,6 +1159,55 @@
         "status": "Acquired",
         "description": "One 8 GB GPU added to the Lab inventory. Installation and availability for projects are not yet confirmed."
       }
+    },
+    {
+      "id": "EQ-54", "category": "Rack and shared", "name": "CyberPower PR2200LCDSL Smart App Sinewave UPS, 2070 VA / 1980 W, 7 outlets, AVR, mini-tower", "quantity": 1,
+      "unitCostUSD": 995, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 995, "lineTotalUSD": 995, "sourceLineTotalUSD": 995, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Reported acquisition cost", "sourceNote": "Acquisition and $995 cost reported by Shannon Duncan on September 18, 2026. Its rated output is not a wall-power measurement; installation and overhead are not yet modeled.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: replacement of or addition to the existing UPS branch is unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A 2070 VA / 1980 W sinewave UPS for the Lab. Installation and which loads it will protect have not yet been confirmed." }
+    },
+    {
+      "id": "EQ-55", "category": "Compute and add-ons", "name": "WEP 605D-III DC variable bench power supply, 60 V / 5 A", "quantity": 1,
+      "unitCostUSD": 69, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 69, "lineTotalUSD": 69, "sourceLineTotalUSD": 69, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Reported acquisition cost", "sourceNote": "Acquisition and $69 cost reported by Shannon Duncan on September 18, 2026. Output rating is not a wall-power measurement.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: bench use and duty cycle unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A precision DC supply for electronics experiments, prototyping, and bench work." }
+    },
+    {
+      "id": "EQ-56", "category": "Compute and add-ons", "name": "Luckfox Pico Mini A", "quantity": 1,
+      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price, configuration, and active use unconfirmed.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: configuration and active use unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A small development board for hardware and embedded experiments." }
+    },
+    {
+      "id": "EQ-57", "category": "Rack and shared", "name": "Sipeed NanoKVM", "quantity": 1,
+      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and installation unconfirmed.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: installation and power use unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A compact remote-access KVM device. Installation has not yet been confirmed." }
+    },
+    {
+      "id": "EQ-58", "category": "Compute and add-ons", "name": "Grove Vision AI Module V2", "quantity": 1,
+      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and project assignment unconfirmed.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: project assignment and active use unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An embedded vision module for future bench experiments." }
+    },
+    {
+      "id": "EQ-59", "category": "Compute and add-ons", "name": "Soldering iron setup", "quantity": 1,
+      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Model, price, and active power use unconfirmed.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: model and duty cycle unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A soldering setup for electronics assembly and repair." }
+    },
+    {
+      "id": "EQ-60", "category": "Compute and add-ons", "name": "M5Stack CoreS3 ESP32-S3 development kit", "quantity": 1,
+      "unitCostUSD": null, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": null, "lineTotalUSD": null, "sourceLineTotalUSD": null, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Not yet priced", "sourceNote": "Acquisition reported by Shannon Duncan on September 18, 2026. Price and project assignment unconfirmed.", "sourceUrls": [],
+      "powerGroupId": "none", "powerTreatment": "Not modeled: project assignment and active use unconfirmed",
+      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An ESP32-S3 development kit for embedded experiments." }
     }
   ],
   "powerGroups": [
@@ -1438,9 +1487,9 @@
     }
   ],
   "controls": {
-    "computeCostUSD": 28244,
-    "sharedCostUSD": 1505,
-    "totalCostUSD": 29749,
+    "computeCostUSD": 28313,
+    "sharedCostUSD": 2500,
+    "totalCostUSD": 30813,
     "corePowerW": [
       229.8,
       406.5,
@@ -1451,10 +1500,10 @@
       693,
       1413
     ],
-    "sourceTotalCostUSD": 29749,
+    "sourceTotalCostUSD": 30813,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 29748,
-    "unpricedItemCount": 1,
-    "costScope": "Priced equipment only; excludes NVIDIA P4"
+    "unadjustedRoundedTotalUSD": 30812,
+    "unpricedItemCount": 6,
+    "costScope": "Priced equipment only; six acquisitions have no supplied cost"
   }
 }
