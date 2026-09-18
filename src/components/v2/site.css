@@ -214,5 +214,6 @@
 .v2-project-choice h2 a:hover { color: var(--signal-deep); }
 .v2-project-choice > p:not(.v2-kicker) { color: var(--graphite); }
 .v2-project-choice ul { margin-top: 1.5rem; padding-left: 1.25rem; line-height: 1.7; }
+.v2-project-choice-cta { display: inline-block; margin-top: 1.75rem; }
 .v2-project-external + .v2-project-external { margin-left: 1.25rem; }
 @media (max-width: 700px) { .v2-project-choices { grid-template-columns: 1fr; } }
