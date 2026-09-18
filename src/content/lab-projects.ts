@@ -132,9 +132,9 @@ export const labProjects: LabProject[] = [
 export const completedProjects: LabProject[] = [
   {
     id: "pod-pi", group: "oss", name: "pod-pi", stage: "Completed",
-    description: "A containerized pi setup for connecting devices to models hosted on the DGX Sparks. The repository is currently private, so the source link requires access.",
-    resources: ["DGX Sparks", "Client devices"],
-    link: { label: "pod-pi repository (private)", url: "https://github.com/hackers-in-the-loop/pod-pi" },
+    description: "Named, persistent Pi coding workspaces in rootless Podman containers. They can connect to a configured model provider, including models hosted on the DGX Sparks; pod-pi does not host a model server.",
+    resources: ["Linux hosts", "Configured model provider, including DGX Sparks"],
+    link: { label: "Explore pod-pi on GitHub", url: "https://github.com/Hackers-in-the-Loop/pod-pi" },
   },
   {
     id: "esp32-fx", group: "oss", name: "esp32-fx", stage: "Completed prototype",
