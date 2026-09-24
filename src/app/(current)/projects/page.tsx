@@ -6,11 +6,11 @@ export const metadata = pageMetadata("Projects", "Explore active experiments and
 
 export default function ProjectsPage() {
   return <>
-    <PageIntro label="Projects" title="What we’re building."><p>Explore current work and projects that have reached a completed milestone. Each project page includes its lead, resources, and links where available.</p><p className="v2-note">Updated {projectsUpdated}.</p></PageIntro>
+    <PageIntro label="Projects" title="What we’re building."><p>Explore current work and projects that have finished, been retired, or joined other work. Each project page includes its lead, resources, and links where available.</p><p className="v2-note">Updated {projectsUpdated}.</p></PageIntro>
     <div className="v2-wrap v2-project-choices">
       {[
         { href: "/projects/active", title: "Active projects", cta: "View active projects", projects: labProjects, copy: "Experiments, research, and infrastructure work in progress." },
-        { href: "/projects/completed", title: "Completed projects", cta: "View completed projects", projects: completedProjects, copy: "Finished builds and prototypes. Follow-on work can still continue." },
+        { href: "/projects/completed", title: "Completed projects", cta: "View completed projects", projects: completedProjects, copy: "Finished research and builds, plus retired and merged efforts." },
       ].map(choice => <section className="v2-project-choice" key={choice.href}>
         <p className="v2-kicker">{choice.projects.length} projects</p>
         <h2><a href={choice.href}>{choice.title} →</a></h2>

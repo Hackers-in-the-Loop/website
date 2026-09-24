@@ -5,7 +5,7 @@
   "snapshot": "2026-09-23",
   "currency": "USD",
   "priceDates": "2026-09-11; network switch updated 2026-09-12; September 2026 acquisitions researched 2026-09-18 and 2026-09-23",
-  "costDefinition": "Estimated equipment cost using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. New GPU board-power references are separate from the configured-lab wall-power totals until installation and workload are confirmed.",
+  "costDefinition": "Estimated equipment cost using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. Newly acquired GPU and server power references are separate from the configured-lab wall-power totals until installation and workload are confirmed.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -1212,7 +1212,7 @@
       "sourceUrls": [{ "label": "Best Buy PNY RTX 5070 12 GB", "url": "https://www.bestbuy.com/product/pny-geforce-rtx-5070-12gb-oc-gddr7-pci-express-5-0-graphics-card-with-triple-fan-black/6620352" }],
       "powerGroupId": "none", "powerTreatment": "Two acquired cards; installation and simultaneous use unconfirmed. Excluded from current V100 dock scenario",
       "powerReference": { "summary": "250 W total graphics power per reference RTX 5070 card; 500 W for two only if both are loaded simultaneously", "basis": "NVIDIA RTX 5070 reference total graphics power is 250 W per card, not measured wall draw. Partner boards can differ. Host, dock and power-supply losses are additional; the Lab's single dock cannot run both cards at once.", "sourceUrls": [{ "label": "NVIDIA RTX 5070 family specifications", "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "Two 12 GB GPUs added to the Lab inventory. Their installation and availability for compute grants are not yet confirmed." }
+      "inventoryNote": "Two 12 GB GPUs added September 23, 2026. Installation and availability for compute grants have not been confirmed."
     },
     {
       "id": "EQ-62", "category": "Compute and add-ons", "name": "NVIDIA GeForce RTX 4070 SUPER, 12 GB GDDR6X", "quantity": 1,
@@ -1221,7 +1221,7 @@
       "sourceUrls": [{ "label": "Walmart PNY RTX 4070 SUPER 12 GB", "url": "https://www.walmart.com/ip/5265483626" }],
       "powerGroupId": "none", "powerTreatment": "Acquired swap card; installation unconfirmed. Excluded from current V100 dock scenario",
       "powerReference": { "summary": "220 W graphics card power for the NVIDIA reference RTX 4070 SUPER", "basis": "NVIDIA specifies 220 W graphics card power for the reference design, not measured wall draw for this acquired board. Host, dock and power-supply losses are additional; a partner board can differ.", "sourceUrls": [{ "label": "NVIDIA RTX 4070 family specifications", "url": "https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4070-family/" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "One 12 GB GPU added to the Lab inventory. Installation and availability for compute grants are not yet confirmed." }
+      "inventoryNote": "One 12 GB GPU added September 23, 2026. Installation and availability for compute grants have not been confirmed."
     },
     {
       "id": "EQ-63", "category": "Compute and add-ons", "name": "Intel Arc Pro B70, 32 GB GDDR6", "quantity": 1,
@@ -1230,7 +1230,16 @@
       "sourceUrls": [{ "label": "Newegg ASRock Arc Pro B70 CT 32 GB", "url": "https://www.newegg.com/asrock-b70-ct-intel-arc-pro-b70-32gb-graphics-card/p/N82E16814930149" }],
       "powerGroupId": "none", "powerTreatment": "Acquired card; exact board and installation unconfirmed. Excluded from current V100 dock scenario",
       "powerReference": { "summary": "160-290 W board-power range across Intel Arc Pro B70 designs; Intel-branded card is 230 W", "basis": "Intel publishes 160-290 W for B70 designs and 230 W for the Intel-branded card. The acquired board is unconfirmed, so no single wattage is assigned. These are card specifications, not measured Lab wall draw; host and power-supply losses are additional.", "sourceUrls": [{ "label": "Intel Arc Pro B70 datasheet", "url": "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2026-03/datasheet-b70-gpu.pdf" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "One 32 GB B70 GPU added to the Lab inventory. Exact board, installation, and availability for compute grants are not yet confirmed." }
+      "inventoryNote": "One 32 GB B70 GPU added September 23, 2026. Exact board, installation, and availability for compute grants have not been confirmed."
+    },
+    {
+      "id": "EQ-64", "category": "Compute and add-ons", "name": "TYAN FT77C-B7079 GPU server, 2 × Xeon E5-2660 v3, 128 GB RAM", "quantity": 1,
+      "unitCostUSD": 1299.88, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 1300, "lineTotalUSD": 1300, "sourceLineTotalUSD": 1300, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable used-server US retail reference", "sourceNote": "Acquired and reported September 23, 2026. Purchase price was not supplied. An eBay listing with the stated TYAN FT77CB7079, dual E5-2660 v3, and 128 GB RAM configuration displayed $1,299.88 with free domestic shipping when checked September 23. The listing's item-specific motherboard identifiers appear inconsistent with its title, so this is a provisional market reference rather than confirmation of the acquired unit or amount paid.",
+      "sourceUrls": [{ "label": "eBay used TYAN FT77CB7079 dual E5-2660 v3, 128 GB listing", "url": "https://www.ebay.com/itm/188585858524" }],
+      "powerGroupId": "none", "powerTreatment": "Acquired 4U server; installation, GPU population, input voltage, and measured wall draw unconfirmed. Excluded from configured-lab power totals",
+      "powerReference": { "summary": "Two CPUs rated 105 W TDP each. Chassis PSU output capacity: 2,000 W on 100-127 V AC or 3,200 W on 200-240 V AC; actual wall draw is unknown", "basis": "Intel specifies 105 W TDP per E5-2660 v3. TYAN specifies 2,000 W or 3,200 W power-supply output capacity depending on input voltage. CPU TDP is not measured electrical consumption, and PSU capacity is not server draw. Fans, memory, storage, GPU selection, utilization, and PSU losses determine actual wall power. Meter the installed system before revising Lab or hosting power estimates.", "sourceUrls": [{ "label": "Intel Xeon E5 v3 family specifications", "url": "https://www.intel.com/content/www/us/en/ark/products/series/78583/intel-xeon-processor-e5-v3-family.html" }, { "label": "TYAN FT77C-B7079 manual", "url": "https://ftp1.tyan.com/pub/doc/FT77C-B7079_UG_V1.0q.pdf" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "A 4U GPU server with two Xeon E5-2660 v3 processors and 128 GB RAM. Installation and GPU assignments for the updated bench are not yet documented." }
     }
   ],
   "powerGroups": [
@@ -1510,9 +1519,9 @@
     }
   ],
   "controls": {
-    "computeCostUSD": 32331,
+    "computeCostUSD": 33631,
     "sharedCostUSD": 2613,
-    "totalCostUSD": 34944,
+    "totalCostUSD": 36244,
     "corePowerW": [
       229.8,
       406.5,
@@ -1523,10 +1532,10 @@
       693,
       1413
     ],
-    "sourceTotalCostUSD": 34944,
+    "sourceTotalCostUSD": 36244,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 34943,
+    "unadjustedRoundedTotalUSD": 36243,
     "unpricedItemCount": 0,
-    "costScope": "Sixty-three priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
+    "costScope": "Sixty-four priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
   }
 }

@@ -2,7 +2,7 @@
 
 The public workbook is `public/lab/hack-lab-inventory.xlsx`.
 
-Use `src/content/lab-inventory.json` as the maintained registry. It contains 63 priced equipment records, stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. Some prices are explicit comparable-item allowances because the acquired model or variant is unknown. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
+Use `src/content/lab-inventory.json` as the maintained registry. It contains 64 priced equipment records, stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. Some prices are explicit comparable-item allowances because the acquired model or variant is unknown. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
 
 The site's power calculator reads this same registry through `src/lib/lab-power.ts`. Do not maintain a separate power estimate file.
 
@@ -38,7 +38,7 @@ EQ-53 is one NVIDIA P4 8 GB reported September 13. EQ-54 through EQ-60 are the U
 
 Each unit price, its detailed basis, and source URLs are in `src/content/lab-inventory.json` and the workbook. Prices exclude tax and shipping except the original touchscreen shipping line. The rounded line costs above sum to $1,496 for these eight acquisitions.
 
-EQ-61 through EQ-63 are the four cards reported September 23. The exact board models and paid prices were not supplied; Shannon asked to use comparable cards for the GeForce GPUs. The B70 is provisionally identified as an Intel Arc Pro B70. The current retail references below were checked September 23. Card power figures describe GPU board designs, not the Lab's wall draw. All four remain outside the existing one-V100 dock power scenario until their installation and use are confirmed.
+EQ-61 through EQ-63 are the four cards reported September 23. They have moved into the permanent inventory and Lab hardware summary. The exact board models and paid prices were not supplied; Shannon asked to use comparable cards for the GeForce GPUs. The B70 is provisionally identified as an Intel Arc Pro B70. The retail references below were checked September 23. Card power figures describe GPU board designs, not the Lab's wall draw. All four remain outside the existing one-V100 dock power scenario until their installation and use are confirmed.
 
 | ID | Quantity | Cost reference (USD) | Power reference | Sources |
 | --- | ---: | ---: | --- | --- |
@@ -48,18 +48,22 @@ EQ-61 through EQ-63 are the four cards reported September 23. The exact board mo
 
 The new cards add $3,699 in rounded reference cost. Running both 5070s together would be 500 W of reference card power before host and power-supply losses, but the documented Lab configuration has one GPU dock and does not establish simultaneous operation. The B70 design wattage cannot be narrowed until its board model is identified.
 
+EQ-64 is the newly acquired TYAN FT77C-B7079 4U GPU server with two Xeon E5-2660 v3 processors and 128 GB RAM. The [used eBay configuration listing](https://www.ebay.com/itm/188585858524) showed $1,299.88 when checked September 23, rounded to $1,300 in the inventory. It is a comparable market reference, not Shannon's reported purchase price. The listing's item-specific motherboard identifiers conflict with its title, so the exact acquired variant remains to be verified.
+
+[Intel rates each E5-2660 v3 at 105 W TDP](https://www.intel.com/content/www/us/en/ark/products/series/78583/intel-xeon-processor-e5-v3-family.html). The [TYAN manual](https://ftp1.tyan.com/pub/doc/FT77C-B7079_UG_V1.0q.pdf) gives the chassis power supplies 2,000 W output capacity on 100-127 V AC or 3,200 W on 200-240 V AC. Those are component thermal and PSU output ratings, not measured wall draw. Actual server consumption depends on fans, memory, storage, GPUs, load, and power-supply losses. Installation, input voltage, GPU population, and operating draw have not been confirmed; this server is excluded from the existing Lab power scenarios until it is metered.
+
 ## Rounding reconciliation
 
-The original published extended lines total $29,749: $28,244 compute and $1,505 shared equipment. The eight earlier additions brought the reference total to $31,245. The four GPUs add $3,699, bringing the current cost estimate to $34,944: $32,331 compute and $2,613 shared equipment. The KVM reference is $118.47 per unit, but its published line is $119. Applying conventional nearest-dollar rounding alone produces $34,943 overall. The workbook preserves the original published KVM line using a visible $1 adjustment. The unit price remains $118.47. All other lines round normally. The touchscreen has a separate $60 shipping input.
+The original published extended lines total $29,749: $28,244 compute and $1,505 shared equipment. The eight earlier additions brought the reference total to $31,245. Four GPUs added $3,699, and the TYAN server adds a $1,300 market reference, bringing the current cost estimate to $36,244: $33,631 compute and $2,613 shared equipment. The KVM reference is $118.47 per unit, but its published line is $119. Applying conventional nearest-dollar rounding alone produces $36,243 overall. The workbook preserves the original published KVM line using a visible $1 adjustment. The unit price remains $118.47. All other lines round normally. The touchscreen has a separate $60 shipping input.
 
 ## QA completed
 
-- The original 52 priced cost records match the source list, including 14 GPU cards split into test rotation and spares; eleven later equipment records have separate price and power references.
+- The original 52 priced cost records match the source list, including 14 GPU cards split into test rotation and spares; twelve later equipment records have separate price and power references.
 - All 21 power groups match the source model and current site data at creation.
 - Core: 229.8 W idle, 406.5 W working, 907 W heavy.
 - Whole lab: 339.3 W idle, 693 W working, 1,413 W heavy.
 - Formula tests covered quantity updates, zero price, missing price, changed power and missing power. Missing inputs remain visible instead of becoming zero totals.
-- The generator extends formulas for all 63 registry records and reconciles the $34,944 cost estimate to the registry controls. Unknown exact models remain marked provisional rather than blank or silently treated as actual purchase costs.
+- The generator extends formulas for all 64 registry records and reconciles the $36,244 cost estimate to the registry controls. Unknown exact models remain marked provisional rather than blank or silently treated as actual purchase costs.
 - Every affected sheet was rendered and visually checked. Detail tables have frozen headers and identifying columns, native filters, typed currency/power values, and explicit component inclusion notes.
 - Exported XLSX contains formulas and cached totals, no error cells, and no old abbreviation or em dashes. XLSX structure and panes were inspected. Recalculation was verified with Artifact Tool; desktop Excel was not launched.
 

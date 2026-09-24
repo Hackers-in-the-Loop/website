@@ -8,11 +8,11 @@ export const metadata = pageMetadata("Active Projects", "Current Hackers in the 
 
 export default function ActiveProjectsPage() {
   return <>
-    <PageIntro label="Projects / Active" title="What’s on the workbench."><p>Open source software, model research, hardware experiments, and the infrastructure that supports them. Hardware listed here is shared across projects; it does not indicate reserved capacity or available allocations.</p><p className="v2-note">Updated {projectsUpdated}.</p><div className="v2-actions"><a className="v2-button" href={siteConfig.githubUrl} target="_blank" rel="noreferrer">Explore our GitHub ↗</a><a className="v2-link" href="/projects">All projects →</a></div></PageIntro>
+    <PageIntro label="Projects / Active" title="What’s on the workbench."><p>Open source software, model research, hardware experiments, cluster infrastructure, and a book series. Hardware listed here is shared across projects; it does not indicate reserved capacity or available allocations.</p><p className="v2-note">Updated {projectsUpdated}.</p><div className="v2-actions"><a className="v2-button" href={siteConfig.githubUrl} target="_blank" rel="noreferrer">Explore our GitHub ↗</a><a className="v2-link" href="/projects">All projects →</a></div></PageIntro>
     <div className="v2-wrap">
       <nav className="v2-project-index" aria-label="Project groups">{projectGroups.map(group => <a key={group.id} href={`#${group.id}`}>{group.label} ↓</a>)}<a href="/lab#hardware">Explore all Lab hardware →</a></nav>
       {projectGroups.map(group => <section className="v2-project-group" id={group.id} key={group.id} aria-labelledby={`${group.id}-title`}>
-        <div className="v2-project-group-heading"><h2 id={`${group.id}-title`}>{group.name}</h2><p className="v2-kicker">{labProjects.filter(project => project.group === group.id).length} projects</p></div>
+        <div className="v2-project-group-heading"><h2 id={`${group.id}-title`}>{group.name}</h2><p className="v2-kicker">{labProjects.filter(project => project.group === group.id).length} {labProjects.filter(project => project.group === group.id).length === 1 ? "project" : "projects"}</p></div>
         <ProjectList projects={labProjects.filter(project => project.group === group.id)} />
       </section>)}
     </div>

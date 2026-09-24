@@ -1,12 +1,13 @@
 // Project descriptions and hardware assignments supplied by Shannon Duncan.
 // These records describe work in progress, not reservations or live utilization.
-export const projectsUpdated = "September 18, 2026";
+export const projectsUpdated = "September 23, 2026";
 
 export const projectGroups = [
   { id: "oss", name: "Open source software", label: "OSS" },
   { id: "gpu", name: "GPU & model research", label: "GPU work" },
   { id: "hardware", name: "Hardware experiments", label: "Hardware" },
   { id: "cluster", name: "Cluster infrastructure", label: "Cluster work" },
+  { id: "books", name: "Books & learning", label: "Books" },
 ] as const;
 
 export type LabProject = {
@@ -24,42 +25,14 @@ export type LabProject = {
 
 export const labProjects: LabProject[] = [
   {
-    id: "microwasm", group: "oss", name: "microWASM", stage: "In development",
-    description: "Sandboxes and micro VMs built on WebAssembly, with durable state. The goal is fast, portable execution across machines and environments.",
-    resources: ["MS-A2"],
-  },
-  {
-    id: "threaded", group: "oss", name: "threaded", stage: "In development",
-    description: "Combines microWASM and celld to multiplex agent deployments. Designed to scale from a single CPU machine to full cloud clusters.",
-    resources: ["MS-A2"],
-  },
-  {
     id: "fxclaw", group: "oss", name: "fxClaw", stage: "In development",
-    description: "An agent system in the vein of OpenClaw, Hermes, PicoClaw, and NanoClaw, built in Zig. It hosts agents natively through microWASM, with fx.sh as the default foundation.",
+    description: "An agent system in the vein of OpenClaw, Hermes, PicoClaw, and NanoClaw, built in Zig with fx.sh as its default foundation. Its sandbox and runtime approach is being revisited after microWASM was retired.",
     resources: ["MS-A2"],
-  },
-  {
-    id: "freeinferencing", group: "oss", name: "freeinferencing.com", stage: "Ongoing development",
-    description: "Work on freeinferencing.com and its related open source projects.",
-    resources: ["MS-A2"],
-    link: { label: "Visit freeinferencing.com", url: "http://freeinferencing.com" },
   },
   {
     id: "zd-web-server", group: "oss", name: "ZD Web Server", stage: "In development",
     description: "Updating the ZD harness and editor to serve over the web, with a headless way to work with agent projects across the cluster.",
     resources: ["N150"],
-  },
-  {
-    id: "typesafe-ai-benchmark", group: "oss", name: "TypeSafe AI Benchmark", stage: "Ongoing benchmarks",
-    description: "Comparing structured-output approaches and model behavior. New benchmarks and models will be added as they become available.",
-    resources: ["MacBook"],
-    link: { label: "Explore the benchmark on GitHub", url: "https://github.com/iammrduncan/typesafe-ai-benchmark" },
-  },
-  {
-    id: "esp32-needle-research", group: "oss", name: "ESP32 Needle 3 decode research", stage: "Active follow-on research",
-    description: "Automating experiments to improve decode speed while retaining eight layers and checking that output quality does not regress. This work builds on the completed ESP32 Needle 3 project; a separate research branch is not public yet.",
-    resources: ["Microbench", "pod-pi", "pi-autoresearch"],
-    link: { label: "Explore the ESP32 Needle 3 repository", url: "https://github.com/iammrduncan/esp32-needle-3" },
   },
   {
     id: "gpu-bench", group: "gpu", name: "Practical Small Model Usage", stage: "Active research",
@@ -68,9 +41,9 @@ export const labProjects: LabProject[] = [
     target: "Run 2B–30B-parameter models well on systems with 16 GB of memory or less. These are research goals, not published benchmarks.",
   },
   {
-    id: "deepseek-flash", group: "gpu", name: "DeepSeek Flash 4.1", stage: "Active research",
-    description: "Work on running DeepSeek Flash 4.1 across a pair of DGX Sparks.",
-    resources: ["2 × DGX Spark"],
+    id: "gpu-bench-server", group: "gpu", name: "Updated GPU Bench", stage: "Hardware build",
+    description: "Bringing an acquired TYAN FT77C-B7079 4U GPU server into the Lab's GPU bench. It has two Xeon E5-2660 v3 processors and 128 GB RAM. Installation, card placement, and operating measurements are not yet documented.",
+    resources: ["TYAN FT77C-B7079 server", "GPU cards on hand; assignments not yet documented"],
   },
   {
     id: "eight-gb-model-testing", group: "gpu", name: "8 GB model testing", stage: "Active research",
@@ -95,14 +68,8 @@ export const labProjects: LabProject[] = [
     target: "Explore whether a single card could eventually run a 12B-parameter model at around 13,000 tokens per second. This is a long-term ambition, not an achieved result.",
   },
   {
-    id: "wrist-agent", group: "hardware", name: "An agent on your wrist", stage: "In development",
-    description: "An ESP32-S3 watch or wrist-worn system designed to keep a personal autonomous agent with you.",
-    resources: ["K15", "ESP32-S3 wearable"],
-    target: "One autonomous agent running around the clock. Runtime and battery life are still being explored.",
-  },
-  {
     id: "wrist-pet", group: "hardware", name: "A tiny pet on your wrist", stage: "In development",
-    description: "A Tamagotchi-style watch or wristband game Shannon is building with his daughter. She is designing it and working with Claude Code and an ESP32-S3 touchscreen to bring it to life.",
+    description: "A Tamagotchi-style watch or wristband game Shannon is building with his daughter. She is designing it and working with Claude Code and an ESP32-S3 touchscreen. The separate wrist-agent idea has been folded into this project.",
     resources: ["Microbench", "ESP32-S3 with touchscreen"],
     lead: "Shannon’s Daughter",
   },
@@ -112,20 +79,22 @@ export const labProjects: LabProject[] = [
     resources: ["N150 / controller", "Cluster HUD"],
   },
   {
-    id: "gpu-cooling", group: "cluster", name: "GPU cooling shrouds", stage: "In development",
-    description: "Building new cooling shrouds for the Lab’s P100, P4, and V100 cards.",
-    resources: ["P100, P4, and V100 GPU cards"],
-  },
-  {
-    id: "provisioning", group: "cluster", name: "Community provisioning", stage: "Planning",
-    description: "Planning how to give people secure access through dynamic VLANs, virtual machines, and attached hardware. Isolation and provisioning arrangements are still being worked out.",
+    id: "provisioning", group: "cluster", name: "Cluster provisioning", stage: "Active development",
+    description: "Building the provisioning and isolation needed to give people secure access to Lab resources. The repository tracks the work; public self-service access is not yet available.",
     resources: ["Cluster network, VM hosts, and attached hardware", "Specific allocations not yet set"],
+    link: { label: "Explore hack-lab on GitHub", url: "https://github.com/Hackers-in-the-Loop/hack-lab" },
   },
   {
     id: "litellm-gateway", group: "cluster", name: "LiteLLM gateway", stage: "Planned community access",
     description: "Preparing a gateway for models served from the cluster, including the DeepSeek Flash 4.1 work, so community members can try them using keys issued through compute grants.",
     resources: ["Cluster model-serving resources", "Gateway host not yet specified"],
     target: "Grant-based API access for community testing. The gateway and key distribution are not yet available.",
+  },
+  {
+    id: "book-series", group: "books", name: "From Models to Custom Silicon", stage: "Book I in production",
+    description: "A five-book engineering series: How Modern AI Models Work; Training, Compressing, and Quantizing Models; Embedded Inference Systems; FPGA Accelerators and Model-Hardware Co-Design; and From RTL to an ASIC. Only Book I is in production. The other four are planned and have not been scaffolded.",
+    resources: ["Writing and reader-review workspace", "Lab experiments as technical context"],
+    target: "Book I has 23 packages internally ready; integrated reader review is pending.",
   },
 ];
 
@@ -144,8 +113,51 @@ export const completedProjects: LabProject[] = [
   },
   {
     id: "esp32-needle-3", group: "oss", name: "ESP32 Needle 3", stage: "Completed prototype",
-    description: "A Needle 3 agent running on ESP32 hardware. Follow-on decode-speed research continues separately on the active projects page.",
+    description: "A Needle 3 agent running on ESP32 hardware. The separate decode-speed research phase has also been completed.",
     resources: ["Microbench"],
     link: { label: "Explore ESP32 Needle 3 on GitHub", url: "https://github.com/iammrduncan/esp32-needle-3" },
+  },
+  {
+    id: "deepseek-flash", group: "gpu", name: "DeepSeek Flash 4.1", stage: "Completed research",
+    description: "The research phase using a pair of DGX Sparks is complete. Performance results have not been supplied for publication here.",
+    resources: ["2 × DGX Spark"],
+  },
+  {
+    id: "gpu-cooling", group: "cluster", name: "GPU cooling shrouds", stage: "Completed build",
+    description: "Cooling shrouds for the Lab's P100, P4, and V100 cards are complete. Installation and measured cooling results have not been documented here.",
+    resources: ["P100, P4, and V100 GPU cards"],
+  },
+  {
+    id: "esp32-needle-research", group: "oss", name: "ESP32 Needle 3 decode research", stage: "Completed research",
+    description: "A follow-on phase explored faster decode while retaining eight layers and checking output quality. The work is complete; performance findings have not been supplied for publication here.",
+    resources: ["Microbench", "pod-pi", "pi-autoresearch"],
+    link: { label: "Explore the ESP32 Needle 3 repository", url: "https://github.com/iammrduncan/esp32-needle-3" },
+  },
+  {
+    id: "typesafe-ai-benchmark", group: "oss", name: "TypeSafe AI Benchmark", stage: "Completed",
+    description: "A completed benchmark project comparing structured-output approaches and model behavior.",
+    resources: ["MacBook"],
+    link: { label: "Explore the benchmark on GitHub", url: "https://github.com/iammrduncan/typesafe-ai-benchmark" },
+  },
+  {
+    id: "freeinferencing", group: "oss", name: "freeinferencing.com", stage: "Completed",
+    description: "The freeinferencing.com project and its related work are complete.",
+    resources: ["MS-A2"],
+    link: { label: "Visit freeinferencing.com", url: "http://freeinferencing.com" },
+  },
+  {
+    id: "microwasm", group: "oss", name: "microWASM", stage: "Abandoned",
+    description: "Development stopped. Existing WebAssembly runtimes such as Wasmer, Wasmtime, nodewasm, and wasmCloud are better options for this work.",
+    resources: ["MS-A2"],
+  },
+  {
+    id: "threaded", group: "oss", name: "threaded", stage: "Abandoned",
+    description: "Development stopped in favor of Google's agent-substrate project.",
+    resources: ["MS-A2"],
+  },
+  {
+    id: "wrist-agent", group: "hardware", name: "An agent on your wrist", stage: "Merged into another project",
+    description: "The standalone wrist-agent idea was folded into A tiny pet on your wrist, which continues as an active project led by Shannon's daughter.",
+    resources: ["K15", "ESP32-S3 wearable"],
   },
 ];
