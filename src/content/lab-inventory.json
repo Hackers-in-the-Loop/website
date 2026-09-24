@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "name": "Hackers in the Loop",
   "shortName": "HACK",
-  "snapshot": "2026-09-18",
+  "snapshot": "2026-09-23",
   "currency": "USD",
-  "priceDates": "2026-09-11; network switch updated 2026-09-12; recent acquisitions researched 2026-09-18",
-  "costDefinition": "Estimated equipment replacement/reference total using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. Recent-acquisition power references are separate from the configured-lab power totals until installation and workload are confirmed.",
+  "priceDates": "2026-09-11; network switch updated 2026-09-12; September 2026 acquisitions researched 2026-09-18 and 2026-09-23",
+  "costDefinition": "Estimated equipment cost using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. New GPU board-power references are separate from the configured-lab wall-power totals until installation and workload are confirmed.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -1154,68 +1154,83 @@
       "sourceUrls": [{ "label": "Newegg refurbished Tesla P4 listing", "url": "https://www.newegg.com/p/pl?N=100006519+100&d=nvidia+tesla+p4+8gb" }],
       "powerGroupId": "none",
       "powerTreatment": "Power reference only; not in configured-lab totals until installed",
-      "powerReference": { "summary": "50 or 75 W board-power design; idle draw and host overhead unknown", "basis": "NVIDIA Tesla P4 datasheet. These are design power options, not measured draw for this card.", "sourceUrls": [{ "label": "NVIDIA Tesla P4 datasheet", "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/184457-Tesla-P4-Datasheet-NV-Final-Letter-Web.pdf" }] },
-      "recentAcquisition": {
-        "reportedOn": "2026-09-13",
-        "status": "Acquired",
-        "description": "One 8 GB GPU added to the Lab inventory. Installation and availability for projects are not yet confirmed."
-      }
+      "powerReference": { "summary": "50 or 75 W board-power design; idle draw and host overhead unknown", "basis": "NVIDIA Tesla P4 datasheet. These are design power options, not measured draw for this card.", "sourceUrls": [{ "label": "NVIDIA Tesla P4 datasheet", "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/184457-Tesla-P4-Datasheet-NV-Final-Letter-Web.pdf" }] }
     },
     {
       "id": "EQ-54", "category": "Rack and shared", "name": "CyberPower PR2200LCDSL Smart App Sinewave UPS, 2070 VA / 1980 W, 7 outlets, AVR, mini-tower", "quantity": 1,
       "unitCostUSD": 995, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 995, "lineTotalUSD": 995, "sourceLineTotalUSD": 995, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Owner-reported price, checked against current listing", "sourceNote": "Shannon reported $995 on September 18, 2026; DigiKey listed the exact model at $995.95. The owner-reported amount is retained as the cost reference. Installation and protected loads are unconfirmed.", "sourceUrls": [{ "label": "DigiKey CyberPower PR2200LCDSL", "url": "https://www.digikey.com/en/products/detail/cyber-power-systems-usa-inc/PR2200LCDSL/21527902" }, { "label": "CyberPower specifications and MSRP", "url": "https://www.cyberpowersystems.com/product/ups/smart-app-sinewave/pr2200lcdsl/" }],
       "powerGroupId": "none", "powerTreatment": "UPS overhead reference only; do not add rated output as consumption or double-count the existing UPS",
-      "powerReference": { "summary": "6 W at no load; about 98% efficient at 25% output load and 99% at 50%", "basis": "ENERGY STAR test for PR2200LCDSL. Output capacity is 1,980 W, not wall draw. Overhead depends on attached load and whether this UPS replaces or supplements the 750 VA unit; battery recharge is excluded.", "sourceUrls": [{ "label": "ENERGY STAR qualified UPS list, PR2200LCDSL", "url": "https://downloads.energystar.gov/bi/qplist/Uninterruptible_Power_Supplies_Product_List.pdf" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A 2070 VA / 1980 W sinewave UPS for the Lab. Installation and which loads it will protect have not yet been confirmed." }
+      "powerReference": { "summary": "6 W at no load; about 98% efficient at 25% output load and 99% at 50%", "basis": "ENERGY STAR test for PR2200LCDSL. Output capacity is 1,980 W, not wall draw. Overhead depends on attached load and whether this UPS replaces or supplements the 750 VA unit; battery recharge is excluded.", "sourceUrls": [{ "label": "ENERGY STAR qualified UPS list, PR2200LCDSL", "url": "https://downloads.energystar.gov/bi/qplist/Uninterruptible_Power_Supplies_Product_List.pdf" }] }
     },
     {
       "id": "EQ-55", "category": "Compute and add-ons", "name": "WEP 605D-III DC variable bench power supply, 60 V / 5 A", "quantity": 1,
       "unitCostUSD": 69, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 69, "lineTotalUSD": 69, "sourceLineTotalUSD": 69, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Owner-reported price, checked against current listing", "sourceNote": "Shannon reported $69 on September 18, 2026; a current WEP 605D-III listing was $69.98. The owner-reported amount is retained as the cost reference.", "sourceUrls": [{ "label": "WEP 605D-III US listing", "url": "https://www.shopabunda.com/products/wep-605d-iii-dc-variable-power-supply-60-00v-5-000a-high-precision-bench-lab-power-supply-with-alligator-clips-for-anodizing-kit-electroplating-arduino-breadboard" }],
       "powerGroupId": "none", "powerTreatment": "Power reference only; bench duty cycle is not part of current whole-lab scenario",
-      "powerReference": { "summary": "Up to 300 W DC output; roughly 375 W AC input at full output if efficiency is 80%", "basis": "60 V × 5 A gives 300 W maximum output. The 80% conversion-efficiency assumption comes from a comparable 60 V / 5 A bench supply, not a published WEP measurement. Actual wall draw follows the connected load.", "sourceUrls": [{ "label": "Comparable 60 V / 5 A bench supply efficiency datasheet", "url": "https://www.farnell.com/datasheets/4459704.pdf" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A precision DC supply for electronics experiments, prototyping, and bench work." }
+      "powerReference": { "summary": "Up to 300 W DC output; roughly 375 W AC input at full output if efficiency is 80%", "basis": "60 V × 5 A gives 300 W maximum output. The 80% conversion-efficiency assumption comes from a comparable 60 V / 5 A bench supply, not a published WEP measurement. Actual wall draw follows the connected load.", "sourceUrls": [{ "label": "Comparable 60 V / 5 A bench supply efficiency datasheet", "url": "https://www.farnell.com/datasheets/4459704.pdf" }] }
     },
     {
       "id": "EQ-56", "category": "Compute and add-ons", "name": "Luckfox Pico Mini A", "quantity": 1,
       "unitCostUSD": 11.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 12, "lineTotalUSD": 12, "sourceLineTotalUSD": 12, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Dated base-variant price reference", "sourceNote": "Luckfox listed the Mini A base board at $11.99 on September 18, 2026. Flash/header options cost up to $18.99; the acquired variant is not specified.", "sourceUrls": [{ "label": "Luckfox Pico Mini A", "url": "https://www.luckfox.com/Luckfox-Pico-Mini-A" }],
       "powerGroupId": "none", "powerTreatment": "Power reference only; configuration and active use unconfirmed",
-      "powerReference": { "summary": "About 1-2 W planning allowance when powered by USB-C; no model-specific draw published", "basis": "Luckfox documents USB-C power but does not publish a board-level watt figure. This is an explicit low-power board allowance, not a measured specification; connected USB peripherals and cameras add load.", "sourceUrls": [{ "label": "Luckfox Pico Mini A product page", "url": "https://www.luckfox.com/Luckfox-Pico-Mini-A" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A small development board for hardware and embedded experiments." }
+      "powerReference": { "summary": "About 1-2 W planning allowance when powered by USB-C; no model-specific draw published", "basis": "Luckfox documents USB-C power but does not publish a board-level watt figure. This is an explicit low-power board allowance, not a measured specification; connected USB peripherals and cameras add load.", "sourceUrls": [{ "label": "Luckfox Pico Mini A product page", "url": "https://www.luckfox.com/Luckfox-Pico-Mini-A" }] }
     },
     {
       "id": "EQ-57", "category": "Rack and shared", "name": "Sipeed NanoKVM", "quantity": 1,
       "unitCostUSD": 112.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 113, "lineTotalUSD": 113, "sourceLineTotalUSD": 113, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Provisional Cube Full-class US replacement reference", "sourceNote": "The exact NanoKVM variant was not specified. A US Cube Full Kit listing was $112.99 on September 18, 2026. This is a provisional comparable reference, not the acquired device's confirmed variant or purchase price; other variants cost less or more.", "sourceUrls": [{ "label": "Sipeed NanoKVM product family", "url": "https://github.com/sipeed/NanoKVM" }, { "label": "US Cube Full Kit retailer listing", "url": "https://www.newegg.com/p/3C6-05G2-02VG1?Item=9SIC5T7KZA4026" }],
       "powerGroupId": "none", "powerTreatment": "Provisional Cube-class reference only; variant and installation unconfirmed",
-      "powerReference": { "summary": "About 1 W for NanoKVM Cube; other NanoKVM variants can differ", "basis": "Sipeed's NanoKVM Cube quick-start states about 1 W at 5 V. This cannot be treated as the acquired device's draw until the variant is identified.", "sourceUrls": [{ "label": "Sipeed NanoKVM Cube quick start", "url": "https://wiki.sipeed.com/hardware/en/kvm/NanoKVM/quick_start.html" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A compact remote-access KVM device. Installation has not yet been confirmed." }
+      "powerReference": { "summary": "About 1 W for NanoKVM Cube; other NanoKVM variants can differ", "basis": "Sipeed's NanoKVM Cube quick-start states about 1 W at 5 V. This cannot be treated as the acquired device's draw until the variant is identified.", "sourceUrls": [{ "label": "Sipeed NanoKVM Cube quick start", "url": "https://wiki.sipeed.com/hardware/en/kvm/NanoKVM/quick_start.html" }] }
     },
     {
       "id": "EQ-58", "category": "Compute and add-ons", "name": "Grove Vision AI Module V2", "quantity": 1,
       "unitCostUSD": 16.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 17, "lineTotalUSD": 17, "sourceLineTotalUSD": 17, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Dated manufacturer price reference", "sourceNote": "Seeed Studio listed the bare Grove Vision AI Module V2 at $16.99 on September 18, 2026. A camera or host board is not included in this line.", "sourceUrls": [{ "label": "Seeed Studio Grove Vision AI Module V2", "url": "https://www.seeedstudio.com/Grove-Vision-AI-Module-V2-p-5851.html" }],
       "powerGroupId": "none", "powerTreatment": "Power reference only; camera, host, and deployment configuration unconfirmed",
-      "powerReference": { "summary": "About 0.35-0.42 W during published inference examples; host and camera separate", "basis": "Published tests report about 0.35 W average and 0.42 W peak for specific vision workloads. This is not a site measurement and is not a universal maximum.", "sourceUrls": [{ "label": "Grove Vision AI V2 inference power experiment", "url": "https://www.hackster.io/limengdu0117/2024-mcu-ai-vision-boards-performance-comparison-998505" }, { "label": "Vision AI V2 measured example", "url": "https://mlsysbook.ai/kits/contents/seeed/grove_vision_ai_v2/setup_and_no_code_apps/setup_and_no_code_apps.html" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An embedded vision module for future bench experiments." }
+      "powerReference": { "summary": "About 0.35-0.42 W during published inference examples; host and camera separate", "basis": "Published tests report about 0.35 W average and 0.42 W peak for specific vision workloads. This is not a site measurement and is not a universal maximum.", "sourceUrls": [{ "label": "Grove Vision AI V2 inference power experiment", "url": "https://www.hackster.io/limengdu0117/2024-mcu-ai-vision-boards-performance-comparison-998505" }, { "label": "Vision AI V2 measured example", "url": "https://mlsysbook.ai/kits/contents/seeed/grove_vision_ai_v2/setup_and_no_code_apps/setup_and_no_code_apps.html" }] }
     },
     {
       "id": "EQ-59", "category": "Compute and add-ons", "name": "Soldering iron setup", "quantity": 1,
       "unitCostUSD": 49.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 50, "lineTotalUSD": 50, "sourceLineTotalUSD": 50, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Provisional comparable-kit allowance", "sourceNote": "The acquired setup's make and contents were not specified. iFixit's entry-level soldering workstation was $49.99 on September 18, 2026; this is a comparable allowance, not the actual paid price or an exact replacement match.", "sourceUrls": [{ "label": "iFixit entry-level soldering workstation", "url": "https://www.ifixit.com/products/soldering-workstation" }],
       "powerGroupId": "none", "powerTreatment": "Power reference only; model and bench duty cycle unconfirmed",
-      "powerReference": { "summary": "About 30-60 W while heating for a 60 W-class iron; near zero unplugged", "basis": "Comparable 60 W soldering irons are load- and thermostat-dependent. This is a planning range, not a specification for the acquired setup; hot-air stations may draw much more.", "sourceUrls": [{ "label": "Adafruit adjustable 60 W iron reference", "url": "https://www.adafruit.com/explore/tools" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "A soldering setup for electronics assembly and repair." }
+      "powerReference": { "summary": "About 30-60 W while heating for a 60 W-class iron; near zero unplugged", "basis": "Comparable 60 W soldering irons are load- and thermostat-dependent. This is a planning range, not a specification for the acquired setup; hot-air stations may draw much more.", "sourceUrls": [{ "label": "Adafruit adjustable 60 W iron reference", "url": "https://www.adafruit.com/explore/tools" }] }
     },
     {
       "id": "EQ-60", "category": "Compute and add-ons", "name": "M5Stack CoreS3 ESP32-S3 development kit", "quantity": 1,
       "unitCostUSD": 59.90, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 60, "lineTotalUSD": 60, "sourceLineTotalUSD": 60, "sourceRoundingAdjustmentUSD": 0,
       "costBasis": "Dated manufacturer price reference", "sourceNote": "M5Stack listed the CoreS3 IoT development kit at $59.90 on September 18, 2026. The older registry also has one M5Stack ESP32-S3 device (EQ-29); this line assumes the newly reported CoreS3 is additional until the owner confirms whether it is the same unit.", "sourceUrls": [{ "label": "M5Stack CoreS3 official store", "url": "https://shop.m5stack.com/products/m5stack-cores3-esp32s3-iotdevelopment-kit" }],
       "powerGroupId": "none", "powerTreatment": "Power reference only; do not double-count the existing M5Stack power group until quantity is confirmed",
-      "powerReference": { "summary": "About 1.5-3 W planning range when active; peripherals and charging vary", "basis": "Uses the existing M5Stack ESP32-S3 bench allowance as a comparable reference. The CoreS3 has a battery and 1 W speaker; manufacturer does not publish a whole-kit wall-power measurement. Additional-unit status is unconfirmed.", "sourceUrls": [{ "label": "M5Stack CoreS3 specifications", "url": "https://shop.m5stack.com/products/m5stack-cores3-esp32s3-iotdevelopment-kit" }] },
-      "recentAcquisition": { "reportedOn": "2026-09-18", "status": "Acquired", "description": "An ESP32-S3 development kit for embedded experiments." }
+      "powerReference": { "summary": "About 1.5-3 W planning range when active; peripherals and charging vary", "basis": "Uses the existing M5Stack ESP32-S3 bench allowance as a comparable reference. The CoreS3 has a battery and 1 W speaker; manufacturer does not publish a whole-kit wall-power measurement. Additional-unit status is unconfirmed.", "sourceUrls": [{ "label": "M5Stack CoreS3 specifications", "url": "https://shop.m5stack.com/products/m5stack-cores3-esp32s3-iotdevelopment-kit" }] }
+    },
+    {
+      "id": "EQ-61", "category": "Compute and add-ons", "name": "NVIDIA GeForce RTX 5070, 12 GB GDDR7", "quantity": 2,
+      "unitCostUSD": 799.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 1600, "lineTotalUSD": 1600, "sourceLineTotalUSD": 1600, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable-card US retail reference", "sourceNote": "Acquired and reported September 23, 2026. Exact board makers and purchase prices were not supplied. Best Buy listed a PNY RTX 5070 12 GB card for $799.99 each; two comparable cards are used for this planning estimate. Actual card specifications and availability may differ.",
+      "sourceUrls": [{ "label": "Best Buy PNY RTX 5070 12 GB", "url": "https://www.bestbuy.com/product/pny-geforce-rtx-5070-12gb-oc-gddr7-pci-express-5-0-graphics-card-with-triple-fan-black/6620352" }],
+      "powerGroupId": "none", "powerTreatment": "Two acquired cards; installation and simultaneous use unconfirmed. Excluded from current V100 dock scenario",
+      "powerReference": { "summary": "250 W total graphics power per reference RTX 5070 card; 500 W for two only if both are loaded simultaneously", "basis": "NVIDIA RTX 5070 reference total graphics power is 250 W per card, not measured wall draw. Partner boards can differ. Host, dock and power-supply losses are additional; the Lab's single dock cannot run both cards at once.", "sourceUrls": [{ "label": "NVIDIA RTX 5070 family specifications", "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "Two 12 GB GPUs added to the Lab inventory. Their installation and availability for compute grants are not yet confirmed." }
+    },
+    {
+      "id": "EQ-62", "category": "Compute and add-ons", "name": "NVIDIA GeForce RTX 4070 SUPER, 12 GB GDDR6X", "quantity": 1,
+      "unitCostUSD": 799, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 799, "lineTotalUSD": 799, "sourceLineTotalUSD": 799, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable-card US retail reference", "sourceNote": "Acquired and reported September 23, 2026. Exact board maker and purchase price were not supplied. Walmart listed a PNY RTX 4070 SUPER 12 GB for $799.00; this is a comparable planning reference.",
+      "sourceUrls": [{ "label": "Walmart PNY RTX 4070 SUPER 12 GB", "url": "https://www.walmart.com/ip/5265483626" }],
+      "powerGroupId": "none", "powerTreatment": "Acquired swap card; installation unconfirmed. Excluded from current V100 dock scenario",
+      "powerReference": { "summary": "220 W graphics card power for the NVIDIA reference RTX 4070 SUPER", "basis": "NVIDIA specifies 220 W graphics card power for the reference design, not measured wall draw for this acquired board. Host, dock and power-supply losses are additional; a partner board can differ.", "sourceUrls": [{ "label": "NVIDIA RTX 4070 family specifications", "url": "https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4070-family/" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "One 12 GB GPU added to the Lab inventory. Installation and availability for compute grants are not yet confirmed." }
+    },
+    {
+      "id": "EQ-63", "category": "Compute and add-ons", "name": "Intel Arc Pro B70, 32 GB GDDR6", "quantity": 1,
+      "unitCostUSD": 1299.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 1300, "lineTotalUSD": 1300, "sourceLineTotalUSD": 1300, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable-card US retail reference", "sourceNote": "Acquired and reported September 23, 2026 as a B70. This registry assumes Intel Arc Pro B70; the exact board maker and paid price were not supplied. Newegg listed an ASRock Arc Pro B70 CT 32 GB for $1,299.99. The listing is a comparable replacement reference, not an identification of the acquired card.",
+      "sourceUrls": [{ "label": "Newegg ASRock Arc Pro B70 CT 32 GB", "url": "https://www.newegg.com/asrock-b70-ct-intel-arc-pro-b70-32gb-graphics-card/p/N82E16814930149" }],
+      "powerGroupId": "none", "powerTreatment": "Acquired card; exact board and installation unconfirmed. Excluded from current V100 dock scenario",
+      "powerReference": { "summary": "160-290 W board-power range across Intel Arc Pro B70 designs; Intel-branded card is 230 W", "basis": "Intel publishes 160-290 W for B70 designs and 230 W for the Intel-branded card. The acquired board is unconfirmed, so no single wattage is assigned. These are card specifications, not measured Lab wall draw; host and power-supply losses are additional.", "sourceUrls": [{ "label": "Intel Arc Pro B70 datasheet", "url": "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2026-03/datasheet-b70-gpu.pdf" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "One 32 GB B70 GPU added to the Lab inventory. Exact board, installation, and availability for compute grants are not yet confirmed." }
     }
   ],
   "powerGroups": [
@@ -1495,9 +1510,9 @@
     }
   ],
   "controls": {
-    "computeCostUSD": 28632,
+    "computeCostUSD": 32331,
     "sharedCostUSD": 2613,
-    "totalCostUSD": 31245,
+    "totalCostUSD": 34944,
     "corePowerW": [
       229.8,
       406.5,
@@ -1508,10 +1523,10 @@
       693,
       1413
     ],
-    "sourceTotalCostUSD": 31245,
+    "sourceTotalCostUSD": 34944,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 31244,
+    "unadjustedRoundedTotalUSD": 34943,
     "unpricedItemCount": 0,
-    "costScope": "Sixty priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
+    "costScope": "Sixty-three priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
   }
 }

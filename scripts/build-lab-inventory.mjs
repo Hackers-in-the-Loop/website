@@ -24,7 +24,7 @@ const workbook=Workbook.create();
 const overview=workbook.worksheets.add('Overview');
 const inventory=workbook.worksheets.add('Inventory');
 const power=workbook.worksheets.add('Power model');
-const acquisitions=workbook.worksheets.add('Acquisition references');
+const acquisitions=workbook.worksheets.add('Device references');
 const c={ink:'#111315',cream:'#F4F2EA',paper:'#FCFCF9',orange:'#FF553D',line:'#D8D8D0',muted:'#555851',input:'#FFF2CA'};
 const money='$'+'#,##0;($#,##0);'+'"-"';
 const money2='$'+'#,##0.00;($#,##0.00);'+'"-"';
@@ -62,19 +62,19 @@ note(overview,'A19','Working: mixed inference, development, storage and bench ac
 note(overview,'A20','Heavy: the modeled systems are busy together. These are estimates, not meter readings.');
 note(overview,'A22','Each power group is counted once. Inventory identifies included components and spares.');
 note(overview,'A23','The whole-lab model uses one V100 in the GPU dock and one installed PCIe FPGA.');
-note(overview,'A24','Agent Blade watts are projected. Recent acquisition power is referenced separately.');
+note(overview,'A24','Agent Blade watts are projected. Unmodeled devices have separate power references.');
 note(overview,'A25','Cooling, household router and post-outage battery recharge are excluded.');
 note(overview,'A26','The 750 VA UPS estimate covers overhead on an essential-load branch.');
 cell(overview,'A28','Keeping the inventory current');overview.getRange('A28').format.font.bold=true;rule(overview,'A28:D28');
 note(overview,'A29','Use the item IDs and power-group IDs when updating equipment, quantities or estimates.');
 note(overview,'A30','Update amber cost inputs and the power rows, then review the totals and snapshot date.');
 note(overview,'A31','Add new records through the maintained data file and regenerate to extend all formulas.');
-note(overview,'A32','Original references: September 11–12, 2026; recent acquisition research: September 18.');
+note(overview,'A32','Original references: September 11–12, 2026; added devices researched through September 23.');
 
 baseStyle(inventory,`A1:L${last+5}`);widths(inventory,{A:12,B:51,C:8,D:13,E:13,F:14,G:15,H:17,I:48,J:23,K:3,L:74});
 title(inventory,'Lab inventory');rule(inventory,'A3:J3');
 note(inventory,'A4','Line cost = rounded quantity × (unit estimate + shipping per unit) + source rounding adjustment.');
-note(inventory,'A5','Blank costs are unknown, not zero. Newly acquired equipment has its status in the source note.');
+note(inventory,'A5','Blank costs are unknown, not zero. Source notes distinguish dated prices and provisional allowances.');
 inventory.getRange('A7:J7').values=[['Item ID','Equipment and specifications','Qty','Unit cost (USD)','Shipping / unit (USD)','Source rounding (USD)','Line cost (USD)','Power group ID','Power treatment','Cost category']];header(inventory,'A7:J7');
 cell(inventory,'L7','Price reference and source note');header(inventory,'L7');
 const itemRows=data.items.map(x=>[x.id,x.name,x.quantity,x.unitCostUSD,x.shippingPerUnitUSD,x.sourceRoundingAdjustmentUSD,null,x.powerGroupId,x.powerTreatment,x.category]);
@@ -123,10 +123,10 @@ power.freezePanes.freezeRows(7);power.freezePanes.freezeColumns(2);
 const pt=power.tables.add(`A7:G${pLast}`,true,'LabPower');pt.showFilterButton=true;pt.style='TableStyleLight1';
 power.getRange(`F${pFirst}:F${pLast}`).format.borders={right:{style:'thin',color:c.line}};
 
-const acquired=data.items.filter(x=>x.recentAcquisition);
+const acquired=data.items.filter(x=>x.powerReference);
 const aFirst=7,aLast=aFirst+acquired.length-1;
 baseStyle(acquisitions,`A1:G${aLast+4}`);widths(acquisitions,{A:13,B:50,C:16,D:17,E:58,F:27,G:95});acquisitions.tabColor=c.orange;
-title(acquisitions,'Recent acquisition references');
+title(acquisitions,'Device cost and power references');
 note(acquisitions,'A3','Prices are dated replacement references or explicit allowances, not necessarily purchase costs.');
 note(acquisitions,'A4','Power figures describe the device or output, as noted. None is added to the current configured-lab totals.');
 acquisitions.getRange('A6:G6').values=[['Item ID','Equipment','Unit reference (USD)','Line estimate (USD)','Power reference','In current power totals?','Price and power basis / sources']];header(acquisitions,'A6:G6');
@@ -141,7 +141,7 @@ acquisitions.getRange(`B${aFirst}:B${aLast}`).format.wrapText=true;
 acquisitions.getRange(`E${aFirst}:G${aLast}`).format.wrapText=true;
 acquisitions.getRange(`C${aFirst}:D${aLast}`).format.horizontalAlignment='right';
 acquisitions.freezePanes.freezeRows(6);
-const at=acquisitions.tables.add(`A6:G${aLast}`,true,'RecentAcquisitions');at.showFilterButton=true;at.style='TableStyleLight1';
+const at=acquisitions.tables.add(`A6:G${aLast}`,true,'DeviceReferences');at.showFilterButton=true;at.style='TableStyleLight1';
 for(let r=first;r<=last;r++){const ref=inventory.getRange(`L${r}`).values[0][0];const lines=ref.split('\n').reduce((n,t)=>n+Math.ceil(t.length/85),0);if(lines>3)inventory.getRange(`A${r}:L${r}`).format.rowHeight=Math.max(57,lines*14+7);}
 
 // Test representative edits and restore them before final export.
@@ -165,15 +165,15 @@ totalCheck(expectedCost);
 const inspections=[];
 inspections.push((await workbook.inspect({kind:'table',range:'Overview!A6:D17',include:'values,formulas',tableMaxRows:12,tableMaxCols:4,maxChars:9000})).ndjson);
 inspections.push((await workbook.inspect({kind:'table',range:'Inventory!A43:J45',include:'values,formulas',tableMaxRows:3,tableMaxCols:10,maxChars:7000})).ndjson);
-inspections.push((await workbook.inspect({kind:'table',range:`Acquisition references!A6:F${aLast}`,include:'values,formulas',tableMaxRows:acquired.length+1,tableMaxCols:6,maxChars:9000})).ndjson);
+inspections.push((await workbook.inspect({kind:'table',range:`Device references!A6:F${aLast}`,include:'values,formulas',tableMaxRows:acquired.length+1,tableMaxCols:6,maxChars:9000})).ndjson);
 const errors=await workbook.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:100},summary:'Final formula scan',maxChars:5000});
 qa.formulaErrorScan=errors.ndjson;
 await fs.writeFile(path.join(outputDir,'inspection.ndjson'),inspections.join('\n')+'\n'+errors.ndjson);
 if(process.argv.includes('--verify-only')){console.log(JSON.stringify({verificationOnly:true,items:data.items.length,expectedCost,actualCost:value(overview,'B9'),pricedSubtotal:value(overview,'B10'),checks:qa.checks,formulaErrorScan:errors.ndjson}));process.exit(0);}
 for(const [name,sheetName,range] of [
- ['overview','Overview','A1:D33'],['inventory-end','Inventory',`A${Math.max(first,last-3)}:J${last+2}`], ['acquisition-references','Acquisition references',`A1:G${aLast+1}`]
+ ['overview','Overview','A1:D33'],['inventory-end','Inventory',`A${Math.max(first,last-3)}:J${last+2}`], ['device-references','Device references',`A1:G${aLast+1}`]
 ]){const blob=await workbook.render({sheetName,range,scale:1.4,format:'png'});await fs.writeFile(path.join(outputDir,`${name}.png`),new Uint8Array(await blob.arrayBuffer()));}
 const output=await SpreadsheetFile.exportXlsx(workbook);const outputPath=path.join(outputDir,'hackers-in-the-loop-lab-inventory.xlsx');await output.save(outputPath);
-qa.output=outputPath;qa.controls=data.controls;qa.sheets=['Overview','Inventory','Power model','Acquisition references'];
+qa.output=outputPath;qa.controls=data.controls;qa.sheets=['Overview','Inventory','Power model','Device references'];
 await fs.writeFile(path.join(outputDir,'qa.json'),JSON.stringify(qa,null,2)+'\n');
 console.log(JSON.stringify({output:outputPath,items:data.items.length,powerGroups:data.powerGroups.length,totalUSD:value(overview,'B9'),pricedSubtotalUSD:value(overview,'B10'),corePowerW:['B','C','D'].map(c=>value(overview,`${c}16`)),wholeLabPowerW:['B','C','D'].map(c=>value(overview,`${c}17`)),formulaErrorScan:errors.ndjson}));
