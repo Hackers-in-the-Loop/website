@@ -2,7 +2,7 @@
 
 The public workbook is `public/lab/hack-lab-inventory.xlsx`.
 
-Use `src/content/lab-inventory.json` as the maintained registry. It contains 64 priced equipment records, stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. Some prices are explicit comparable-item allowances because the acquired model or variant is unknown. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
+Use `src/content/lab-inventory.json` as the maintained registry. It contains 66 priced equipment records, stable equipment IDs, 21 power groups, component-to-group mappings, snapshot date, source links, and cost/power definitions. Some prices are explicit comparable-item allowances because the acquired model or variant is unknown. `scripts/build-lab-inventory.mjs` creates the workbook from that registry and accepts input and output paths as its first two arguments. It uses the bundled `@oai/artifact-tool` runtime. It does not require source notes or network access.
 
 The site's power calculator reads this same registry through `src/lib/lab-power.ts`. Do not maintain a separate power estimate file.
 
@@ -52,18 +52,22 @@ EQ-64 is the newly acquired TYAN FT77C-B7079 4U GPU server with two Xeon E5-2660
 
 [Intel rates each E5-2660 v3 at 105 W TDP](https://www.intel.com/content/www/us/en/ark/products/series/78583/intel-xeon-processor-e5-v3-family.html). The [TYAN manual](https://ftp1.tyan.com/pub/doc/FT77C-B7079_UG_V1.0q.pdf) gives the chassis power supplies 2,000 W output capacity on 100-127 V AC or 3,200 W on 200-240 V AC. Those are component thermal and PSU output ratings, not measured wall draw. Actual server consumption depends on fans, memory, storage, GPUs, load, and power-supply losses. Installation, input voltage, GPU population, and operating draw have not been confirmed; this server is excluded from the existing Lab power scenarios until it is metered.
 
+EQ-65 and EQ-66 were reported acquired September 28. The Dell PowerEdge R730 is described as a 16-bay SFF, 2.50 GHz 24-core server with 512 GB RAM and 16 caddies. The [matching refurbished TechMikeNY listing](https://www.ebay.com/str/techmikeny/Dell-PowerEdge-R730/_i.html?store_cat=15884377015) showed $2,850.95 on September 28, rounded to $2,851. This is a market reference, not the amount paid. The CPU model, PSU variant, installed drives, and deployment role are unconfirmed. [Dell lists 495 W, 750 W, and 1,100 W AC PSU options](https://i.dell.com/sites/doccontent/shared-content/data-sheets/en/documents/dell-poweredge-r730-spec-sheet.pdf) for the R730; these are output capacities, not actual wall power. Caddies alone do not imply drives are installed.
+
+The exact model of the acquired Omada 10G switch is unknown. The [eight-port SFP+ SX3008F at B&H](https://www.bhphotovideo.com/c/product/1684305-REG/tp_link_tl_sx3008f_jetstream_8_port_10ge.html) was $239.99 on September 28, rounded to $240, as a comparable allowance. [Omada rates that model at up to 15.46 W](https://www.omadanetworks.com/us/business-networking/omada-switch-aggregation/sx3008f/v1.20/) at 220 V / 50 Hz. The acquired switch could have different ports or PoE capability, so neither that price nor wattage identifies the acquired unit. Its installation and whether it augments or replaces the NETGEAR switch are also unknown. Both new items remain outside the configured Lab power totals pending identification and measurement.
+
 ## Rounding reconciliation
 
-The original published extended lines total $29,749: $28,244 compute and $1,505 shared equipment. The eight earlier additions brought the reference total to $31,245. Four GPUs added $3,699, and the TYAN server adds a $1,300 market reference, bringing the current cost estimate to $36,244: $33,631 compute and $2,613 shared equipment. The KVM reference is $118.47 per unit, but its published line is $119. Applying conventional nearest-dollar rounding alone produces $36,243 overall. The workbook preserves the original published KVM line using a visible $1 adjustment. The unit price remains $118.47. All other lines round normally. The touchscreen has a separate $60 shipping input.
+The original published extended lines total $29,749: $28,244 compute and $1,505 shared equipment. The eight earlier additions brought the reference total to $31,245. Four GPUs added $3,699, the TYAN server $1,300, the Dell server $2,851, and the Omada switch $240 in market references, bringing the current cost estimate to $39,335: $36,482 compute and $2,853 shared equipment. The KVM reference is $118.47 per unit, but its published line is $119. Applying conventional nearest-dollar rounding alone produces $39,334 overall. The workbook preserves the original published KVM line using a visible $1 adjustment. The unit price remains $118.47. All other lines round normally. The touchscreen has a separate $60 shipping input.
 
 ## QA completed
 
-- The original 52 priced cost records match the source list, including 14 GPU cards split into test rotation and spares; twelve later equipment records have separate price and power references.
+- The original 52 priced cost records match the source list, including 14 GPU cards split into test rotation and spares; fourteen later equipment records have separate price and power references.
 - All 21 power groups match the source model and current site data at creation.
 - Core: 229.8 W idle, 406.5 W working, 907 W heavy.
 - Whole lab: 339.3 W idle, 693 W working, 1,413 W heavy.
 - Formula tests covered quantity updates, zero price, missing price, changed power and missing power. Missing inputs remain visible instead of becoming zero totals.
-- The generator extends formulas for all 64 registry records and reconciles the $36,244 cost estimate to the registry controls. Unknown exact models remain marked provisional rather than blank or silently treated as actual purchase costs.
+- The generator extends formulas for all 66 registry records and reconciles the $39,335 cost estimate to the registry controls. Unknown exact models remain marked provisional rather than blank or silently treated as actual purchase costs.
 - Every affected sheet was rendered and visually checked. Detail tables have frozen headers and identifying columns, native filters, typed currency/power values, and explicit component inclusion notes.
 - Exported XLSX contains formulas and cached totals, no error cells, and no old abbreviation or em dashes. XLSX structure and panes were inspected. Recalculation was verified with Artifact Tool; desktop Excel was not launched.
 

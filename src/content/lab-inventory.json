@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "name": "Hackers in the Loop",
   "shortName": "HACK",
-  "snapshot": "2026-09-23",
+  "snapshot": "2026-09-28",
   "currency": "USD",
-  "priceDates": "2026-09-11; network switch updated 2026-09-12; September 2026 acquisitions researched 2026-09-18 and 2026-09-23",
-  "costDefinition": "Estimated equipment cost using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. Newly acquired GPU and server power references are separate from the configured-lab wall-power totals until installation and workload are confirmed.",
+  "priceDates": "2026-09-11; network switch updated 2026-09-12; September 2026 acquisitions researched 2026-09-18, 2026-09-23, and 2026-09-28",
+  "costDefinition": "Estimated equipment cost using dated market prices, comparable-item allowances where a model or variant is unknown, and two owner-reported prices checked against current listings. Each line rounds quantity times unit cost plus the stated per-unit shipping to the nearest dollar. Tax and shipping are excluded except for the rack touchscreen. The original KVM line keeps a visible $1 rounding adjustment. This is not the amount spent or a donation valuation. Newly acquired GPU, server, and switch power references are separate from the configured-lab wall-power totals until installation and workload are confirmed.",
   "powerDefinition": "Planning estimates at the wall. Each group is counted once. Included components, uninstalled swap cards and spares do not add to totals. Working means mixed activity; heavy means the modeled systems are busy together.",
   "exclusions": "Room cooling, household router, UPS recharge after an outage, and fixed electricity charges are excluded. The 750 VA UPS overhead assumes an essential-load branch. Agent Blade power is projected for a populated board.",
   "items": [
@@ -1240,6 +1240,24 @@
       "powerGroupId": "none", "powerTreatment": "Acquired 4U server; installation, GPU population, input voltage, and measured wall draw unconfirmed. Excluded from configured-lab power totals",
       "powerReference": { "summary": "Two CPUs rated 105 W TDP each. Chassis PSU output capacity: 2,000 W on 100-127 V AC or 3,200 W on 200-240 V AC; actual wall draw is unknown", "basis": "Intel specifies 105 W TDP per E5-2660 v3. TYAN specifies 2,000 W or 3,200 W power-supply output capacity depending on input voltage. CPU TDP is not measured electrical consumption, and PSU capacity is not server draw. Fans, memory, storage, GPU selection, utilization, and PSU losses determine actual wall power. Meter the installed system before revising Lab or hosting power estimates.", "sourceUrls": [{ "label": "Intel Xeon E5 v3 family specifications", "url": "https://www.intel.com/content/www/us/en/ark/products/series/78583/intel-xeon-processor-e5-v3-family.html" }, { "label": "TYAN FT77C-B7079 manual", "url": "https://ftp1.tyan.com/pub/doc/FT77C-B7079_UG_V1.0q.pdf" }] },
       "recentAcquisition": { "reportedOn": "2026-09-23", "status": "Acquired", "description": "A 4U GPU server with two Xeon E5-2660 v3 processors and 128 GB RAM. Installation and GPU assignments for the updated bench are not yet documented." }
+    },
+    {
+      "id": "EQ-65", "category": "Compute and add-ons", "name": "Dell PowerEdge R730, 16-bay SFF, 2.50 GHz 24-core, 512 GB RAM, 16 caddies", "quantity": 1,
+      "unitCostUSD": 2850.95, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 2851, "lineTotalUSD": 2851, "sourceLineTotalUSD": 2851, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable refurbished-server US retail reference", "sourceNote": "Acquired and reported September 28, 2026. Owner purchase price and exact CPU/PSU models were not supplied. TechMikeNY's matching 16-bay, 2.50 GHz 24-core, 512 GB, 16-caddie R730 listing showed $2,850.95 on September 28. This is a comparable market reference, not the amount paid. Caddies do not imply drives are installed.",
+      "sourceUrls": [{ "label": "TechMikeNY matching R730 listing", "url": "https://www.ebay.com/str/techmikeny/Dell-PowerEdge-R730/_i.html?store_cat=15884377015" }],
+      "powerGroupId": "none", "powerTreatment": "Acquired server; CPU/PSU variants, drives, installation, and measured wall draw unconfirmed. Excluded from configured-lab power totals",
+      "powerReference": { "summary": "Dell R730 supports 495 W, 750 W, or 1,100 W AC PSU options; actual wall draw is unknown", "basis": "Dell's published PSU figures are output-capacity options, not consumption. The reported 2.50 GHz / 24-core description does not confirm CPU model or its thermal rating. RAM, storage, load, and PSU losses affect actual draw. Measure the installed server before adding it to the Lab power scenarios.", "sourceUrls": [{ "label": "Dell PowerEdge R730 technical specification", "url": "https://i.dell.com/sites/doccontent/shared-content/data-sheets/en/documents/dell-poweredge-r730-spec-sheet.pdf" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-28", "status": "Acquired", "description": "A 16-bay small-form-factor server with 512 GB RAM and 16 drive caddies. CPU model, installed drives, deployment role, and grant availability are not yet documented." }
+    },
+    {
+      "id": "EQ-66", "category": "Rack and shared", "name": "Omada 10G network switch, exact model unconfirmed", "quantity": 1,
+      "unitCostUSD": 239.99, "shippingPerUnitUSD": 0, "baseRoundedLineCostUSD": 240, "lineTotalUSD": 240, "sourceLineTotalUSD": 240, "sourceRoundingAdjustmentUSD": 0,
+      "costBasis": "Dated comparable-switch US retail allowance", "sourceNote": "Acquired and reported September 28, 2026. Exact Omada model and paid price were not supplied. B&H listed the eight-port 10G SFP+ SX3008F for $239.99 on September 28. This is a provisional comparable price, not identification of the acquired switch.",
+      "sourceUrls": [{ "label": "B&H Omada SX3008F comparable switch", "url": "https://www.bhphotovideo.com/c/product/1684305-REG/tp_link_tl_sx3008f_jetstream_8_port_10ge.html" }],
+      "powerGroupId": "none", "powerTreatment": "Acquired network switch; exact model, installation, and whether it augments or replaces the existing switch are unconfirmed. Excluded from configured-lab power totals",
+      "powerReference": { "summary": "Comparable Omada SX3008F is rated up to 15.46 W; acquired switch model and wall draw unknown", "basis": "Omada publishes a 15.46 W maximum for the SX3008F v1.20 at 220 V / 50 Hz. The acquired switch could have different ports, PoE capability, and power requirements. Confirm its model and measure or model the installed network before updating Lab scenarios.", "sourceUrls": [{ "label": "Omada SX3008F v1.20 specifications", "url": "https://www.omadanetworks.com/us/business-networking/omada-switch-aggregation/sx3008f/v1.20/" }] },
+      "recentAcquisition": { "reportedOn": "2026-09-28", "status": "Acquired", "description": "A 10G Omada switch. Its exact model, port mix, and place in the Lab network are still to be confirmed; the listed price and power are for a comparable eight-port SFP+ model." }
     }
   ],
   "powerGroups": [
@@ -1519,9 +1537,9 @@
     }
   ],
   "controls": {
-    "computeCostUSD": 33631,
-    "sharedCostUSD": 2613,
-    "totalCostUSD": 36244,
+    "computeCostUSD": 36482,
+    "sharedCostUSD": 2853,
+    "totalCostUSD": 39335,
     "corePowerW": [
       229.8,
       406.5,
@@ -1532,10 +1550,10 @@
       693,
       1413
     ],
-    "sourceTotalCostUSD": 36244,
+    "sourceTotalCostUSD": 39335,
     "sourceRoundingDifferenceUSD": 1,
-    "unadjustedRoundedTotalUSD": 36243,
+    "unadjustedRoundedTotalUSD": 39334,
     "unpricedItemCount": 0,
-    "costScope": "Sixty-four priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
+    "costScope": "Sixty-six priced records, including provisional replacement references for acquisitions whose exact model or purchase cost is unknown"
   }
 }
