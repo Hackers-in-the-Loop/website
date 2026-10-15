@@ -92,7 +92,7 @@ export const labProjects: LabProject[] = [
   },
   {
     id: "book-series", group: "books", name: "From Models to Custom Silicon", stage: "Book I in production",
-    description: "A five-book engineering series: How Modern AI Models Work; Training, Compressing, and Quantizing Models; Embedded Inference Systems; FPGA Accelerators and Model-Hardware Co-Design; and From RTL to an ASIC. Only Book I is in production. The other four are planned and have not been scaffolded.",
+    description: "A six-book engineering series: How Modern AI Models Work; Training, Compressing, and Quantizing Models; Inference Systems and Engineering; Advanced Model Architectures; Smart Quantizing: Making Smaller Models Smarter; and From FPGA to ASICs. Only Book I is in production. The other five are planned and have not been scaffolded.",
     resources: ["Writing and reader-review workspace", "Lab experiments as technical context"],
     target: "Book I has 23 packages internally ready; integrated reader review is pending.",
   },
