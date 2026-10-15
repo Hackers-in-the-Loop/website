@@ -471,3 +471,7 @@ a.row-title { text-decoration: underline; text-decoration-color: var(--signal); 
   .bar, .lanes-switch, .toc-side, .toc-inline, .pager, .pager-back, .copy, .foot, .lane-watch, .watch-cards { display: none !important; }
   .term-card { display: none !important; }
 }
+
+/* whole-book PDF download on the book page */
+.idx-head .ch-actions { margin-top: 1.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+.idx-pdf-note { font: 0.9rem var(--text); color: var(--graphite); }
