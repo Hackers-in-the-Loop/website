@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const pages = [["/", "Home"], ["/why", "Why?"], ["/lab", "Lab"], ["/projects", "Projects"], ["/community", "Community"]] as const;
+const pages = [["/", "Home"], ["/why", "Why?"], ["/lab", "Lab"], ["/projects", "Projects"], ["/learn/", "Learn"], ["/community", "Community"]] as const;
 
 export function Navigation() {
   const pathname = usePathname();
