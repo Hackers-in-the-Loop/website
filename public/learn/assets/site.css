@@ -504,3 +504,12 @@ a.row-title { text-decoration: underline; text-decoration-color: var(--signal); 
   .cs-whole { width: 100%; max-width: 18rem; }
 }
 @media print { .cheat { box-shadow: none; break-before: page; } }
+
+/* ---------------------------------------------------------------- community invitation */
+.join { display: flex; align-items: center; justify-content: space-between; gap: 0.9rem 1.4rem; flex-wrap: wrap; margin: 0 0 1.8rem; padding: 0.95rem 1.1rem; background: var(--signal); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 6px; box-shadow: 4px 4px 0 var(--ink); }
+.join-text { flex: 1 1 22rem; margin: 0; font: 400 0.98rem/1.45 var(--text); hyphens: none; text-align: left; }
+.join-text strong { font-weight: 600; }
+.join-btn { flex: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.6rem 1rem; background: var(--ink); color: var(--term-ink); border-radius: 4px; font: 700 0.78rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+.join-btn:hover, .join-btn:focus-visible { background: var(--paper); color: var(--ink); outline: 2px solid var(--ink); outline-offset: 0; }
+@media (max-width: 640px) { .join-btn { width: 100%; justify-content: center; } }
+@media print { .join { display: none; } }
