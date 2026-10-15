@@ -10,7 +10,7 @@ export function FounderStory() {
           <h3>For me, Hackers in the Loop has two goals.</h3>
           <ol>
             <li><strong>Invest in others as others have invested in me.</strong> Build a community where we take time to listen, teach, and appreciate one another and the things we’re building.</li>
-            <li><strong>Provide resources through grants.</strong> Help people learn, research, and build with open source technology.</li>
+            <li><strong>Share resources.</strong> Help people learn, research, and build with open source technology.</li>
           </ol>
           <p>I hope Hackers in the Loop becomes something meaningful for someone. Even if it changes just one person’s life, it will have been worth it to me.</p>
 

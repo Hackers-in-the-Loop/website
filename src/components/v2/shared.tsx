@@ -12,10 +12,6 @@ export function PageIntro({ label, title, children }: { label: string; title: st
   return <header className="v2-hero-surface"><div className="v2-wrap v2-page-intro"><p className="v2-kicker">{label}</p><h1>{title}</h1><div className="v2-intro-copy">{children}</div></div></header>;
 }
 
-export function LabStatus() {
-  return <dl className="v2-status"><div><dt>Equipment</dt><dd>Built & documented</dd></div><div><dt>Compute requests</dt><dd>Open for proposals</dd></div><div><dt>Shared access</dt><dd>Being set up</dd></div></dl>;
-}
-
 export function CommunityInvitation() {
   return <section className="v2-invitation"><div className="v2-wrap v2-split"><div><p className="v2-kicker">Good company for your curiosity</p><h2>Bring what you’re working on.<br />Or what you’re wondering about.</h2><p>You don’t need a project or Lab access to take part.</p></div><ConnectLink /></div></section>;
 }

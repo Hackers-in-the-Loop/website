@@ -1,0 +1,126 @@
+/* The hero card frame. The drawing's own styles live inside public/hero-figure/hero-figure.svg. */
+.v2-home-mark.hf-card {
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hf-stage {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: inherit;
+}
+
+.hf-stage:focus-visible {
+  outline: 1px solid #8a817b;
+  outline-offset: -10px;
+}
+
+.hf-card .hf-still,
+.hf-card .hf-host,
+.hf-card .hf-host > svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hf-card .hf-stage[data-live] .hf-still {
+  visibility: hidden;
+}
+
+.hf-corner {
+  position: absolute;
+  z-index: 1;
+  font: 400 10.5px/1 var(--font-mono);
+  letter-spacing: 0.04em;
+  color: #8a817b;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hf-corner[data-corner="fig"] {
+  top: 20px;
+  left: 22px;
+  color: #b9b0a6;
+}
+
+.hf-corner[data-corner="title"] {
+  top: 20px;
+  right: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hf-corner[data-corner="hint"] {
+  bottom: 20px;
+  left: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hf-corner[data-corner="readout"] {
+  right: 22px;
+  bottom: 20px;
+  color: #ddd5ca;
+  font-variant-numeric: tabular-nums;
+}
+
+.hf-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  /* on a 300 px card the machine takes a little more of it, as the corners leave room above and below */
+  .hf-card .hf-still,
+  .hf-card .hf-host > svg {
+    transform: scale(1.12);
+  }
+
+  .hf-corner {
+    font-size: 9.5px;
+  }
+
+  .hf-corner[data-corner="fig"],
+  .hf-corner[data-corner="title"] {
+    top: 14px;
+  }
+
+  .hf-corner[data-corner="hint"],
+  .hf-corner[data-corner="readout"] {
+    bottom: 14px;
+  }
+
+  .hf-corner[data-corner="fig"],
+  .hf-corner[data-corner="hint"] {
+    left: 14px;
+  }
+
+  .hf-corner[data-corner="title"],
+  .hf-corner[data-corner="readout"] {
+    right: 14px;
+  }
+}
+
+/* On the 300 px card the hint crowds the readout; the card itself is still the button. */
+@media (max-width: 420px) {
+  .hf-corner[data-corner="hint"] {
+    display: none;
+  }
+}

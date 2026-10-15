@@ -56,5 +56,8 @@ const completedProjects = readFileSync("out/projects/completed/index.html", "utf
 assert.match(completedProjects, /href="https:\/\/github.com\/iammrduncan\/esp32-fx"/);
 assert.match(completedProjects, /href="https:\/\/github.com\/Hackers-in-the-Loop\/pod-pi"/);
 assert.doesNotMatch(completedProjects, /pod-pi repository \(private\)/);
-assert.match(readFileSync("out/projects/active/index.html", "utf8"), /Ternary Bonsai 2 27B/);
+assert.match(completedProjects, /Ternary Bonsai 2 27B/);
+assert.doesNotMatch(completedProjects + projectIndex, /github\.com\/Hackers-in-the-Loop\/hack-lab/);
+const activeProjects = readFileSync("out/projects/active/index.html", "utf8");
+for (const featured of ["magnesium", "thermite"]) assert.match(activeProjects, new RegExp(`href="/projects/active#${featured}"`));
 console.log("SEO export checks passed: seven pages, social images, structured data, sitemap, robots, legacy exclusions, and project navigation.");

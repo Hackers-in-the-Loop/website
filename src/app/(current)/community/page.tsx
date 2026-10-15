@@ -7,7 +7,7 @@ export const metadata = pageMetadata("Community / Connect", "Join Hackers in the
 
 export default function CommunityPage() {
   return <>
-    <PageIntro label="Community / Connect" title="You can start where you are."><p>Ask about something you’re learning, share what you’re working on, or get to know people. You don’t need a project, a grant, or Lab access to take part.</p><div className="v2-actions"><a className="v2-button v2-button--primary" href="#connect">Find a way to connect ↓</a><a className="v2-link" href="#rules">Read the community rules</a></div></PageIntro>
+    <PageIntro label="Community / Connect" title="You can start where you are."><p>Ask about something you’re learning, share what you’re working on, or get to know people. You don’t need a project or Lab access to take part.</p><div className="v2-actions"><a className="v2-button v2-button--primary" href="#connect">Find a way to connect ↓</a><a className="v2-link" href="#rules">Read the community rules</a></div></PageIntro>
     <span id="join" /><section className="v2-connection" id="connect" aria-labelledby="connect-title"><div className="v2-wrap v2-section v2-split">
       <div><p className="v2-kicker">Our community home</p><h2 id="connect-title">Join the conversation on Discord.</h2><p>Share a build log, a question, a recent discovery, or an update from your life. Take an interest in what someone else is doing, too.</p>
         {siteConfig.discordUrl ? <div className="v2-actions"><a className="v2-button v2-button--primary" href={siteConfig.discordUrl} target="_blank" rel="noreferrer">Join Discord ↗</a></div> : <p className="v2-note">Contact us through X or LinkedIn.</p>}

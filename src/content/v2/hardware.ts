@@ -1,9 +1,20 @@
+// The Lab at a glance, by job. Showcase-level detail only: what each part is for, not an inventory
+// (the itemized workbook stays a download). Counts follow the HACK Lab field guide
+// (hack-lab docs/website, as of 13 October 2026).
+export const labNumbers = [
+  ["14", "GPUs and AI chips in service"],
+  ["192 GB", "GPU memory in one 8-GPU server"],
+  ["384 GB", "unified memory across three DGX Sparks"],
+  ["~24 TB", "shared storage for models and results"],
+] as const;
+
 export const hardware = [
-  ["AI compute", "3 × NVIDIA DGX Spark", "128 GB unified memory and 4 TB NVMe each. 384 GB of memory across three separate machines for inference and training experiments. The build thread describes a two-Spark pair plus one standalone Spark."],
-  ["General compute", "MS-A2, N150, K15, and Dell R730", "MS-A2: Ryzen 9 9955HX, 96 GB RAM, 6 TB SSD. N150 controller: 16 GB, 500 GB SSD + 5 TB USB HDD. K15: Core Ultra 5 125U, 32 GB, 512 GB SSD + 4 TB NVMe; also hosts the GPU bench. A 16-bay Dell R730 with 512 GB RAM and 16 caddies was acquired; its deployment role is not yet documented."],
-  ["GPU bench", "19 cards, one dock, and a 4U server", "8 P100s, 2 V100s, 2 BC-160s, 2 Radeon VIIs, 1 P4, 2 RTX 5070s, 1 RTX 4070 SUPER, and 1 Intel Arc Pro B70. The documented DEG2 dock connects to the K15 and runs one GPU at a time. A TYAN FT77C-B7079 server with two Xeon E5-2660 v3 CPUs and 128 GB RAM was acquired for an updated bench; its installation and GPU assignments are not yet documented."],
-  ["Storage", "QNAP TS-464", "4 × 8 TB WD Red Plus HDDs in RAID5: 32 TB raw, about 24 TB after parity and before overhead. One 4 TB WD Blue NVMe drive provides the Qtier SSD tier."],
-  ["Small-device experiments", "FPGA, edge AI, and ESP32", "Custom i5 host and TANG Primer 20K, Stratix V, Kintex-7, and XCKU3P FPGA platforms. Orange Pi 6, Luckfox Pico Mini A, Grove Vision AI Module V2, AX630C LLM module, M5Stack ESP32-S3 devices, and the experimental Agent Blade."],
-  ["Electronics bench", "Power, soldering, and prototyping", "WEP 605D-III 60 V / 5 A DC supply, soldering setup, and embedded boards for hardware experiments. These bench tools are in the inventory; their operating draw depends on the work underway."],
-  ["Rack and control", "12U TecMOJO / 10-inch rack", "NETGEAR GS108E switch, patch panel, eight-port KVM, Sipeed NanoKVM, rack displays, fans, power meter, and CyberPower 750 VA and PR2200LCDSL UPS units. An Omada 10G switch was also acquired; its model and network role are unconfirmed. The new UPS installation and protected loads have not been confirmed."],
+  ["Model servers", "3 × NVIDIA DGX Spark", "128 GB of unified memory each. Two together serve the Lab's default model; the third runs quantization experiments."],
+  ["GPU server", "8 data-centre GPUs", "Four V100s and four P100s in one 4U server. Its P100s are the research lanes."],
+  ["VM host", "Dell PowerEdge R730", "512 GB of memory for virtual machines, including the brain of the GPU cluster."],
+  ["Platform", "A mini PC", "Runs the shared services: sign-in, dashboards and the model gateway."],
+  ["GPU benches", "Swappable cards", "Radeon VII, BC-160, RTX and spare P100 cards on external docks, one GPU at a time."],
+  ["Storage", "4-bay NAS", "About 24 TB usable: model files, logs and results, shared over the network."],
+  ["Small devices", "FPGA, edge AI and ESP32", "FPGA boards, edge-AI modules, ESP32 devices and an electronics bench."],
+  ["Rack", "12U, 10-inch mini rack", "Switches, KVM, status screens and battery backup."],
 ] as const;

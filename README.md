@@ -16,7 +16,7 @@ The repository contains one production site:
 
 - `/`: Community purpose and ways to participate.
 - `/why`: Shared purpose and the founder's own story.
-- `/lab`: Hardware, compute requests, support, operating estimates, and the build journey.
+- `/lab`: What the Lab is for, the kinds of research it runs, its hardware, support, operating estimates, and the build journey.
 - `/projects`: Directory of active and completed work; `/projects/active` and `/projects/completed` document leads and resources.
 - `/community`: Discord, contact links, and community rules.
 

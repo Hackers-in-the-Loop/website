@@ -7,3 +7,18 @@ export function ProjectList({ projects }: { projects: LabProject[] }) {
     <dl><div><dt>Project lead</dt><dd>{project.lead ? project.lead : <a className="v2-project-lead" href={siteConfig.xUrl} target="_blank" rel="noreferrer">Shannon Duncan ↗</a>}</dd></div><div><dt>Hardware & resources</dt><dd><ul>{project.resources.map(resource => <li key={resource}>{resource}</li>)}</ul></dd></div>{project.target && <div><dt>Working toward</dt><dd>{project.target}</dd></div>}</dl>
   </article>)}</>;
 }
+
+export function FeaturedProjects({ projects }: { projects: LabProject[] }) {
+  const featured = projects.filter(project => project.featured);
+  if (!featured.length) return null;
+  return <section className="v2-featured" aria-labelledby="featured-title"><div className="v2-wrap v2-section">
+    <p className="v2-kicker">Featured / The main work right now</p>
+    <h2 id="featured-title">Two big builds.</h2>
+    <div className="v2-featured-grid">{featured.map(project => <article key={project.id}>
+      <p className="v2-kicker">{project.stage}</p>
+      <h3>{project.name}</h3>
+      <p className="v2-featured-pitch">{project.featured}</p>
+      <div className="v2-actions"><a className="v2-button v2-button--light" href={`/projects/active#${project.id}`}>Read more →</a>{project.link && <a className="v2-link" href={project.link.url} target="_blank" rel="noreferrer">GitHub ↗</a>}</div>
+    </article>)}</div>
+  </div></section>;
+}

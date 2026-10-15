@@ -3,7 +3,7 @@ export function CommunityRules() {
         <ol className="community-rules">
           <li>
             <h3>Treat people with respect.</h3>
-            <p>Make room for questions at every experience level. Challenge ideas without attacking people. Harassment, hate, and putting people down for what they don’t know have no place here.</p>
+            <p>Make room for questions at every experience level. Challenge ideas without attacking people. Harassment, hate, and putting people down for what they don’t know have no place here. Keep language PG.</p>
           </li>
           <li>
             <h3>Share your work, not a sales pitch.</h3>

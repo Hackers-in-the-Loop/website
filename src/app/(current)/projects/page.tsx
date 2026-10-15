@@ -1,4 +1,5 @@
 import { completedProjects, labProjects, projectsUpdated } from "@/content/lab-projects";
+import { FeaturedProjects } from "@/components/v2/project-list";
 import { CommunityInvitation, PageIntro } from "@/components/v2/shared";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -7,6 +8,7 @@ export const metadata = pageMetadata("Projects", "Explore active experiments and
 export default function ProjectsPage() {
   return <>
     <PageIntro label="Projects" title="What we’re building."><p>Explore current work and projects that have finished, been retired, or joined other work. Each project page includes its lead, resources, and links where available.</p><p className="v2-note">Updated {projectsUpdated}.</p></PageIntro>
+    <FeaturedProjects projects={labProjects} />
     <div className="v2-wrap v2-project-choices">
       {[
         { href: "/projects/active", title: "Active projects", cta: "View active projects", projects: labProjects, copy: "Experiments, research, and infrastructure work in progress." },
